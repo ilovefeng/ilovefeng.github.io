@@ -291,6 +291,216 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/mac下安装Python3/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/mac下安装Python3/" itemprop="url">
+                  mac下安装Python3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T14:38:08+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/20/mac下安装Python3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/20/mac下安装Python3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/20/mac下安装Python3/" class="leancloud_visitors" data-flag-title="mac下安装Python3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h3><p>对于iOS开发不要随便拆卸系统自带的Python,因为有很多 library 还是使用 Python2.7。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
+<li><p><a href="#1">1.安装Xcode</a></p>
+</li>
+<li><p><a href="#2">2.安装套件管理工具 Homebrew</a></p>
+</li>
+<li><p><a href="#3">3.安装Python</a></p>
+</li>
+<li><p><a href="#4">4.设置路径（可选）</a></p>
+</li>
+<li><p><a href="#5">5.确认安装</a></p>
+</li>
+<li><p><a href="#6">6.使用</a></p>
+</li>
+<li><p><a href="#6">7.安装pip等</a></p>
+</li>
+</ul>
+<h3 id="1">1 安装Xcode</h3><br>1.1  App Store 搜索Xcode 并安装<br><br>1.2  安装 Xcode command line tool<br><br>1.2.1 打开命令行terminal工具<br><br>- control + space<br>- 输入terminal<br>- 回车<br><br><br>1.2.2 安装Xcode command line tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcode-select --install</div></pre></td></tr></table></figure><br><br><h3 id="2">2 安装套件管理工具 Homebrew</h3>
+
+<p>2.1 <a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">安装    Homebrew</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
+<p>2.2 查看是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew doctor</div></pre></td></tr></table></figure>
+<h3 id="3">3 安装Python</h3>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python</div></pre></td></tr></table></figure>
+<h3 id="4">4 设置路径（可选）</h3>
+
+<p>如果不设置路径，则使用python的话，会默认用系统的。(这个没有具体执行，所以这个需要自己尝试)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">## 修改/etc/paths，把/usr/local/bin 移到上面去</div><div class="line">sudo vim /etc/paths</div></pre></td></tr></table></figure>
+<p>拓展：<br>查看当前path是什么。<br>PATH 的用途：<br>告诉系統，我们的brew在哪里。会从上往下查找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $PAHTH</div></pre></td></tr></table></figure></p>
+<h3 id="5">5 确认安装</h3>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的python2.7，目录为/usr/bin/python</div><div class="line">which python</div><div class="line">//brew安装的python3.4,目录为/usr/local/bin/python3</div><div class="line">which python3</div></pre></td></tr></table></figure>
+<p></p><h3 id="6">6 使用</h3><br><strong>未执行操作4</strong>的情况（推荐）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">python a.py</div><div class="line">//brew安装的</div><div class="line">python3 a.py</div></pre></td></tr></table></figure><p></p>
+<p>执行<strong>操作4</strong>的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">/usr/bin/python a.py</div><div class="line">//brew安装的</div><div class="line">python a.py</div></pre></td></tr></table></figure>
+<p></p><h3 id="7">7 安装pip</h3><p></p>
+<ul>
+<li>安装Python2.7以上版本，会自动带pip。</li>
+<li>系统自带的python没有pip，只有easy_install</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 给系统的python安装pip</div><div class="line">easy_install pip</div></pre></td></tr></table></figure>
+<ul>
+<li>使用pip</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">pip --version</div><div class="line">//brew安装的</div><div class="line">pip3 --version</div></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/#step2" target="_blank" rel="external">1. MAC OSX 正確地同時安裝 PYTHON 2.7 和 PYTHON3</a><br><a href="http://blog.csdn.net/u012422446/article/details/56834557" target="_blank" rel="external">2. Mac安装python2.x与python3.x</a><br><a href="http://www.2cto.com/kf/201702/597697.html" target="_blank" rel="external">3. mac下安装python小坑</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/创建-a文件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1308,7 +1518,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1317,7 +1527,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1326,7 +1536,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[mac下安装Python3]]></title>
+      <url>%2F2017%2F04%2F20%2Fmac%E4%B8%8B%E5%AE%89%E8%A3%85Python3%2F</url>
+      <content type="text"><![CDATA[前沿对于iOS开发不要随便拆卸系统自带的Python,因为有很多 library 还是使用 Python2.7。 正文 1.安装Xcode 2.安装套件管理工具 Homebrew 3.安装Python 4.设置路径（可选） 5.确认安装 6.使用 7.安装pip等 1 安装Xcode1.1 App Store 搜索Xcode 并安装1.2 安装 Xcode command line tool1.2.1 打开命令行terminal工具- control + space- 输入terminal- 回车1.2.2 安装Xcode command line tool1xcode-select --install2 安装套件管理工具 Homebrew 2.1 安装 Homebrew1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 2.2 查看是否安装成功 1brew doctor 3 安装Python 1brew install python 4 设置路径（可选） 如果不设置路径，则使用python的话，会默认用系统的。(这个没有具体执行，所以这个需要自己尝试) 12## 修改/etc/paths，把/usr/local/bin 移到上面去sudo vim /etc/paths 拓展：查看当前path是什么。PATH 的用途：告诉系統，我们的brew在哪里。会从上往下查找。1echo $PAHTH 5 确认安装 1234// 系统自带的python2.7，目录为/usr/bin/pythonwhich python//brew安装的python3.4,目录为/usr/local/bin/python3which python3 6 使用未执行操作4的情况（推荐）1234// 系统自带的python a.py//brew安装的python3 a.py 执行操作4的情况 1234// 系统自带的/usr/bin/python a.py//brew安装的python a.py 7 安装pip 安装Python2.7以上版本，会自动带pip。 系统自带的python没有pip，只有easy_install 12// 给系统的python安装pipeasy_install pip 使用pip 1234// 系统自带的pip --version//brew安装的pip3 --version 参考1. MAC OSX 正確地同時安裝 PYTHON 2.7 和 PYTHON32. Mac安装python2.x与python3.x3. mac下安装python小坑]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[创建.a文件]]></title>
       <url>%2F2017%2F04%2F05%2F%E5%88%9B%E5%BB%BA-a%E6%96%87%E4%BB%B6%2F</url>
       <content type="text"><![CDATA[###一 创建.a 创建真机.a Valid Architectures设置：armv7｜armv7s｜arm64｜i386｜x86_64 Architectures设置: armv7｜arm64 Build Active Architecture Only ：NO 用真机运行或者选择Generic iOS Device （此时） 创建模拟器.a Valid Architectures设置为：armv7｜armv7s｜arm64｜i386｜x86_64 Architectures设置: i386｜x86_64 Build Active Architecture Only ：NO 合成支持模拟器的和真机的 lipo -create 真机库.a的路径 模拟器库.a的的路径 －output 合成库的名字.a ####注意： 如果Valid Architectures中添加了armv7s，就一定得添加armv7 二 查看.a文件包含的文件取出armv7平台的包： lipo 查看的.a -thin armv7 -output armv7/抽出的.a 查看库中所包含的文件列表： ar -t armv7/抽出的.a 1 xcode6不再构建arm7s 2.iOS开发——制作同时支持armv7，armv7s，arm64，i386，x86_64 3.iOS Device Compatibility Reference 4.App Distribution Guide]]></content>
