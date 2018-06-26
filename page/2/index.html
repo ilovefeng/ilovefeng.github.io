@@ -1,0 +1,1863 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="童真的烂漫" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="代码简单点，bug少一点！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="童真的烂漫">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="童真的烂漫">
+<meta property="og:description" content="代码简单点，bug少一点！">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="童真的烂漫">
+<meta name="twitter:description" content="代码简单点，bug少一点！">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+
+
+
+  <title> 童真的烂漫 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">童真的烂漫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/sed命令/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/20/sed命令/" itemprop="url">
+                  sed命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:29:30+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/20/sed命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/20/sed命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/20/sed命令/" class="leancloud_visitors" data-flag-title="sed命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h3><blockquote>
+<p><strong>sed</strong>(stream editor ：流编辑器)是一个编辑器，它一次处理一行内容。处理时，把当前处理的行存储在临时缓冲区中，称为<strong>“模式空间”</strong>（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。</p>
+</blockquote>
+<h3 id="2-命令格式"><a href="#2-命令格式" class="headerlink" title="2 命令格式"></a>2 命令格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sed [options] &apos;command&apos; file(s)</div><div class="line">sed [options] -f scriptfile file(s)</div></pre></td></tr></table></figure>
+<h3 id="3-参数"><a href="#3-参数" class="headerlink" title="3 参数"></a>3 参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">sed [-nefr] [动作]</div><div class="line">选项与参数：</div><div class="line">-i ：直接修改读取的文件内容，而不是输出到终端。</div><div class="line">-n ：使用安静(silent)模式。在一般 sed 的用法中，所有来自 STDIN 的数据一般都会被列出到终端上。但如果加上 -n 参数后，则只有经过sed 特殊处理的那一行(或者动作)才会被列出来。</div><div class="line">-e ：直接在命令列模式上进行 sed 的动作编辑；</div><div class="line">-f ：直接将 sed 的动作写在一个文件内， -f filename 则可以运行 filename 内的 sed 动作；</div><div class="line">-r ：sed 的动作支持的是延伸型正规表示法的语法。(默认是基础正规表示法语法)</div><div class="line"></div><div class="line">动作说明： [n1[,n2]]function</div><div class="line">n1, n2 ：不见得会存在，一般代表[选择进行动作的行数]</div><div class="line">举例来说，如果我的动作是需要在 10 到 20 行之间进行的，则[10,20[动作行为]]</div><div class="line"></div><div class="line">function：</div><div class="line">a ：新增， a 的后面可以接字串，而这些字串会在新的一行出现(目前的下一行)～</div><div class="line">c ：取代， c 的后面可以接字串，这些字串可以取代 n1,n2 之间的行！</div><div class="line">d ：删除，因为是删除啊，所以 d 后面通常不接任何咚咚；</div><div class="line">i ：插入， i 的后面可以接字串，而这些字串会在新的一行出现(目前的上一行)；</div><div class="line">p ：列印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行～</div><div class="line">s ：取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！例如 1,20s/old/new/g 就是啦！</div></pre></td></tr></table></figure>
+<h3 id="4-sed替换标记"><a href="#4-sed替换标记" class="headerlink" title="4 sed替换标记"></a>4 sed替换标记</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">g 表示行内全面替换。</div><div class="line">p 表示打印行。</div><div class="line">w 表示把行写入一个文件。</div><div class="line">x 表示互换模板块中的文本和缓冲区中的文本。</div><div class="line">y 表示把一个字符翻译为另外的字符（但是不用于正则表达式）</div><div class="line">\1 子串匹配标记</div><div class="line">&amp; 已匹配字符串标记</div></pre></td></tr></table></figure>
+<h3 id="5-sed元字符集"><a href="#5-sed元字符集" class="headerlink" title="5 sed元字符集"></a>5 sed元字符集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">^ 匹配行开始，如：/^sed/匹配所有以sed开头的行。</div><div class="line">$ 匹配行结束，如：/sed$/匹配所有以sed结尾的行。</div><div class="line">. 匹配一个非换行符的任意字符，如：/s.d/匹配s后接一个任意字符，最后是d。</div><div class="line">* 匹配0个或多个字符，如：/*sed/匹配所有模板是一个或多个空格后紧跟sed的行。</div><div class="line">[] 匹配一个指定范围内的字符，如/[ss]ed/匹配sed和Sed。</div><div class="line">[^] 匹配一个不在指定范围内的字符，如：/[^A-RT-Z]ed/匹配不包含A-R和T-Z的一个字母开头，紧跟ed的行。</div><div class="line">\(..\) 匹配子串，保存匹配的字符，如s/\(love\)able/\1rs，loveable被替换成lovers。</div><div class="line">&amp; 保存搜索字符用来替换其他字符，如s/love/**&amp;**/，love这成**love**。</div><div class="line">\&lt; 匹配单词的开始，如:/\&lt;love/匹配包含以love开头的单词的行。</div><div class="line">\&gt; 匹配单词的结束，如/love\&gt;/匹配包含以love结尾的单词的行。</div><div class="line">x\&#123;m\&#125; 重复字符x，m次，如：/0\&#123;5\&#125;/匹配包含5个0的行。</div><div class="line">x\&#123;m,\&#125; 重复字符x，至少m次，如：/0\&#123;5,\&#125;/匹配至少有5个0的行。</div><div class="line">x\&#123;m,n\&#125; 重复字符x，至少m次，不多于n次，如：/0\&#123;5,10\&#125;/匹配5~10个0的行。</div></pre></td></tr></table></figure>
+<h3 id="6-定界符"><a href="#6-定界符" class="headerlink" title="6 定界符"></a>6 定界符</h3><p>命令中字符 / 在sed中作为定界符使用，也可以使用任意的定界符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sed &apos;s:test:TEXT:g&apos;</div><div class="line">sed &apos;s|test|TEXT|g&apos;</div></pre></td></tr></table></figure>
+<h3 id="7-例子"><a href="#7-例子" class="headerlink" title="7 例子"></a>7 例子</h3><p>由于mac系统是原生于bsd系，sed命令和gnu是不同的。</p>
+<p>gnu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed &quot;2 a\\xxx&quot; test.txt</div></pre></td></tr></table></figure>
+<p>mac:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sed &quot;2 a\ (注意此处有空格,要在下一行添加文本)</div><div class="line">xxx</div><div class="line">&quot; test.txt  (如果想换行要把&quot;写到下一行)</div></pre></td></tr></table></figure>
+<p>将 /etc/passwd 的内容列出并且列印行号，同时，请将第 2~5 行删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nl /etc/passwd | sed &apos;2,5d&apos;</div></pre></td></tr></table></figure>
+<h2 id="管道符-命令"><a href="#管道符-命令" class="headerlink" title="管道符 | 命令"></a>管道符 | 命令</h2><h3 id="1-简介-1"><a href="#1-简介-1" class="headerlink" title="1 简介"></a>1 简介</h3><blockquote>
+<p> 将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。连续使用管道意味着第一个命令的输出会作为 第二个命令的输入，第二个命令的输出又会作为第三个命令的输入，依此类推</p>
+</blockquote>
+<h3 id="2-命令格式-1"><a href="#2-命令格式-1" class="headerlink" title="2 命令格式"></a>2 命令格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(命令1 ) | (命令2 )</div></pre></td></tr></table></figure>
+<h3 id="3-例子"><a href="#3-例子" class="headerlink" title="3 例子"></a>3 例子</h3><p>找出系统中有多少个用户使用bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 第一个管道将cat命令（显示passwd文件的内容）的输出送给grep命令，grep命令找出含有“/bin /bash”的所有行；第二个管道将grep的输出送给wc命令，wc命令统计出输入中的行数</div><div class="line">cat /etc/passwd | grep /bin/bash | wc -l</div></pre></td></tr></table></figure>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><h3 id="1-字符表"><a href="#1-字符表" class="headerlink" title="1 字符表"></a>1 字符表</h3><table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>意义</th>
+<th>ASCII码值（十进制）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\a</td>
+<td>响铃(BEL)</td>
+<td>007</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格(BS) ，将当前位置移到前一列</td>
+<td>008</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页(FF)，将当前位置移到下页开头</td>
+<td>012</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行(LF) ，将当前位置移到下一行开头</td>
+<td>010</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车(CR) ，将当前位置移到本行开头</td>
+<td>013</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表(HT) （跳到下一个TAB位置）</td>
+<td>009</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表(VT)</td>
+<td>011</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>代表一个反斜线字符’’\’</td>
+<td>092</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>代表一个单引号（撇号）字符</td>
+<td>039</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>代表一个双引号字符</td>
+<td>034</td>
+</tr>
+<tr>
+<td>\?</td>
+<td>代表一个问号</td>
+<td>063</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>空字符(NULL)</td>
+<td>000</td>
+</tr>
+<tr>
+<td>\ooo</td>
+<td>1到3位八进制数所代表的任意字符</td>
+<td>三位八进制</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>1到2位十六进制所代表的任意字符</td>
+<td>二位十六进制</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-HTML转义字符"><a href="#2-HTML转义字符" class="headerlink" title="2 HTML转义字符"></a>2 HTML转义字符</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>十进制</th>
+<th>转义字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“</td>
+<td>&#34;</td>
+<td>&quot;</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>&#38;</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>&#60;</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>&#62;</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>不断开空格(non-breaking space)</td>
+<td>&#160;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/安装class-dump/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/05/安装class-dump/" itemprop="url">
+                  安装class-dump
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-05T15:51:27+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/越狱/" itemprop="url" rel="index">
+                    <span itemprop="name">越狱</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/05/安装class-dump/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/05/安装class-dump/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/05/安装class-dump/" class="leancloud_visitors" data-flag-title="安装class-dump">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>当Mac升级了OSX 10.11后，配置class-dump的时候，会发现逆向书上推荐的class-dump存放目录<strong>/usr/bin</strong>,class-dump存放不进去，尝试过用sudo 还是不被允许。</p>
+<ul>
+<li><p>原因是 OSX10.11的一个新特性 Rootless,也叫System Integrity Protection（SIP）和SELinux差不多，都是限制root用户的权限。</p>
+<ul>
+<li>可以在RecoveryMode关闭这个特性，这样就直接可以读写/usr/bin了，<strong>不过不建议</strong>。（关闭方法：开机的时候按住option出现选择磁盘的界面按command + R进入RecoveryMode，选择实用工具终端，输入csrutil disable回车搞定）</li>
+</ul>
+</li>
+<li><p>查找网上的资料，目前我用的方法是改变 (class-dump)[] 的环境变量来使用。<a href="https://link.jianshu.com/?t=http://stevenygard.com/projects/class-dump/" target="_blank" rel="external">class-dump下载地址</a></p>
+<ul>
+<li><p>首先打开Terminal，输入<code>mkdir ~/bin</code>，在当前用户根目录下创建一个bin目录。</p>
+</li>
+<li><p>把下载下来的 dmg 打开，复制文件里面的class-dump到创建的bin目录下。赋予其可执行权限：<br><code>chmod +x ~/bin/class-dump</code></p>
+</li>
+<li><p>打开bash_profile文件配置环境变量,<code>vim ~/.bash_profile</code></p>
+<ul>
+<li>按下 i 键进入编辑状态，在最下方加一行 <code>export PATH=$HOME/bin/:$PATH</code></li>
+<li>按下esc键,再按shift+: 输入 wq!进行保存退出编辑</li>
+<li>在Terminal中执行<code>source ~/.bash_profile</code></li>
+<li>测试是否改变成功:Terminal中执行<code>class-dump</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">ifengdeMacBook-Pro:~ ifeng$ class-dump</div><div class="line">class-dump 3.5 (64 bit)</div><div class="line">Usage: class-dump [options] &lt;mach-o-file&gt;</div><div class="line"></div><div class="line">  where options are:</div><div class="line">        -a             show instance variable offsets</div><div class="line">        -A             show implementation addresses</div><div class="line">        --arch &lt;arch&gt;  choose a specific architecture from a universal binary (ppc, ppc64, i386, x86_64, armv6, armv7, armv7s, arm64)</div><div class="line">        -C &lt;regex&gt;     only display classes matching regular expression</div><div class="line">        -f &lt;str&gt;       find string in method name</div><div class="line">        -H             generate header files in current directory, or directory specified with -o</div><div class="line">        -I             sort classes, categories, and protocols by inheritance (overrides -s)</div><div class="line">        -o &lt;dir&gt;       output directory used for -H</div><div class="line">        -r             recursively expand frameworks and fixed VM shared libraries</div><div class="line">        -s             sort classes and categories by name</div><div class="line">        -S             sort methods by name</div><div class="line">        -t             suppress header in output, for testing</div><div class="line">        --list-arches  list the arches in the file, then exit</div><div class="line">        --sdk-ios      specify iOS SDK version (will look in /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS&lt;version&gt;.sdk</div><div class="line">        --sdk-mac      specify Mac OS X version (will look in /Developer/SDKs/MacOSX&lt;version&gt;.sdk</div><div class="line">        --sdk-root     specify the full SDK root path (or use --sdk-ios/--sdk-mac for a shortcut)</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>原文：<a href="https://www.jianshu.com/p/025fa775f3a6" target="_blank" rel="external">class-dump最新安装方法</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/05/Python获取PPT中的备注/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/05/Python获取PPT中的备注/" itemprop="url">
+                  python获取ppt中的备注
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-05T15:51:27+08:00">
+                2017-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/05/Python获取PPT中的备注/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/05/Python获取PPT中的备注/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/05/Python获取PPT中的备注/" class="leancloud_visitors" data-flag-title="python获取ppt中的备注">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装环境（window下）"><a href="#安装环境（window下）" class="headerlink" title="安装环境（window下）"></a>安装环境（window下）</h3><ul>
+<li>安装<a href="https://www.python.org/downloads/" target="_blank" rel="external">python</a><ul>
+<li>添加环境变量<br>  <code>右键我的电脑-&gt;属性-&gt;高级系统设置-&gt;系统变量-&gt;Path添加python的安装目录</code></li>
+<li>升级pip，因为自带的pip是旧的<ul>
+<li><code>python -m pip install -U pip</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>安装pywin32（其实是pypiwin32）</p>
+<ul>
+<li>pip install pypiwin32</li>
+</ul>
+</li>
+<li><p>安装OLE/COM（查看comAPI的文档）</p>
+<ul>
+<li>下载安装，去这个<a href="http://download.csdn.net/download/u010828718/10194456" target="_blank" rel="external">地址</a>，下载安装</li>
+<li>进入安装目录<code>C:\Program Files (x86)\Resource Kit</code>,查看API<ul>
+<li>1 Type Libraries </li>
+<li>2 Microsoft PowerPoint 14.0 Object Library(Ver 2.a)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python2.7.14</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># pip install pypiwin32</span></div><div class="line">__author__ = <span class="string">'ifeng'</span></div><div class="line"><span class="keyword">import</span> win32com</div><div class="line"><span class="keyword">from</span> win32com.client <span class="keyword">import</span> Dispatch, constants</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">obtainPPTNote</span><span class="params">(pptPath)</span>:</span></div><div class="line">    <span class="keyword">if</span> pptPath.strip() == <span class="string">''</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'need a ppt \' path'</span></div><div class="line">        <span class="keyword">return</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        listForNote = []</div><div class="line">        ppt = win32com.client.Dispatch(<span class="string">'PowerPoint.Application'</span>)</div><div class="line">        ppt.Visible = <span class="number">1</span></div><div class="line">        pptSel = ppt.Presentations.Open(pptPath)    win32com.client.gencache.EnsureDispatch(<span class="string">'PowerPoint.Application'</span>)</div><div class="line">       </div><div class="line">        slide_count = pptSel.Slides.Count</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, slide_count + <span class="number">1</span>):</div><div class="line">            shape_count = pptSel.Slides(i).Shapes.Count</div><div class="line">            notePageRange = pptSel.Slides(i)</div><div class="line">            slideRange = notePageRange.NotesPage</div><div class="line">            noteShape = slideRange.Shapes.Placeholders(<span class="number">2</span>)</div><div class="line">            notetxtFrame = noteShape.TextFrame</div><div class="line">            textrangestring = notetxtFrame.TextRange</div><div class="line">            text1 = textrangestring.Text</div><div class="line">            listForNote.append(text1.encode(<span class="string">'utf-8'</span>))</div><div class="line">            <span class="keyword">print</span> text1</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">"opened is error for ppt"</span>)</div><div class="line">    <span class="keyword">finally</span>:</div><div class="line">        ppt.Quit()</div><div class="line">        <span class="keyword">return</span> listForNote</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">   obtainPPTNote(<span class="string">"C:\\Users\\admin\\Desktop\\1.pptx"</span>)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/20/addChildViewController等方法/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/20/addChildViewController等方法/" itemprop="url">
+                  addChildViewController等方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-20T19:10:07+08:00">
+                2017-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码/" itemprop="url" rel="index">
+                    <span itemprop="name">代码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/20/addChildViewController等方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/20/addChildViewController等方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/20/addChildViewController等方法/" class="leancloud_visitors" data-flag-title="addChildViewController等方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="addChildViewController等方法"><a href="#addChildViewController等方法" class="headerlink" title="addChildViewController等方法"></a>addChildViewController等方法</h1><p><strong>在以前</strong>，一个UIViewController的View可能有很多小的子view，用addSubview增加了大量的子view。这些子view大多数不会一直处于界面上，只是在某些情况下才会出现，虽然这些view很少出现，但是我们却常常一直把它们放在内存中。另外，当收到内存警告时，我们只能自己手工把这些view从super view中去掉。<strong>所以</strong>在iOS 5.0及以后，iOS为UIViewController类添加了新的属性和方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,readonly) NSArray *childViewControllers</div><div class="line">- (void)addChildViewController:(UIViewController *)childController</div><div class="line">- (void) removeFromParentViewController</div><div class="line"></div><div class="line">- (void)transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion</div><div class="line"></div><div class="line">- (void)willMoveToParentViewController:(UIViewController *)parent</div><div class="line">- (void)didMoveToParentViewController:(UIViewController *)parent</div></pre></td></tr></table></figure>
+<p>一 - (void)addChildViewController:(UIViewController *)childController<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//向父视图控制器容器中添加子视图控制器</div><div class="line">[父视图控制器 addChildViewController:子视图控制器];</div></pre></td></tr></table></figure></p>
+<p>当要添加的子视图控制器已经包含在视图控制器容器中，那么，相当于先从父视图控制器中删除，然后重新添加到父视图控制器中</p>
+<p>二 - (void)removeFromParentViewController</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//从父视图控制器中删除</div><div class="line">[子视图控制器 removeFromParentViewController];</div></pre></td></tr></table></figure>
+<p>三 -(void)transitionFromViewController:(UIViewController <em>)fromViewController toViewController:(UIViewController </em>)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//交换两个子视图控制器的位置（由于添加的顺序不同，所以子试图控制器在父视图控制器中存在层次关系）</div><div class="line">[ 父视图 transitionFromViewController: 当前显示的子试图控制器，将被替换为非显示状态</div><div class="line">toViewController:将要显示的子视图控制器</div><div class="line">options:动画的方式</div><div class="line">animations:动画Block</div><div class="line">completion:完成后执行的Block]</div></pre></td></tr></table></figure>
+<p>四 - (void)willMoveToParentViewController:(UIViewController *)parent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//当一个视图控制器从视图控制器容器中被添加或者被删除之前，该方法被调用</div><div class="line">[要添加的或者别删除的子视图 willMoveToParentViewController:nil]</div></pre></td></tr></table></figure>
+<p>注意：<br>1.removeFromParentViewController 前要调用，且parent参数为nil<br>2.addChildViewController前，不用调用，以为系统在显示前自动调用<br>3.只需要在transitionFromViewController方法之前调用。</p>
+<p>五- (void)didMoveToParentViewController:(UIViewController *)parent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//当从一个视图控制容器中添加或者移除viewController后，该方法被调用。</div><div class="line">[要添加的或者别删除的子视图 didMoveToParentViewController:父视图（或者没有父视图时nil） ]</div></pre></td></tr></table></figure>
+<p>注意：<br>1.removeFromParentViewController 后不用我们调用，因为系统删除子控制器后自动调用。<br>2.addChildViewController后，必须调用该方法。<br>3.只需要在transitionFromViewController方法后，调用。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>例子1  添加子视图控制器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[父视图控制器 addChildViewController:子视图控制器];</div><div class="line">子视图控制器.view.frame = 任意frame（一般是父视图的frame）;</div><div class="line">[父视图控制器.view addSubview:子视图控制器.view];</div><div class="line">[子视图控制器 didMoveToParentViewController:父视图控制器];</div></pre></td></tr></table></figure>
+<p>例子2  移除子视图控制器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[子视图控制器 willMoveToParentViewController:nil];</div><div class="line">[子视图控制器.view removeFromSuperview];</div><div class="line">[子视图控制器 removeFromParentViewController];</div></pre></td></tr></table></figure>
+<p>参考<br><a href="http://www.cnblogs.com/zengyou/p/3386605.html" target="_blank" rel="external">1.addChildViewController</a><br><a href="http://blog.csdn.net/yongyinmg/article/details/40619727" target="_blank" rel="external">2.willMoveToParentViewController和didMoveToParentViewController</a><br><a href="http://geeklu.com/2014/05/custom-container-view-controller/" target="_blank" rel="external">3.Custom Container View Controller</a>（这篇不错，可以仔细看看，可以自定义）<br><a href="http://blog.devtang.com/blog/2012/02/06/new-methods-in-uiviewcontroller-of-ios5/" target="_blank" rel="external">4 .iOS5中UIViewController的新方法</a>(唐巧大神的杰作，有例子)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/nginx的简介/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/nginx的简介/" itemprop="url">
+                  nginx的简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T22:25:01+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/20/nginx的简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/20/nginx的简介/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/20/nginx的简介/" class="leancloud_visitors" data-flag-title="nginx的简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-nginx"><a href="#1-nginx" class="headerlink" title="1.nginx"></a>1.<a href="http://nginx.org/" target="_blank" rel="external">nginx</a></h4><blockquote>
+<p>nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.</p>
+</blockquote>
+<h4 id="2-brew"><a href="#2-brew" class="headerlink" title="2.brew"></a>2.<a href="https://brew.sh/" target="_blank" rel="external">brew</a></h4><blockquote>
+<p>brew又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.<br>一般Mac电脑会默认安装有brew.</p>
+</blockquote>
+<ul>
+<li>brew 搜索软件</li>
+</ul>
+<p><code>brew search nginx</code></p>
+<ul>
+<li>brew 安装软件</li>
+</ul>
+<p><code>brew install nginx</code></p>
+<ul>
+<li>brew 卸载软件</li>
+</ul>
+<p><code>brew uninstall nginx</code></p>
+<ul>
+<li>brew 升级</li>
+</ul>
+<p><code>sudo brew update</code></p>
+<ul>
+<li>查看安装信息(经常用到, 比如查看安装目录等)</li>
+</ul>
+<p><code>sudo brew info nginx</code></p>
+<ul>
+<li>查看已经安装的软件</li>
+</ul>
+<p><code>brew list</code></p>
+<h4 id="3-brew安装nginx"><a href="#3-brew安装nginx" class="headerlink" title="3.brew安装nginx"></a>3.brew安装nginx</h4><ul>
+<li>安装nginx</li>
+</ul>
+<p><code>sudo brew install nginx</code></p>
+<ul>
+<li>启动nginx服务</li>
+</ul>
+<p><code>sudo brew services start nginx</code></p>
+<ul>
+<li>关闭nginx服务</li>
+</ul>
+<p><code>sudo brew services stop nginx</code></p>
+<ul>
+<li>查看nginx版本</li>
+</ul>
+<p><code>nginx -v</code></p>
+<ul>
+<li>刷新nginx</li>
+</ul>
+<p><code>nginx -s reload</code></p>
+<ul>
+<li>停止nginx</li>
+</ul>
+<p><code>nginx -s stop</code></p>
+<p><a href="http://blog.csdn.net/qq_22383951/article/details/53019034" target="_blank" rel="external">http://blog.csdn.net/qq_22383951/article/details/53019034</a></p>
+<p><a href="http://www.jianshu.com/p/46b083bfd5e0" target="_blank" rel="external">http://www.jianshu.com/p/46b083bfd5e0</a></p>
+<p><a href="http://tengine.taobao.org/book/index.html#" target="_blank" rel="external">http://tengine.taobao.org/book/index.html#</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="童真的烂漫" />
+          <p class="site-author-name" itemprop="name">童真的烂漫</p>
+          <p class="site-description motion-element" itemprop="description">代码简单点，bug少一点！</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">童真的烂漫</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ilovefeng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("mcWzUpQ3AldFJ4kzarMYUdHm-gzGzoHsz", "r4IAP9mahPuKIgHr5NQA4bPF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

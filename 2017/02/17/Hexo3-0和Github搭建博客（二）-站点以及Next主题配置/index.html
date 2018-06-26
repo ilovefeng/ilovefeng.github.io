@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="童真的烂漫" type="application/atom+xml" />
+
 
 
 
@@ -409,9 +411,9 @@
 
       
         <hr>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>站点配置文件：myBlog/_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">language: zh-Hans #设置语言</div><div class="line">title: 我的博客 #博客标题</div><div class="line">subtitle: 梦想 #博客副标题</div><div class="line">description: 这个blog自己看的 #博客描述</div><div class="line">author: 我 #博客描述</div><div class="line">theme: next #博客主题</div><div class="line">post_asset_folder: true #引用本地图片</div><div class="line">deploy:</div><div class="line">type: git ##部署类型，其它类型自行google之</div><div class="line">repo: https://github.com/aaa/aaa.github.io ##git仓库地址</div><div class="line">search:</div><div class="line">path: search.xml #搜索功能，需要安装hexo-generator-searchdb</div><div class="line">field: post</div><div class="line">format: html</div><div class="line">limit: 10000</div><div class="line">#多说评论和分享</div><div class="line">duoshuo_shortname: abc</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>站点配置文件：myBlog/_config.yml<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> zh-Hans <span class="comment">#设置语言</span></div><div class="line"><span class="attr">title:</span> 我的博客 <span class="comment">#博客标题</span></div><div class="line"><span class="attr">subtitle:</span> 梦想 <span class="comment">#博客副标题</span></div><div class="line"><span class="attr">description:</span> 这个blog自己看的 <span class="comment">#博客描述</span></div><div class="line"><span class="attr">author:</span> 我 <span class="comment">#博客描述</span></div><div class="line"><span class="attr">theme:</span> next <span class="comment">#博客主题</span></div><div class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span> <span class="comment">#引用本地图片</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">type:</span> git <span class="comment">##部署类型，其它类型自行google之</span></div><div class="line"><span class="attr">repo:</span> https://github.com/aaa/aaa.github.io <span class="comment">##git仓库地址</span></div><div class="line"><span class="attr">search:</span></div><div class="line"><span class="attr">path:</span> search.xml <span class="comment">#搜索功能，需要安装hexo-generator-searchdb</span></div><div class="line"><span class="attr">field:</span> post</div><div class="line"><span class="attr">format:</span> html</div><div class="line"><span class="attr">limit:</span> <span class="number">10000</span></div><div class="line"><span class="comment">#多说评论和分享</span></div><div class="line"><span class="attr">duoshuo_shortname:</span> abc</div><div class="line"><span class="attr">duoshuo_share:</span> <span class="literal">true</span></div></pre></td></tr></table></figure></p>
 <p>主题配置文件：myBlog/themes/next/_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 主题风格,其他用#注释掉</div><div class="line">scheme: Pisces</div></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 主题风格,其他用#注释掉</span></div><div class="line"><span class="symbol">scheme:</span> Pisces</div></pre></td></tr></table></figure>
 <p><strong>注意：配置文件要符合英文标点符号使用规范:冒号后必须空格，否则会编译错误</strong></p>
 <h2 id="Hexo其他设置"><a href="#Hexo其他设置" class="headerlink" title="Hexo其他设置"></a>Hexo其他设置</h2><blockquote>
 <p>设置包括：<strong>标签、分类、关于、站点搜索、引用本地图片、发布</strong></p>
@@ -419,30 +421,30 @@
 <li>hexo new page tags</li>
 </ul>
 </blockquote>
-<p>生成<strong>index.md</strong>文件，添加type字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/tags/index.md</div><div class="line">---</div><div class="line">title: tags</div><div class="line">date: 2016-11-15 19:10:05</div><div class="line">type: &quot;tags&quot;</div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p>生成<strong>index.md</strong>文件，添加type字段<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/tags/index.md</div><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> tags</div><div class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-11</span><span class="bullet">-15</span> <span class="number">19</span>:<span class="number">10</span>:<span class="number">05</span></div><div class="line"><span class="attr">type:</span> <span class="string">"tags"</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="2-添加分类页面"><a href="#2-添加分类页面" class="headerlink" title="2.添加分类页面"></a>2.添加分类页面</h3><blockquote>
 <ul>
 <li>hexo new page categories</li>
 </ul>
 </blockquote>
-<p>生成<strong>index.md</strong>文件，添加type字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/categories/index.md</div><div class="line">---</div><div class="line">title: categories</div><div class="line">date: 2016-11-15 19:11:13</div><div class="line">type: &quot;categories&quot;</div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p>生成<strong>index.md</strong>文件，添加type字段<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/categories/index.md</div><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> categories</div><div class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-11</span><span class="bullet">-15</span> <span class="number">19</span>:<span class="number">11</span>:<span class="number">13</span></div><div class="line"><span class="attr">type:</span> <span class="string">"categories"</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="3-设置具体文章的categories和tag"><a href="#3-设置具体文章的categories和tag" class="headerlink" title="3.设置具体文章的categories和tag"></a>3.设置具体文章的categories和tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/_posts/Hexo3.0和Github搭建博客.md</div><div class="line">---</div><div class="line">title: Hexo3.0和Github搭建博客</div><div class="line">date: 2017-02-15 15:41:16</div><div class="line">tags: [npm, hexo, github]</div><div class="line">categories: 搭建博客</div><div class="line">---</div></pre></td></tr></table></figure>
+<h3 id="3-设置具体文章的categories和tag"><a href="#3-设置具体文章的categories和tag" class="headerlink" title="3.设置具体文章的categories和tag"></a>3.设置具体文章的categories和tag</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//文件路径：myBlog/source/_posts/Hexo3<span class="number">.0</span>和Github搭建博客.md</div><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> Hexo3<span class="number">.0</span>和Github搭建博客</div><div class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-02</span><span class="bullet">-15</span> <span class="number">15</span>:<span class="number">41</span>:<span class="number">16</span></div><div class="line"><span class="attr">tags:</span> [npm, hexo, github]</div><div class="line"><span class="attr">categories:</span> 搭建博客</div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="4-设置关于我页面"><a href="#4-设置关于我页面" class="headerlink" title="4.设置关于我页面"></a>4.设置关于我页面</h3><blockquote>
 <ul>
 <li>hexo new page about</li>
 </ul>
 </blockquote>
-<p>生成<strong>index.md</strong>文件,修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">//文件路径： myBlog/source/about/index.md</div><div class="line">title: about</div><div class="line">date: 2016-11-15 19:08:50</div><div class="line">---</div><div class="line"></div><div class="line">## 关于我</div><div class="line">一只学习前端的小菜鸟，欢迎分享知识。</div><div class="line">From: jc</div><div class="line">QQ：110</div><div class="line">Email: 110</div></pre></td></tr></table></figure></p>
+<p>生成<strong>index.md</strong>文件,修改如下：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line">//文件路径： myBlog/source/about/index.md</div><div class="line"><span class="attr">title:</span> about</div><div class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-11</span><span class="bullet">-15</span> <span class="number">19</span>:<span class="number">08</span>:<span class="number">50</span></div><div class="line"><span class="meta">---</span></div><div class="line"></div><div class="line"><span class="comment">## 关于我</span></div><div class="line">一只学习前端的小菜鸟，欢迎分享知识。</div><div class="line"><span class="attr">From:</span> jc</div><div class="line">QQ：<span class="number">110</span></div><div class="line"><span class="attr">Email:</span> <span class="number">110</span></div></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="5-加入站点内容搜索功能"><a href="#5-加入站点内容搜索功能" class="headerlink" title="5.加入站点内容搜索功能"></a>5.加入站点内容搜索功能</h3><h4 id="5-1-安装hexo-generator-searchdb"><a href="#5-1-安装hexo-generator-searchdb" class="headerlink" title="5.1 安装hexo-generator-searchdb"></a>5.1 安装hexo-generator-searchdb</h4><blockquote>
 <ul>
 <li>npm install hexo-generator-searchdb –save</li>
 </ul>
 </blockquote>
-<h4 id="5-2-添加search字段"><a href="#5-2-添加search字段" class="headerlink" title="5.2 添加search字段"></a>5.2 添加search字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//站点配置：myBlog/_config.yml中</div><div class="line">search:</div><div class="line">path: search.xml</div><div class="line">field: post</div><div class="line">format: html</div><div class="line">limit: 10000</div></pre></td></tr></table></figure>
+<h4 id="5-2-添加search字段"><a href="#5-2-添加search字段" class="headerlink" title="5.2 添加search字段"></a>5.2 添加search字段</h4><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//站点配置：myBlog/_config.yml中</span></div><div class="line"><span class="symbol">search:</span></div><div class="line"><span class="symbol">path:</span> search.xml</div><div class="line"><span class="symbol">field:</span> post</div><div class="line"><span class="symbol">format:</span> html</div><div class="line"><span class="symbol">limit:</span> <span class="number">10000</span></div></pre></td></tr></table></figure>
 <h3 id="6-加入多说评论、分享功能"><a href="#6-加入多说评论、分享功能" class="headerlink" title="6.加入多说评论、分享功能"></a>6.加入多说评论、分享功能</h3><p><a href="http://duoshuo.com/" target="_blank" rel="external">登陆多说</a>：</p>
 <p>在站点的myBlog/_config.yml中加入duoshuo_shortname字段</p>
 <blockquote>
@@ -468,10 +470,10 @@
 <li>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> – save</li>
 </ul>
 </blockquote>
-<p>7.3 引用图片<br>7.3.1 利用标签引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 &#123;% asset_path slug %&#125;</div><div class="line">2 &#123;% asset_img slug [title] %&#125;</div><div class="line">3 &#123;% asset_link slug [title] %&#125;</div></pre></td></tr></table></figure></p>
-<p>7.3.2 利用makdown<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![例子](例子.png)</div></pre></td></tr></table></figure></p>
-<h3 id="7-博客预览和生成、部署"><a href="#7-博客预览和生成、部署" class="headerlink" title="7.博客预览和生成、部署"></a>7.博客预览和生成、部署</h3><h4 id="7-1-浏览和发布"><a href="#7-1-浏览和发布" class="headerlink" title="7.1 浏览和发布"></a>7.1 浏览和发布</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#浏览</div><div class="line">hexo c</div><div class="line">hexo -g s</div><div class="line">或</div><div class="line">#发布</div><div class="line">hexo c</div><div class="line">hexo -g d</div></pre></td></tr></table></figure>
-<h4 id="7-2-其他"><a href="#7-2-其他" class="headerlink" title="7.2 其他"></a>7.2 其他</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo c = hexo clean  # 清空,有问题的时候，先清空再发布</div><div class="line">hexo g = hexo generate  #生成</div><div class="line">hexo s = hexo server  #启动本地预览</div><div class="line">hexo d = hexo deploy  #远程部署</div><div class="line">hexo n &quot;文章标题&quot; = hexo new &quot;文章标题&quot;  #新建一篇博文</div><div class="line">hexo  s -g   #等同先输入hexo g，再输入hexo s</div><div class="line">hexo  d -g   #等同先输入hexo g，再输入hexo d</div></pre></td></tr></table></figure>
+<p>7.3 引用图片<br>7.3.1 利用标签引用<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">1 </span>&#123;% asset_path slug %&#125;</div><div class="line"><span class="symbol">2 </span>&#123;% asset_img slug [title] %&#125;</div><div class="line"><span class="symbol">3 </span>&#123;% asset_link slug [title] %&#125;</div></pre></td></tr></table></figure></p>
+<p>7.3.2 利用makdown<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="string">例子</span>](<span class="link">例子.png</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="7-博客预览和生成、部署"><a href="#7-博客预览和生成、部署" class="headerlink" title="7.博客预览和生成、部署"></a>7.博客预览和生成、部署</h3><h4 id="7-1-浏览和发布"><a href="#7-1-浏览和发布" class="headerlink" title="7.1 浏览和发布"></a>7.1 浏览和发布</h4><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#浏览</span></div><div class="line">hexo c</div><div class="line">hexo -g s</div><div class="line">或</div><div class="line"><span class="meta">#发布</span></div><div class="line">hexo c</div><div class="line">hexo -g d</div></pre></td></tr></table></figure>
+<h4 id="7-2-其他"><a href="#7-2-其他" class="headerlink" title="7.2 其他"></a>7.2 其他</h4><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo <span class="attr">c</span> = hexo clean  <span class="comment"># 清空,有问题的时候，先清空再发布</span></div><div class="line">hexo <span class="attr">g</span> = hexo generate  <span class="comment">#生成</span></div><div class="line">hexo <span class="attr">s</span> = hexo server  <span class="comment">#启动本地预览</span></div><div class="line">hexo <span class="attr">d</span> = hexo deploy  <span class="comment">#远程部署</span></div><div class="line">hexo n <span class="string">"文章标题"</span> = hexo new <span class="string">"文章标题"</span>  <span class="comment">#新建一篇博文</span></div><div class="line">hexo  s -g   <span class="comment">#等同先输入hexo g，再输入hexo s</span></div><div class="line">hexo  d -g   <span class="comment">#等同先输入hexo g，再输入hexo d</span></div></pre></td></tr></table></figure>
 <p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">1.Hexo官方中文文档</a><br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">2.Next官方中文文档</a><br><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">3.知乎上主题推荐</a></p>
 
       
@@ -611,14 +613,14 @@
                src="/images/avatar.jpg"
                alt="童真的烂漫" />
           <p class="site-author-name" itemprop="name">童真的烂漫</p>
-          <p class="site-description motion-element" itemprop="description">那年我还很年轻。囧！</p>
+          <p class="site-description motion-element" itemprop="description">代码简单点，bug少一点！</p>
         </div>
         <nav class="site-state motion-element">
         
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -627,7 +629,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -636,7 +638,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -644,6 +646,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -692,7 +701,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -802,7 +811,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"tongzhendelanman"};
+    var duoshuoQuery = {short_name:"ilovefeng"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;

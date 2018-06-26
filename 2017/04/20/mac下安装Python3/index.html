@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="童真的烂漫" type="application/atom+xml" />
+
 
 
 
@@ -127,7 +129,7 @@
 
 
 1 安装Xcode1.1  App Store 搜索Xcode 并安装1.2  安装 Xcode command li">
-<meta property="og:updated_time" content="2017-04-20T06:42:39.000Z">
+<meta property="og:updated_time" content="2018-06-06T03:40:06.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac下安装Python3">
 <meta name="twitter:description" content="前沿对于iOS开发不要随便拆卸系统自带的Python,因为有很多 library 还是使用 Python2.7。
@@ -476,35 +478,47 @@
 <li><p><a href="#6">7.安装pip等</a></p>
 </li>
 </ul>
-<h3 id="1">1 安装Xcode</h3><br>1.1  App Store 搜索Xcode 并安装<br><br>1.2  安装 Xcode command line tool<br><br>1.2.1 打开命令行terminal工具<br><br>- control + space<br>- 输入terminal<br>- 回车<br><br><br>1.2.2 安装Xcode command line tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcode-select --install</div></pre></td></tr></table></figure><br><br><h3 id="2">2 安装套件管理工具 Homebrew</h3>
+<h3 id="1">1 安装Xcode</h3><br>1.1  App Store 搜索Xcode 并安装<br><br>1.2  安装 Xcode command line tool<br><br>1.2.1 打开命令行terminal工具<br><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 control + space</div><div class="line">2 输入terminal</div><div class="line">3 回车</div></pre></td></tr></table></figure><br><br>1.2.2 安装Xcode command line tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcode-select --install</div></pre></td></tr></table></figure><br><br><h3 id="2">2 安装套件管理工具 Homebrew </h3>
 
 <p>2.1 <a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">安装    Homebrew</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
 <p>2.2 查看是否安装成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew doctor</div></pre></td></tr></table></figure>
+<p>Homebrew拓展：</p>
+<p>2.3 搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#主要看具体的信息，比如目前的版本，依赖，安装后注意事项等</div><div class="line">brew search 查找的内容</div></pre></td></tr></table></figure>
+<p>2.4 更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 这会更新 Homebrew 自己，并且使得接下来的两个操作有意义——</div><div class="line">brew update</div></pre></td></tr></table></figure>
+<p>2.5 检查过时（是否有新版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 列出所有安装的软件里可以升级的那些</div><div class="line">brew outdated</div></pre></td></tr></table></figure>
+<p>2.6 升级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 升级所有可以升级的软件们</div><div class="line">brew upgrade </div><div class="line"># 升级某个</div><div class="line">brew upgrade 某个软件</div></pre></td></tr></table></figure>
+<p>2.7 清理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 清理不需要的版本极其安装包缓存</div><div class="line">brew cleanup</div></pre></td></tr></table></figure>
 <h3 id="3">3 安装Python</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python</div></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>python</div></pre></td></tr></table></figure>
 <h3 id="4">4 设置路径（可选）</h3>
 
 <p>如果不设置路径，则使用python的话，会默认用系统的。(这个没有具体执行，所以这个需要自己尝试)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">## 修改/etc/paths，把/usr/local/bin 移到上面去</div><div class="line">sudo vim /etc/paths</div></pre></td></tr></table></figure>
-<p>拓展：<br>查看当前path是什么。<br>PATH 的用途：<br>告诉系統，我们的brew在哪里。会从上往下查找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $PAHTH</div></pre></td></tr></table></figure></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 修改/etc/paths，把/usr/local/bin 移到上面去</span></div><div class="line">sudo vim <span class="regexp">/etc/</span>paths</div></pre></td></tr></table></figure>
+<p>拓展：<br>查看当前path是什么。<br>PATH 的用途：<br>告诉系統，我们的brew在哪里。会从上往下查找。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PAHTH</span></div></pre></td></tr></table></figure>
 <h3 id="5">5 确认安装</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的python2.7，目录为/usr/bin/python</div><div class="line">which python</div><div class="line">//brew安装的python3.4,目录为/usr/local/bin/python3</div><div class="line">which python3</div></pre></td></tr></table></figure>
-<p></p><h3 id="6">6 使用</h3><br><strong>未执行操作4</strong>的情况（推荐）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">python a.py</div><div class="line">//brew安装的</div><div class="line">python3 a.py</div></pre></td></tr></table></figure><p></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的python2.<span class="number">7</span>，目录为/usr/bin/<span class="keyword">python</span></div><div class="line">which <span class="keyword">python</span></div><div class="line">//brew安装的<span class="keyword">python3</span>.<span class="number">4</span>,目录为/usr/local/bin/<span class="keyword">python3</span></div><div class="line">which <span class="keyword">python3</span></div></pre></td></tr></table></figure>
+<p></p><h3 id="6">6 使用</h3><br><strong>未执行操作4</strong>的情况（推荐）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">python <span class="selector-tag">a</span><span class="selector-class">.py</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">python3 <span class="selector-tag">a</span>.py</div></pre></td></tr></table></figure><p></p>
 <p>执行<strong>操作4</strong>的情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">/usr/bin/python a.py</div><div class="line">//brew安装的</div><div class="line">python a.py</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">/usr/bin/python <span class="selector-tag">a</span><span class="selector-class">.py</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">python <span class="selector-tag">a</span>.py</div></pre></td></tr></table></figure>
 <p></p><h3 id="7">7 安装pip</h3><p></p>
 <ul>
 <li>安装Python2.7以上版本，会自动带pip。</li>
 <li>系统自带的python没有pip，只有easy_install</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 给系统的python安装pip</div><div class="line">easy_install pip</div></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给系统的python安装pip</span></div><div class="line">easy_install pip</div></pre></td></tr></table></figure>
 <ul>
 <li>使用pip</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的</div><div class="line">pip --version</div><div class="line">//brew安装的</div><div class="line">pip3 --version</div></pre></td></tr></table></figure>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">pip --<span class="keyword">version</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">pip3 --<span class="keyword">version</span></div></pre></td></tr></table></figure>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/#step2" target="_blank" rel="external">1. MAC OSX 正確地同時安裝 PYTHON 2.7 和 PYTHON3</a><br><a href="http://blog.csdn.net/u012422446/article/details/56834557" target="_blank" rel="external">2. Mac安装python2.x与python3.x</a><br><a href="http://www.2cto.com/kf/201702/597697.html" target="_blank" rel="external">3. mac下安装python小坑</a></p>
 
       
@@ -551,6 +565,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/20/nginx的简介/" rel="prev" title="nginx的简介">
+                nginx的简介 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -636,14 +654,14 @@
                src="/images/avatar.jpg"
                alt="童真的烂漫" />
           <p class="site-author-name" itemprop="name">童真的烂漫</p>
-          <p class="site-description motion-element" itemprop="description">那年我还很年轻。囧！</p>
+          <p class="site-description motion-element" itemprop="description">代码简单点，bug少一点！</p>
         </div>
         <nav class="site-state motion-element">
         
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -652,7 +670,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -661,7 +679,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -669,6 +687,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -696,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前沿"><span class="nav-number">1.</span> <span class="nav-text">前沿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">3.</span> <span class="nav-text">1 安装Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">4.</span> <span class="nav-text">2 安装套件管理工具 Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">5.</span> <span class="nav-text">3 安装Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">6.</span> <span class="nav-text">4 设置路径（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">7.</span> <span class="nav-text">5 确认安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6"><span class="nav-number">8.</span> <span class="nav-text">6 使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7"><span class="nav-number">9.</span> <span class="nav-text">7 安装pip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前沿"><span class="nav-number">1.</span> <span class="nav-text">前沿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">3.</span> <span class="nav-text">1 安装Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">4.</span> <span class="nav-text">2 安装套件管理工具 Homebrew </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">5.</span> <span class="nav-text">3 安装Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">6.</span> <span class="nav-text">4 设置路径（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">7.</span> <span class="nav-text">5 确认安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6"><span class="nav-number">8.</span> <span class="nav-text">6 使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7"><span class="nav-number">9.</span> <span class="nav-text">7 安装pip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -717,7 +742,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -827,7 +852,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"tongzhendelanman"};
+    var duoshuoQuery = {short_name:"ilovefeng"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
