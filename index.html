@@ -421,43 +421,58 @@
 <p>文 -&gt; （一次UFT-8编码）%E6%96%87 -&gt; （二次UFT-8编码）%25E6%2596%2587</p>
 </blockquote>
 <h4 id="1-GB2312、GBK、GB18030与UTF-8的区别"><a href="#1-GB2312、GBK、GB18030与UTF-8的区别" class="headerlink" title="1 GB2312、GBK、GB18030与UTF-8的区别"></a>1 GB2312、GBK、GB18030与UTF-8的区别</h4><ul>
-<li>GB2312</li>
+<li>GB2312<ul>
 <li>国家标准，支持中文字符</li>
-<li>GBK</li>
+</ul>
+</li>
+<li><p>GBK</p>
+<ul>
 <li>GB2312的拓展</li>
 <li>不论中、英文字符均使用双字节来表示，中文将其最高位设定成1。</li>
-<li><p>通用性比UTF8差，不过UTF8占用的数据库比GBD大</p>
+<li>通用性比UTF8差，不过UTF8占用的数据库比GBD大</li>
+</ul>
 </li>
 <li><p>GB18030</p>
-</li>
+<ul>
 <li>GBK的拓展</li>
-<li><p>采用了2\4位混和的办法，兼容GB2312和GBK2字节编码的文件</p>
+<li>采用了2\4位混和的办法，兼容GB2312和GBK2字节编码的文件</li>
+</ul>
 </li>
 <li><p>UTF-8</p>
-</li>
+<ul>
 <li>全称：Unicode Transformation Format-8bit，允许含BOM，但通常不含BOM</li>
 <li>英文使用8位（即一个字节），中文使用24位（三个字节）</li>
 <li>包含全世界所有国家需要用到的字符，是国际编码，通用性强</li>
+</ul>
+</li>
 </ul>
 <h4 id="2-相互转换"><a href="#2-相互转换" class="headerlink" title="2 相互转换"></a>2 相互转换</h4><ul>
 <li>通过<strong>Unicode编码</strong>相互转换</li>
 </ul>
 <h4 id="3-ASCll编码和Unicode编码的区别"><a href="#3-ASCll编码和Unicode编码的区别" class="headerlink" title="3 ASCll编码和Unicode编码的区别"></a>3 ASCll编码和Unicode编码的区别</h4><ul>
-<li>ASCII编码</li>
+<li>ASCII编码<ul>
 <li>1个字节</li>
 <li>ASCII 码一共定义了 128 个字符</li>
 <li>大写的字母 A 是 65（这是十进制数，对应二进制是0100 0001）</li>
 <li>这 128 个字符只使用了 8 位二进制数中的后面 7 位，最前面的一位统一规定为 0</li>
-<li>Unicode编码</li>
+</ul>
+</li>
+<li>Unicode编码<ul>
 <li>通常是2个字节，可以更多</li>
-<li>UTF-8编码</li>
+</ul>
+</li>
+<li>UTF-8编码<ul>
 <li>把Unicode字符根据不同的数字大小编码成1-4个字节</li>
-<li>编码规则如下</li>
+<li>编码规则如下<ul>
 <li>对于单个字节的字符，第一位设为 0，后面的 7 位对应这个字符的 Unicode 码点，因此与 ASCII 码完全相同</li>
 <li>对于 N 个字节的字符（N &gt; 1），</li>
 <li>第一个字节的前 N 位都设为 1，第 N + 1 位设为0</li>
 <li>剩余的 N - 1 个字节的前两位都设位 10</li>
 <li>剩下的二进制位则使用这个字符的 Unicode 码点来填充</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <table>
 <thead>
@@ -486,76 +501,110 @@
 </tbody>
 </table>
 <ul>
-<li>编码例子</li>
+<li>编码例子<ul>
 <li>“汉”的 Unicode 码点是 0x6c49（110 1100 0100 1001），通过上面的对照表可以发现，0x0000 6c49 位于第三行的范围，那么得出其格式为 1110xxxx 10xxxxxx 10xxxxxx</li>
 <li>接着，从“汉”的二进制数最后一位开始，从后向前依次填充对应格式中的 x，多出的 x 用 0 补上</li>
 <li>这样，就得到了“汉”的 UTF-8 编码为 11100110 10110001 10001001，转换成十六进制就是 0xE6 0xB7 0x89</li>
-<li>解码规则如下</li>
+</ul>
+</li>
+<li>解码规则如下<ul>
 <li>如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；</li>
 <li>如果一个字节的第一位1，那么连续有多少个 1，就表示该字符占用多少个字节</li>
 </ul>
+</li>
+</ul>
 <h4 id="4-iOS中URL编码和解码"><a href="#4-iOS中URL编码和解码" class="headerlink" title="4 iOS中URL编码和解码"></a>4 iOS中URL编码和解码</h4><h5 id="4-1-为什么需要URL编码"><a href="#4-1-为什么需要URL编码" class="headerlink" title="4.1 为什么需要URL编码"></a>4.1 为什么需要URL编码</h5><ul>
-<li>URL中有些字符会引起歧义</li>
+<li>URL中有些字符会引起歧义<ul>
 <li>例如：URL参数字符串中使用键值对(key=value)的方式来传参，键值对之间以&amp;符号分隔,因此键值中的&amp;符号必须进行编码</li>
+</ul>
+</li>
 <li>URL的编码格式采用的是ASCII码，而不是Unicode</li>
 <li>URL中不能包含任何非ASCII字符，例如中文</li>
 </ul>
 <h5 id="4-1-URL编码、解码"><a href="#4-1-URL编码、解码" class="headerlink" title="4.1 URL编码、解码"></a>4.1 URL编码、解码</h5><ul>
-<li>　URL编码的原则</li>
+<li>　URL编码的原则<ul>
 <li>就是使用安全的字符(没有特殊用途或者特殊意义的可打印字符)去表示那些不安全的字符</li>
-<li>中文、空格字符编码</li>
+</ul>
+</li>
+<li>中文、空格字符编码<ul>
 <li>stringByAddingPercentEscapesUsingEncoding(只对 `#%^{}[]|\”&lt;&gt; 加空格共14个字符编码，不包括”&amp;?”等符号)</li>
 <li>stringByAddingPercentEncodingWithAllowedCharacters（ ios9）</li>
 </ul>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">NSString * resourcePath = @&quot;https://www.baidu.com/文件夹&quot;</div><div class="line">// 编码</div><div class="line">(iOS9.0以下使用）</div><div class="line">NSString *str3 =[resourcePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">(iOS9.0以及以上使用）</div><div class="line">NSString *str3 =</div><div class="line">[resourcePath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];</div><div class="line">NSString *str3 =</div><div class="line">[resourcePath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@&quot;`#%^&#123;&#125;\&quot;[]|\\&lt;&gt;&quot;].invertedSet];</div></pre></td></tr></table></figure>
 <ul>
-<li>中文、空格字符解码</li>
+<li>中文、空格字符解码<ul>
 <li>stringByReplacingPercentEscapesUsingEncoding</li>
 <li>stringByRemovingPercentEncoding  （ios9）</li>
 </ul>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NSString * resourcePath = @&quot;https://www.baidu.com/文件夹&quot;;  </div><div class="line">// 解码</div><div class="line">(iOS9.0以下使用）</div><div class="line">NSString *str2 = [resourcePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">(iOS9.0以及以上使用）:</div><div class="line">NSString *str2 = [resourcePath stringByRemovingPercentEncoding];</div></pre></td></tr></table></figure>
 <h5 id="4-2-NSCharacterSet-中的字符"><a href="#4-2-NSCharacterSet-中的字符" class="headerlink" title="4.2 NSCharacterSet 中的字符"></a>4.2 NSCharacterSet 中的字符</h5><ul>
-<li>URLFragmentAllowedCharacterSet </li>
-<li><p>“#%&lt;&gt;[]^`{|}</p>
+<li><p>URLFragmentAllowedCharacterSet </p>
+<ul>
+<li>“#%&lt;&gt;[]^`{|}</li>
+</ul>
 </li>
 <li><p>URLHostAllowedCharacterSet      </p>
-</li>
-<li><p>“#%/&lt;&gt;?@\^`{|}</p>
+<ul>
+<li>“#%/&lt;&gt;?@\^`{|}</li>
+</ul>
 </li>
 <li><p>URLPasswordAllowedCharacterSet </p>
-</li>
-<li><p>“#%/:&lt;&gt;?@[]^`{|}</p>
+<ul>
+<li>“#%/:&lt;&gt;?@[]^`{|}</li>
+</ul>
 </li>
 <li><p>URLPathAllowedCharacterSet     </p>
-</li>
-<li><p>“#%;&lt;&gt;?[]^`{|}</p>
+<ul>
+<li>“#%;&lt;&gt;?[]^`{|}</li>
+</ul>
 </li>
 <li><p>URLQueryAllowedCharacterSet     </p>
-</li>
-<li><p>“#%&lt;&gt;[]^`{|}</p>
+<ul>
+<li>“#%&lt;&gt;[]^`{|}</li>
+</ul>
 </li>
 <li><p>URLUserAllowedCharacterSet     </p>
-</li>
+<ul>
 <li>“#%/:&lt;&gt;?@[]^`</li>
 </ul>
+</li>
+</ul>
 <h4 id="5-原码、反码、补码"><a href="#5-原码、反码、补码" class="headerlink" title="5 原码、反码、补码"></a>5 原码、反码、补码</h4><ul>
-<li>原码：一个整数，按照绝对值大小转换成的二进制数</li>
+<li>原码：一个整数，按照绝对值大小转换成的二进制数<ul>
 <li>最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小</li>
 <li>比如5的原码：00000000 00000000 00000000 00000101</li>
-<li>反码：将二进制数按位取反，所得的新二进制数称为原二进制数的反码</li>
+</ul>
+</li>
+<li>反码：将二进制数按位取反，所得的新二进制数称为原二进制数的反码<ul>
 <li>正数的反码与其原码相同</li>
-<li>负数的反码是对其原码逐位取反，但符号位除外</li>
+</ul>
+</li>
+<li>负数的反码是对其原码逐位取反，但符号位除外<ul>
 <li>取反操作指：原为1，得0；原为0，得1。（1变0; 0变1）</li>
-<li>补码：反码加1称为补码</li>
+</ul>
+</li>
+<li>补码：反码加1称为补码<ul>
 <li>正数的补码和原码相同</li>
-<li>负数以其正值的补码形式表达</li>
+</ul>
+</li>
+<li>负数以其正值的补码形式表达<ul>
 <li>比如5的补码（也就是-5的表达方式）：11111111 11111111 11111111 11111011</li>
-<li>无符号位取值范围</li>
+</ul>
+</li>
+<li>无符号位取值范围<ul>
 <li>0~255 （因为计算机是从0开始计算的而不是1）</li>
 <li>0～2^8 - 1 (256 -1)</li>
-<li>有符号位取值范围</li>
+</ul>
+</li>
+<li>有符号位取值范围<ul>
 <li>-128 ～ +127</li>
 <li>-2^7（-128） ~ 2^7-1 （128-1）</li>
+</ul>
+</li>
 </ul>
 <h4 id="6-URL中的特殊字符"><a href="#6-URL中的特殊字符" class="headerlink" title="6 URL中的特殊字符"></a>6 URL中的特殊字符</h4><ul>
 <li>URL中只允许包含英文字母(a-zA-Z)、数字(0-9)、4个特殊字符(- _ . ~)以及所有保留字符，如果要在URL中传递这些特殊符号，那么就要使用他们的编码了</li>
@@ -719,27 +768,45 @@
 </tbody>
 </table>
 <h4 id="7-URL的格式"><a href="#7-URL的格式" class="headerlink" title="7 URL的格式"></a>7 URL的格式</h4><ul>
-<li>URI（Uniform Resource Identifier）：统一资源标识符</li>
+<li>URI（Uniform Resource Identifier）：统一资源标识符<ul>
 <li>标识/定义资源</li>
-<li>URL（Uniform Resource Location）：统一资源定位符</li>
+</ul>
+</li>
+<li>URL（Uniform Resource Location）：统一资源定位符<ul>
 <li>描述如何访问到该资源</li>
+</ul>
+</li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">protocol :// hostname[<span class="string">:port</span>] / path / [<span class="string">;parameters</span>][<span class="symbol">?query</span>]#fragment</div><div class="line"></div><div class="line"></div><div class="line">foo://example.com:8042/over/there?name=ferret#nose  </div><div class="line">\<span class="emphasis">_/  \_</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">___/ \__</span><span class="strong">_____</span><span class="emphasis">_/\_</span><span class="strong">_____</span><span class="strong">___/ \__</span>/  </div><div class="line">|          |              |         |        |  </div><div class="line">scheme    authority        path      query   fragment</div></pre></td></tr></table></figure>
 <ul>
-<li>protocol（协议）</li>
+<li>protocol（协议）<ul>
 <li>指定使用的传输协议，最常用的是HTTP协议</li>
-<li>hostname（主机名）</li>
+</ul>
+</li>
+<li>hostname（主机名）<ul>
 <li>存放资源的服务器的域名系统(DNS) 主机名或 IP 地址</li>
-<li>port（端口号）</li>
+</ul>
+</li>
+<li>port（端口号）<ul>
 <li>各种传输协议都有默认的端口号，如http的默认端口为80</li>
-<li>path（路径）</li>
+</ul>
+</li>
+<li>path（路径）<ul>
 <li>由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址</li>
-<li>parameters（参数）</li>
+</ul>
+</li>
+<li>parameters（参数）<ul>
 <li>指定特殊参数的可选项</li>
-<li>query(查询)</li>
+</ul>
+</li>
+<li>query(查询)<ul>
 <li>可选，用于给动态网页传递参数，可有多个参数，用“&amp;”符号隔开，每个参数的名和值用“=”符号隔开</li>
-<li>fragment（信息片断）</li>
+</ul>
+</li>
+<li>fragment（信息片断）<ul>
 <li>字符串，用来标识 URI 所标识资源里的某个资源</li>
+</ul>
+</li>
 </ul>
 <h4 id="8-处理字符串的方法-：NSCharacterSet-NSMutableCharacterSet"><a href="#8-处理字符串的方法-：NSCharacterSet-NSMutableCharacterSet" class="headerlink" title="8 处理字符串的方法 ：NSCharacterSet\NSMutableCharacterSet"></a>8 处理字符串的方法 ：NSCharacterSet\NSMutableCharacterSet</h4><ul>
 <li>常用API学习</li>
