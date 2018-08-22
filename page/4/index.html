@@ -293,6 +293,634 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/nginx的简介/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/nginx的简介/" itemprop="url">
+                  nginx的简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T22:25:01+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/20/nginx的简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/20/nginx的简介/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/20/nginx的简介/" class="leancloud_visitors" data-flag-title="nginx的简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-nginx"><a href="#1-nginx" class="headerlink" title="1.nginx"></a>1.<a href="http://nginx.org/" target="_blank" rel="external">nginx</a></h4><blockquote>
+<p>nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.</p>
+</blockquote>
+<h4 id="2-brew"><a href="#2-brew" class="headerlink" title="2.brew"></a>2.<a href="https://brew.sh/" target="_blank" rel="external">brew</a></h4><blockquote>
+<p>brew又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.<br>一般Mac电脑会默认安装有brew.</p>
+</blockquote>
+<ul>
+<li>brew 搜索软件</li>
+</ul>
+<p><code>brew search nginx</code></p>
+<ul>
+<li>brew 安装软件</li>
+</ul>
+<p><code>brew install nginx</code></p>
+<ul>
+<li>brew 卸载软件</li>
+</ul>
+<p><code>brew uninstall nginx</code></p>
+<ul>
+<li>brew 升级</li>
+</ul>
+<p><code>sudo brew update</code></p>
+<ul>
+<li>查看安装信息(经常用到, 比如查看安装目录等)</li>
+</ul>
+<p><code>sudo brew info nginx</code></p>
+<ul>
+<li>查看已经安装的软件</li>
+</ul>
+<p><code>brew list</code></p>
+<h4 id="3-brew安装nginx"><a href="#3-brew安装nginx" class="headerlink" title="3.brew安装nginx"></a>3.brew安装nginx</h4><ul>
+<li>安装nginx</li>
+</ul>
+<p><code>sudo brew install nginx</code></p>
+<ul>
+<li>启动nginx服务</li>
+</ul>
+<p><code>sudo brew services start nginx</code></p>
+<ul>
+<li>关闭nginx服务</li>
+</ul>
+<p><code>sudo brew services stop nginx</code></p>
+<ul>
+<li>查看nginx版本</li>
+</ul>
+<p><code>nginx -v</code></p>
+<ul>
+<li>刷新nginx</li>
+</ul>
+<p><code>nginx -s reload</code></p>
+<ul>
+<li>停止nginx</li>
+</ul>
+<p><code>nginx -s stop</code></p>
+<p><a href="http://blog.csdn.net/qq_22383951/article/details/53019034" target="_blank" rel="external">http://blog.csdn.net/qq_22383951/article/details/53019034</a></p>
+<p><a href="http://www.jianshu.com/p/46b083bfd5e0" target="_blank" rel="external">http://www.jianshu.com/p/46b083bfd5e0</a></p>
+<p><a href="http://tengine.taobao.org/book/index.html#" target="_blank" rel="external">http://tengine.taobao.org/book/index.html#</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/mac下安装Python3/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/mac下安装Python3/" itemprop="url">
+                  mac下安装Python3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T14:38:08+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/20/mac下安装Python3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/20/mac下安装Python3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/20/mac下安装Python3/" class="leancloud_visitors" data-flag-title="mac下安装Python3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h3><p>对于iOS开发不要随便拆卸系统自带的Python,因为有很多 library 还是使用 Python2.7。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
+<li><p><a href="#1">1.安装Xcode</a></p>
+</li>
+<li><p><a href="#2">2.安装套件管理工具 Homebrew</a></p>
+</li>
+<li><p><a href="#3">3.安装Python</a></p>
+</li>
+<li><p><a href="#4">4.设置路径（可选）</a></p>
+</li>
+<li><p><a href="#5">5.确认安装</a></p>
+</li>
+<li><p><a href="#6">6.使用</a></p>
+</li>
+<li><p><a href="#6">7.安装pip等</a></p>
+</li>
+</ul>
+<h3 id="1">1 安装Xcode</h3><br>1.1  App Store 搜索Xcode 并安装<br><br>1.2  安装 Xcode command line tool<br><br>1.2.1 打开命令行terminal工具<br><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 control + space</div><div class="line">2 输入terminal</div><div class="line">3 回车</div></pre></td></tr></table></figure><br><br>1.2.2 安装Xcode command line tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcode-select --install</div></pre></td></tr></table></figure><br><br><h3 id="2">2 安装套件管理工具 Homebrew </h3>
+
+<p>2.1 <a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">安装    Homebrew</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
+<p>2.2 查看是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew doctor</div></pre></td></tr></table></figure>
+<p>Homebrew拓展：</p>
+<p>2.3 搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#主要看具体的信息，比如目前的版本，依赖，安装后注意事项等</div><div class="line">brew search 查找的内容</div></pre></td></tr></table></figure>
+<p>2.4 更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 这会更新 Homebrew 自己，并且使得接下来的两个操作有意义——</div><div class="line">brew update</div></pre></td></tr></table></figure>
+<p>2.5 检查过时（是否有新版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 列出所有安装的软件里可以升级的那些</div><div class="line">brew outdated</div></pre></td></tr></table></figure>
+<p>2.6 升级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 升级所有可以升级的软件们</div><div class="line">brew upgrade </div><div class="line"># 升级某个</div><div class="line">brew upgrade 某个软件</div></pre></td></tr></table></figure>
+<p>2.7 清理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 清理不需要的版本极其安装包缓存</div><div class="line">brew cleanup</div></pre></td></tr></table></figure>
+<h3 id="3">3 安装Python</h3>
+
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>python</div></pre></td></tr></table></figure>
+<h3 id="4">4 设置路径（可选）</h3>
+
+<p>如果不设置路径，则使用python的话，会默认用系统的。(这个没有具体执行，所以这个需要自己尝试)</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 修改/etc/paths，把/usr/local/bin 移到上面去</span></div><div class="line">sudo vim <span class="regexp">/etc/</span>paths</div></pre></td></tr></table></figure>
+<p>拓展：<br>查看当前path是什么。<br>PATH 的用途：<br>告诉系統，我们的brew在哪里。会从上往下查找。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PAHTH</span></div></pre></td></tr></table></figure>
+<h3 id="5">5 确认安装</h3>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 系统自带的python2.<span class="number">7</span>，目录为/usr/bin/<span class="keyword">python</span></div><div class="line">which <span class="keyword">python</span></div><div class="line">//brew安装的<span class="keyword">python3</span>.<span class="number">4</span>,目录为/usr/local/bin/<span class="keyword">python3</span></div><div class="line">which <span class="keyword">python3</span></div></pre></td></tr></table></figure>
+<p></p><h3 id="6">6 使用</h3><br><strong>未执行操作4</strong>的情况（推荐）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">python <span class="selector-tag">a</span><span class="selector-class">.py</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">python3 <span class="selector-tag">a</span>.py</div></pre></td></tr></table></figure><p></p>
+<p>执行<strong>操作4</strong>的情况</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">/usr/bin/python <span class="selector-tag">a</span><span class="selector-class">.py</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">python <span class="selector-tag">a</span>.py</div></pre></td></tr></table></figure>
+<p></p><h3 id="7">7 安装pip</h3><p></p>
+<ul>
+<li>安装Python2.7以上版本，会自动带pip。</li>
+<li>系统自带的python没有pip，只有easy_install</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给系统的python安装pip</span></div><div class="line">easy_install pip</div></pre></td></tr></table></figure>
+<ul>
+<li>使用pip</li>
+</ul>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 系统自带的</span></div><div class="line">pip --<span class="keyword">version</span></div><div class="line"><span class="comment">//brew安装的</span></div><div class="line">pip3 --<span class="keyword">version</span></div></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/#step2" target="_blank" rel="external">1. MAC OSX 正確地同時安裝 PYTHON 2.7 和 PYTHON3</a><br><a href="http://blog.csdn.net/u012422446/article/details/56834557" target="_blank" rel="external">2. Mac安装python2.x与python3.x</a><br><a href="http://www.2cto.com/kf/201702/597697.html" target="_blank" rel="external">3. mac下安装python小坑</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/UIViewAutoresizing/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/05/UIViewAutoresizing/" itemprop="url">
+                  UIViewAutoresizing
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-05T15:51:27+08:00">
+                2017-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/05/UIViewAutoresizing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/UIViewAutoresizing/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/05/UIViewAutoresizing/" class="leancloud_visitors" data-flag-title="UIViewAutoresizing">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-UIViewAutoresizing"><a href="#1-UIViewAutoresizing" class="headerlink" title="1  UIViewAutoresizing"></a>1  UIViewAutoresizing</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) &#123;</div><div class="line">  //1 不自动调整</div><div class="line">    UIViewAutoresizingNone                 = 0,</div><div class="line">  //2 自动调整与superView左边的距离，保证与superView右边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleLeftMargin   = 1 &lt;&lt; 0,</div><div class="line">  //3  自动调整自己的宽度，保证与superView左边和右边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleWidth        = 1 &lt;&lt; 1,</div><div class="line">  // 4 自动调整与superView的右边距离，保证与superView左边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleRightMargin  = 1 &lt;&lt; 2,</div><div class="line">  // 5 自动调整与superView顶部的距离，保证与superView底部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleTopMargin    = 1 &lt;&lt; 3,</div><div class="line">  // 6  自动调整自己的高度，保证与superView顶部和底部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleHeight       = 1 &lt;&lt; 4,</div><div class="line">  //  7 自动调整与superView底部的距离，与superView顶部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleBottomMargin = 1 &lt;&lt; 5</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>UIViewAutoresizingFlexibleLeftMargin  |UIViewAutoresizingFlexibleRightMargin </li>
+</ul>
+<blockquote>
+<p> 自动调整与superView左边的距离，保证与左边的距离和右边的距离和原来距左边和右边的距离的比例不变。比如原来距离为20，30，调整后的距离应为68，102，即68/20=102/30。</p>
+</blockquote>
+<ul>
+<li><p>UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight</p>
+<blockquote>
+<p>首先，下边距是不变的，但高和上边距会变，变换的计算如下，比如superview的高度，由100加高的200。自己的下边距是50，则去掉不变的下边距后,superview的变化比例是：（100-50）/(200-50) = 50/150 = 1/3。则自己的上边距和高都变为越来的3倍</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin </li>
+</ul>
+<blockquote>
+<p>上边距，高，下边距都和superview同比变换,比如superview的高由100变为200。则自己的上边距，高，下边距也都变为原来的2倍</p>
+</blockquote>
+<ul>
+<li>上面的变换只在superview的autoresizesSubviews为YES是才会发生 autoresizesSubviews默认为YES。同时，superview的contentMode不会影响sub view的变换。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/多线程基本知识/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -600,451 +1228,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/反射机制/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="童真的烂漫">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="童真的烂漫">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/05/反射机制/" itemprop="url">
-                  Objective-C 反射机制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-05T15:51:27+08:00">
-                2017-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/05/反射机制/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/反射机制/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/04/05/反射机制/" class="leancloud_visitors" data-flag-title="Objective-C 反射机制">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="1-获取Class对象"><a href="#1-获取Class对象" class="headerlink" title="1 获取Class对象"></a>1 获取Class对象</h5><p><code>Class</code>对象其实本质上就是一个结构体，任何类的定义都是对象，这个结构体中的成员变量还是自己，这种设计方式非常像链表的数据结构。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//obj为Object实例对象</div><div class="line">typedef struct objc_class *Class;</div><div class="line">struct objc_class &#123;</div><div class="line">    Class isa  OBJC_ISA_AVAILABILITY;                                  </div><div class="line">&#125;</div><div class="line">//obj为Class类对象</div><div class="line">typedef struct objc_class *Class;</div><div class="line">    struct objc_class &#123;</div><div class="line">          Class isa;</div><div class="line">          Class super_class;</div><div class="line">         /* followed by runtime specific details... */</div><div class="line">   &#125;;</div></pre></td></tr></table></figure>
-<p>Object-C的类型结构</p>
-<ul>
-<li>Object（实例）</li>
-<li>Class（类）</li>
-<li>Metaclass（元类）</li>
-<li>Rootclass(根类)</li>
-<li>Rootclass‘s metaclass(根元类)，且这些都是对象</li>
-</ul>
-<p>object_getClass(obj)与[obj class]的区别</p>
-<ul>
-<li>object_getClass(obj)返回的是obj中的isa指针；</li>
-<li>而[obj class]则分两种情况：<ul>
-<li>当obj为实例对象时，[obj  class]中class是实例方法：<code>- (Class)class</code>，返回的obj对象中的isa指针；</li>
-<li>当obj为类对象（包括元类和根类以及根元类）时，调用的是类方法：<code>+ (Class)class</code>，返回的结果为其本身作者</li>
-</ul>
-</li>
-</ul>
-<p>Object-C的对象模型图</p>
-<p><img src="http://img.blog.csdn.net/20180207054713422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDgyODcxOA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Object-C的对象模型图"></p>
-<h5 id="2-获得Class对象的三个方法。"><a href="#2-获得Class对象的三个方法。" class="headerlink" title="2 获得Class对象的三个方法。"></a>2 获得Class对象的三个方法。</h5><blockquote>
-<p>1 可以直接用一个实例对象或类对象，直接调用<code>Class</code>方法获取<code>Class</code>对象。</p>
-<p>2 获取到的类对象是同一个类对象（类对象的<code>isa</code>指针），内存地址也是一样的。</p>
-</blockquote>
-<ul>
-<li><p>在<strong>实例方法</strong>中通过self调用class实例方法获取类对象</p>
-<ul>
-<li>-(Class)instanceMethod {return [self class];}</li>
-</ul>
-</li>
-<li><p>通过类直接调用class类方法获取类对象</p>
-<ul>
-<li>[UIViewController class]</li>
-</ul>
-</li>
-<li><p>在<strong>类方法</strong>中使用类对象调用class方法获取类对象</p>
-<ul>
-<li>+(Class)classMethod {return [self class];}</li>
-</ul>
-<p>​</p>
-</li>
-</ul>
-<h5 id="3-反射方法"><a href="#3-反射方法" class="headerlink" title="3 反射方法"></a>3 反射方法</h5><p>系统<code>Foundation</code>框架为我们提供了一些方法反射的API，我们可以通过这些API执行将字符串转为<code>SEL</code>等操作。由于<code>OC</code>语言的动态性，这些操作都是发生在运行时的</p>
-<ul>
-<li><p>SEL和字符串转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FOUNDATION_EXPORT NSString *NSStringFromSelector(SEL aSelector);</div><div class="line">FOUNDATION_EXPORT SEL NSSelectorFromString(NSString *aSelectorName);</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-<li><p>Class和字符串转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FOUNDATION_EXPORT NSString *NSStringFromClass(Class aClass);</div><div class="line">FOUNDATION_EXPORT Class __nullable NSClassFromString(NSString *aClassName);</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-<li><p>Protocol和字符串转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FOUNDATION_EXPORT NSString *NSStringFromProtocol(Protocol *proto) ;</div><div class="line">FOUNDATION_EXPORT Protocol * __nullable NSProtocolFromString(NSString *namestr) ;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ul>
-<h5 id="4-反射方法应用"><a href="#4-反射方法应用" class="headerlink" title="4 反射方法应用"></a>4 反射方法应用</h5><ul>
-<li>在运行时选择创建那个实例</li>
-<li>动态选择调用哪个方法</li>
-</ul>
-<p>可以由服务器传回来的参数来控制，我们可以将服务器传回来的类名和方法名，实例为我们的对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// 1 假设从服务器获取JSON串，通过这个JSON串获取需要创建的类为ViewController，并且调用这个类的getDataList方法。</div><div class="line">#define SuppressPerformSelectorLeakWarning(Stuff) \</div><div class="line">    do &#123; \</div><div class="line">        _Pragma(&quot;clang diagnostic push&quot;) \</div><div class="line">        _Pragma(&quot;clang diagnostic ignored \&quot;-Warc-performSelector-leaks\&quot;&quot;) \</div><div class="line">        Stuff; \</div><div class="line">        _Pragma(&quot;clang diagnostic pop&quot;) \</div><div class="line">    &#125; while (0)</div><div class="line">SuppressPerformSelectorLeakWarning(</div><div class="line">    Class class = NSClassFromString(@&quot;ViewController&quot;);</div><div class="line">	ViewController *vc = [[class alloc] init];</div><div class="line">	SEL selector = NSSelectorFromString(@&quot;getDataList&quot;);</div><div class="line">	[vc performSelector:selector];</div><div class="line">);</div><div class="line"></div><div class="line"></div><div class="line">//2 如果出现：performSelector may cause a leak because its selector is unknown</div><div class="line">//则用下边这个方法</div><div class="line">//不带参数</div><div class="line">UIViewController *_controller;</div><div class="line">SEL selector = NSSelectorFromString(@&quot;someMethod&quot;);</div><div class="line">IMP imp = [_controller methodForSelector:selector];</div><div class="line">void (*func)(id, SEL) = (void *)imp;</div><div class="line">func(_controller, selector);</div><div class="line"></div><div class="line">//3 带参数</div><div class="line">SEL selector = NSSelectorFromString(@&quot;processRegion:ofView:&quot;);</div><div class="line">IMP imp = [_controller methodForSelector:selector];</div><div class="line">CGRect (*func)(id, SEL, CGRect, UIView *) = (void *)imp;</div><div class="line">CGRect result = _controller ?</div><div class="line">func(_controller, selector, someRect, someView) : CGRectZero;</div><div class="line"></div><div class="line">//4 不会出现警告</div><div class="line"> [_controller performSelector:@selector(someMethod)];</div></pre></td></tr></table></figure>
-<h5 id="5-常用判断方法"><a href="#5-常用判断方法" class="headerlink" title="5 常用判断方法"></a>5 常用判断方法</h5><ul>
-<li>当前对象是否这个<strong>类或其子类</strong>的实例<ul>
-<li>-(BOOL)isKindOfClass:(Class)aClass</li>
-</ul>
-</li>
-<li>当前对象是否是这个<strong>类</strong>的实例<ul>
-<li>-(BOOL)isMemberOfClass:(Class)aClass</li>
-</ul>
-</li>
-<li>当前对象是否遵守这个<strong>协议</strong><ul>
-<li>-(BOOL)conformsToProtocol:(Protocol *)aProtocol</li>
-</ul>
-</li>
-<li>当前对象是否实现这个<strong>方法</strong><ul>
-<li>-(BOOL)respondsToSelector:(SEL)aSelector</li>
-</ul>
-</li>
-</ul>
-<h5 id="6-例子"><a href="#6-例子" class="headerlink" title="6 例子"></a>6 例子</h5><blockquote>
-<p>根据后台推送过来的数据，进行动态页面跳转，跳转到页面后根据返回到数据执行对应的操作</p>
-</blockquote>
-<ul>
-<li>用反射机制动态的创建类并执行方法</li>
-</ul>
-<p>假设和后台约定格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@&#123;</div><div class="line">     // 类名</div><div class="line">     @&quot;className&quot; : @&quot;UserListViewController&quot;, </div><div class="line">     // 数据参数</div><div class="line">     @&quot;propertys&quot; : @&#123; @&quot;name&quot;: @&quot;liuxiaozhuang&quot;, </div><div class="line">                       @&quot;age&quot;: @3 &#125;,</div><div class="line">     // 调用方法名</div><div class="line">     @&quot;method&quot; : @&quot;refreshUserInformation&quot;</div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
-<p>定义一个<code>UserListViewController</code>类，根据远程推送过来的数据，<strong>动态进行页面跳转和调用等操作</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#import &lt;UIKit/UIKit.h&gt;</div><div class="line">// 由于使用的KVC赋值，如果不想把这两个属性暴露出来，把这两个属性写在.m文件也可以</div><div class="line">@interface UserListViewController : UIViewController</div><div class="line">@property (nonatomic,strong) NSString *name;/*!&lt; 用户名 */</div><div class="line">@property (nonatomic,strong) NSNumber *age;/*!&lt; 用户年龄 */</div><div class="line">/** 使用反射机制反射为SEL后，调用的方法 */</div><div class="line">- (void)refreshUserInformation;</div><div class="line">@end</div><div class="line">// 简单封装的页面跳转方法，只是做演示，代码都是没问题的，使用时可以根据业务需求进行修改。</div><div class="line">- (void)remoteNotificationDictionary:(NSDictionary *)dict &#123;</div><div class="line">    // 根据字典字段反射出我们想要的类，并初始化控制器</div><div class="line">    Class class = NSClassFromString(dict[@&quot;className&quot;]);</div><div class="line">    UIViewController *vc = [[class alloc] init];</div><div class="line">    // 获取参数列表，使用枚举的方式，对控制器属性进行KVC赋值</div><div class="line">    NSDictionary *parameter = dict[@&quot;propertys&quot;];</div><div class="line">    [parameter enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) &#123;</div><div class="line">        // 在属性赋值时，做容错处理，防止因为后台数据导致的异常</div><div class="line">        if ([vc respondsToSelector:NSSelectorFromString(key)]) &#123;</div><div class="line">            [vc setValue:obj forKey:key];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">    [self.navigationController pushViewController:vc animated:YES];</div><div class="line">    // 从字典中获取方法名，并调用对应的方法</div><div class="line">    SEL selector = NSSelectorFromString(dict[@&quot;method&quot;]);</div><div class="line">  	IMP imp = [vc methodForSelector:selector];</div><div class="line">  	void (*func)(id, SEL) = (void *)imp;</div><div class="line">    func(vc, selector);</div><div class="line">   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>通过<code>runtime</code>来实现这个功能</li>
-</ul>
-<p><a href="https://www.jianshu.com/p/6517ab655be7" target="_blank" rel="external">1 performSelector may cause a leak because its selector is unknown</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/UIViewAutoresizing/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="童真的烂漫">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="童真的烂漫">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/05/UIViewAutoresizing/" itemprop="url">
-                  UIViewAutoresizing
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-05T15:51:27+08:00">
-                2017-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/05/UIViewAutoresizing/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/UIViewAutoresizing/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/04/05/UIViewAutoresizing/" class="leancloud_visitors" data-flag-title="UIViewAutoresizing">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-UIViewAutoresizing"><a href="#1-UIViewAutoresizing" class="headerlink" title="1  UIViewAutoresizing"></a>1  UIViewAutoresizing</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) &#123;</div><div class="line">  //1 不自动调整</div><div class="line">    UIViewAutoresizingNone                 = 0,</div><div class="line">  //2 自动调整与superView左边的距离，保证与superView右边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleLeftMargin   = 1 &lt;&lt; 0,</div><div class="line">  //3  自动调整自己的宽度，保证与superView左边和右边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleWidth        = 1 &lt;&lt; 1,</div><div class="line">  // 4 自动调整与superView的右边距离，保证与superView左边的距离不变</div><div class="line">    UIViewAutoresizingFlexibleRightMargin  = 1 &lt;&lt; 2,</div><div class="line">  // 5 自动调整与superView顶部的距离，保证与superView底部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleTopMargin    = 1 &lt;&lt; 3,</div><div class="line">  // 6  自动调整自己的高度，保证与superView顶部和底部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleHeight       = 1 &lt;&lt; 4,</div><div class="line">  //  7 自动调整与superView底部的距离，与superView顶部的距离不变</div><div class="line">    UIViewAutoresizingFlexibleBottomMargin = 1 &lt;&lt; 5</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ul>
-<li>UIViewAutoresizingFlexibleLeftMargin  |UIViewAutoresizingFlexibleRightMargin </li>
-</ul>
-<blockquote>
-<p> 自动调整与superView左边的距离，保证与左边的距离和右边的距离和原来距左边和右边的距离的比例不变。比如原来距离为20，30，调整后的距离应为68，102，即68/20=102/30。</p>
-</blockquote>
-<ul>
-<li><p>UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight</p>
-<blockquote>
-<p>首先，下边距是不变的，但高和上边距会变，变换的计算如下，比如superview的高度，由100加高的200。自己的下边距是50，则去掉不变的下边距后,superview的变化比例是：（100-50）/(200-50) = 50/150 = 1/3。则自己的上边距和高都变为越来的3倍</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin </li>
-</ul>
-<blockquote>
-<p>上边距，高，下边距都和superview同比变换,比如superview的高由100变为200。则自己的上边距，高，下边距也都变为原来的2倍</p>
-</blockquote>
-<ul>
-<li>上面的变换只在superview的autoresizesSubviews为YES是才会发生 autoresizesSubviews默认为YES。同时，superview的contentMode不会影响sub view的变换。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/XCode链接器参数-ObjC-all-load-force-load/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1238,175 +1421,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/常用代码/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="童真的烂漫">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="童真的烂漫">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/05/常用代码/" itemprop="url">
-                  常用代码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-05T15:51:27+08:00">
-                2017-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/代码/" itemprop="url" rel="index">
-                    <span itemprop="name">代码</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/05/常用代码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/常用代码/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/04/05/常用代码/" class="leancloud_visitors" data-flag-title="常用代码">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="常用代码"><a href="#常用代码" class="headerlink" title="常用代码"></a>常用代码</h3><h4 id="1-button抬手、松手事件"><a href="#1-button抬手、松手事件" class="headerlink" title="1.button抬手、松手事件"></a>1.button抬手、松手事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//方法一</div><div class="line">-(void)createButton1&#123;</div><div class="line">  UIButton *tButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];</div><div class="line">  tButton.backgroundColor = [UIColor blackColor];</div><div class="line">  [tButton setTitle:@&quot;点击&quot; forState:UIControlStateNormal];</div><div class="line">  [tButton setTitle:@&quot;松开&quot; forState:UIControlStateHighlighted];</div><div class="line">  //处理按钮点击事件</div><div class="line">  [tButton addTarget:self action:@selector(TouchDown)forControlEvents: UIControlEventTouchDown];</div><div class="line">  //处理按钮松开状态</div><div class="line">  [tButton addTarget:self action:@selector(TouchUp)forControlEvents: UIControlEventTouchUpInside | UIControlEventTouchUpOutside];</div><div class="line">  [self.view addSubview:tButton];</div><div class="line">&#125;</div><div class="line">- (void)TouchDown</div><div class="line">&#123;</div><div class="line">    //这里可以处理其他点击事件</div><div class="line">    NSLog(@&quot;按钮点击了&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)TouchUp</div><div class="line">&#123;</div><div class="line">    //这里可以处理其他松开事件</div><div class="line">    NSLog(@&quot;按钮松开了&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//方法二</div><div class="line">-(void)createButton2&#123;</div><div class="line">  UIButton *tButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];</div><div class="line">  tButton.backgroundColor = [UIColor blackColor];</div><div class="line">  [tButton setTitle:@&quot;点击&quot; forState:UIControlStateNormal];</div><div class="line">  [tButton setTitle:@&quot;松开&quot; forState:UIControlStateHighlighted];</div><div class="line">  [tButton addTarget:self action:@selector(buttonAction:forEvent:) forControlEvents:UIControlEventAllTouchEvents];</div><div class="line">  [self.view addSubview:tButton];</div><div class="line">&#125;</div><div class="line">   </div><div class="line">- (void)buttonAction:(id)sender forEvent:(UIEvent *)event&#123;</div><div class="line">    UITouchPhase phase = event.allTouches.anyObject.phase;</div><div class="line">    if (phase == UITouchPhaseBegan) &#123;</div><div class="line">        NSLog(@&quot;press&quot;);</div><div class="line">    &#125;</div><div class="line">    else if(phase == UITouchPhaseEnded)&#123;</div><div class="line">        NSLog(@&quot;release&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1449,7 +1468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1458,7 +1477,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1467,7 +1486,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

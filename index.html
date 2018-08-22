@@ -293,7 +293,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/iOS中的转码问题/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/iOS中super和self/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="童真的烂漫">
@@ -318,8 +318,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/06/26/iOS中的转码问题/" itemprop="url">
-                  iOS中的转码问题
+                <a class="post-title-link" href="/2018/08/16/iOS中super和self/" itemprop="url">
+                  未命名
                 </a>
               
             
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-26T18:14:34+08:00">
-                2018-06-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T10:18:43+08:00">
+                2018-08-16
               </time>
             
 
@@ -346,28 +346,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/补充/" itemprop="url" rel="index">
-                    <span itemprop="name">补充</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -376,8 +354,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/26/iOS中的转码问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/06/26/iOS中的转码问题/" itemprop="commentCount"></span>
+                <a href="/2018/08/16/iOS中super和self/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/16/iOS中super和self/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +363,7 @@
 
           
           
-             <span id="/2018/06/26/iOS中的转码问题/" class="leancloud_visitors" data-flag-title="iOS中的转码问题">
+             <span id="/2018/08/16/iOS中super和self/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,412 +394,141 @@
       
         
           
-            <p>由一个汉字二次编码，引起的知识补充<br>汉字二次编码：</p>
+            <p>title: iOS中super和self<br>date: 2018-08-16 10:18:43<br>tags: [基础]<br>categories: 基础</p>
+<p>1 [self class] 与 [super class]</p>
 <blockquote>
-<p>文 -&gt; （一次UFT-8编码）%E6%96%87 -&gt; （二次UFT-8编码）%25E6%2596%2587</p>
+<p>将Student.m 转换成 Cpp 文件</p>
+<p>xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc Student.m</p>
 </blockquote>
-<h4 id="1-GB2312、GBK、GB18030与UTF-8的区别"><a href="#1-GB2312、GBK、GB18030与UTF-8的区别" class="headerlink" title="1 GB2312、GBK、GB18030与UTF-8的区别"></a>1 GB2312、GBK、GB18030与UTF-8的区别</h4><ul>
-<li>GB2312<ul>
-<li>国家标准，支持中文字符</li>
-</ul>
-</li>
-<li><p>GBK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">@implementation Student : Person</div><div class="line"></div><div class="line">- (instancetype)init</div><div class="line">&#123;</div><div class="line">    // self = ((Student *(*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super)&#123;(id)self, (id)class_getSuperclass(objc_getClass(&quot;Student&quot;))&#125;, sel_registerName(&quot;init&quot;));</div><div class="line">    self = [super init];</div><div class="line">    if (self) &#123;</div><div class="line">    </div><div class="line">    	// id objSelf = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)self, sel_registerName(&quot;class&quot;));</div><div class="line">        id obj1 = [self class];</div><div class="line">        // id objSuper = ((Class (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super)&#123;(id)self, (id)class_getSuperclass(objc_getClass(&quot;Student&quot;))&#125;, sel_registerName(&quot;class&quot;));</div><div class="line">        id obj2 = [super class];</div><div class="line">        NSLog(@&quot;%@&quot;,obj1);</div><div class="line">        NSLog(@&quot;%@&quot;,obj2);</div><div class="line">        //手动实现一个super </div><div class="line">        struct objc_super1 &#123;</div><div class="line">            __unsafe_unretained id receiver;</div><div class="line">            Class superClass;</div><div class="line">        &#125;;</div><div class="line">        struct objc_super1 obj_super = &#123;self,class_getSuperclass(object_getClass(self))&#125;;</div><div class="line">        id obj3 = objc_msgSendSuper(&amp;obj_super,@selector(class));</div><div class="line"></div><div class="line">        </div><div class="line"></div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<blockquote>
+<p>继承关系：Student-&gt;Person-&gt;NSObject</p>
+</blockquote>
 <ul>
-<li>GB2312的拓展</li>
-<li>不论中、英文字符均使用双字节来表示，中文将其最高位设定成1。</li>
-<li>通用性比UTF8差，不过UTF8占用的数据库比GBD大</li>
-</ul>
-</li>
-<li><p>GB18030</p>
+<li><p>[self class]</p>
 <ul>
-<li>GBK的拓展</li>
-<li>采用了2\4位混和的办法，兼容GB2312和GBK2字节编码的文件</li>
+<li>转成 objc_msgSend(self,@selector(class)) ，消息的接收者是当前所在类的实例对象</li>
+<li>去查找 class 方法<ul>
+<li>去self 所在类 Student 中查找</li>
+<li>如果类 Student 没有 class ，会向Student 父类 Person 类找 class 方法</li>
+<li>如果 Person 类也没有找到 class 方法,最终会找到最顶级父类 NSObject 的 class 方法</li>
+<li>最终找到 NSObject 的 class 方法 ,并调用了object_getClass(self) ,由于消息接收者是 self 当前类实例对象, 所以最终 [self class]输出 Student</li>
 </ul>
 </li>
-<li><p>UTF-8</p>
+</ul>
+</li>
+<li><p>[super class]</p>
 <ul>
-<li>全称：Unicode Transformation Format-8bit，允许含BOM，但通常不含BOM</li>
-<li>英文使用8位（即一个字节），中文使用24位（三个字节）</li>
-<li>包含全世界所有国家需要用到的字符，是国际编码，通用性强</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-相互转换"><a href="#2-相互转换" class="headerlink" title="2 相互转换"></a>2 相互转换</h4><ul>
-<li>通过<strong>Unicode编码</strong>相互转换</li>
-</ul>
-<h4 id="3-ASCll编码和Unicode编码的区别"><a href="#3-ASCll编码和Unicode编码的区别" class="headerlink" title="3 ASCll编码和Unicode编码的区别"></a>3 ASCll编码和Unicode编码的区别</h4><ul>
-<li>ASCII编码<ul>
-<li>1个字节</li>
-<li>ASCII 码一共定义了 128 个字符</li>
-<li>大写的字母 A 是 65（这是十进制数，对应二进制是0100 0001）</li>
-<li>这 128 个字符只使用了 8 位二进制数中的后面 7 位，最前面的一位统一规定为 0</li>
-</ul>
-</li>
-<li>Unicode编码<ul>
-<li>通常是2个字节，可以更多</li>
-</ul>
-</li>
-<li>UTF-8编码<ul>
-<li>把Unicode字符根据不同的数字大小编码成1-4个字节</li>
-<li>编码规则如下<ul>
-<li>对于单个字节的字符，第一位设为 0，后面的 7 位对应这个字符的 Unicode 码点，因此与 ASCII 码完全相同</li>
-<li>对于 N 个字节的字符（N &gt; 1），</li>
-<li>第一个字节的前 N 位都设为 1，第 N + 1 位设为0</li>
-<li>剩余的 N - 1 个字节的前两位都设位 10</li>
-<li>剩下的二进制位则使用这个字符的 Unicode 码点来填充</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>UNICODE 十六进制码点范围</th>
-<th style="text-align:center">UTF-8 二进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0000 0000 - 0000 007F</td>
-<td style="text-align:center">0xxxxxxx</td>
-</tr>
-<tr>
-<td>0000 0080 - 0000 07FF</td>
-<td style="text-align:center">110xxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0000 0800 - 0000 FFFF</td>
-<td style="text-align:center">1110xxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0001 0000 - 0010 FFFF</td>
-<td style="text-align:center">11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-</tbody>
-</table>
+<li><p>转化成 objc_msgSendSuper(struct objc_super *,SEL) </p>
 <ul>
-<li>编码例子<ul>
-<li>“汉”的 Unicode 码点是 0x6c49（110 1100 0100 1001），通过上面的对照表可以发现，0x0000 6c49 位于第三行的范围，那么得出其格式为 1110xxxx 10xxxxxx 10xxxxxx</li>
-<li>接着，从“汉”的二进制数最后一位开始，从后向前依次填充对应格式中的 x，多出的 x 用 0 补上</li>
-<li>这样，就得到了“汉”的 UTF-8 编码为 11100110 10110001 10001001，转换成十六进制就是 0xE6 0xB7 0x89</li>
-</ul>
-</li>
-<li>解码规则如下<ul>
-<li>如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；</li>
-<li>如果一个字节的第一位1，那么连续有多少个 1，就表示该字符占用多少个字节</li>
+<li>objc_super 是一个结构体，包含<ul>
+<li>一个 receiver 实例（student 实例对象）</li>
+<li>一 个 Class super_class（指向了当前类的父类Person类 ）</li>
 </ul>
 </li>
 </ul>
-<h4 id="4-iOS中URL编码和解码"><a href="#4-iOS中URL编码和解码" class="headerlink" title="4 iOS中URL编码和解码"></a>4 iOS中URL编码和解码</h4><h5 id="4-1-为什么需要URL编码"><a href="#4-1-为什么需要URL编码" class="headerlink" title="4.1 为什么需要URL编码"></a>4.1 为什么需要URL编码</h5><ul>
-<li>URL中有些字符会引起歧义<ul>
-<li>例如：URL参数字符串中使用键值对(key=value)的方式来传参，键值对之间以&amp;符号分隔,因此键值中的&amp;符号必须进行编码</li>
-</ul>
 </li>
-<li>URL的编码格式采用的是ASCII码，而不是Unicode</li>
-<li>URL中不能包含任何非ASCII字符，例如中文</li>
-</ul>
-<h5 id="4-1-URL编码、解码"><a href="#4-1-URL编码、解码" class="headerlink" title="4.1 URL编码、解码"></a>4.1 URL编码、解码</h5><ul>
-<li>　URL编码的原则<ul>
-<li>就是使用安全的字符(没有特殊用途或者特殊意义的可打印字符)去表示那些不安全的字符</li>
-</ul>
-</li>
-<li>中文、空格字符编码<ul>
-<li>stringByAddingPercentEscapesUsingEncoding(只对 `#%^{}[]|\”&lt;&gt; 加空格共14个字符编码，不包括”&amp;?”等符号)</li>
-<li>stringByAddingPercentEncodingWithAllowedCharacters（ ios9）</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">NSString * resourcePath = @&quot;https://www.baidu.com/文件夹&quot;</div><div class="line">// 编码</div><div class="line">(iOS9.0以下使用）</div><div class="line">NSString *str3 =[resourcePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">(iOS9.0以及以上使用）</div><div class="line">NSString *str3 =</div><div class="line">[resourcePath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];</div><div class="line">NSString *str3 =</div><div class="line">[resourcePath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@&quot;`#%^&#123;&#125;\&quot;[]|\\&lt;&gt;&quot;].invertedSet];</div></pre></td></tr></table></figure>
+<li><p>去查找 class 方法</p>
 <ul>
-<li>中文、空格字符解码<ul>
-<li>stringByReplacingPercentEscapesUsingEncoding</li>
-<li>stringByRemovingPercentEncoding  （ios9）</li>
-</ul>
+<li><p>消息的接收者还是student 类的实例对象，然后从父类Person类开始查找</p>
 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NSString * resourcePath = @&quot;https://www.baidu.com/文件夹&quot;;  </div><div class="line">// 解码</div><div class="line">(iOS9.0以下使用）</div><div class="line">NSString *str2 = [resourcePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">(iOS9.0以及以上使用）:</div><div class="line">NSString *str2 = [resourcePath stringByRemovingPercentEncoding];</div></pre></td></tr></table></figure>
-<h5 id="4-2-NSCharacterSet-中的字符"><a href="#4-2-NSCharacterSet-中的字符" class="headerlink" title="4.2 NSCharacterSet 中的字符"></a>4.2 NSCharacterSet 中的字符</h5><ul>
-<li><p>URLFragmentAllowedCharacterSet </p>
+<li><p>如果在父类中没有找到class 这个方法</p>
 <ul>
-<li>“#%&lt;&gt;[]^`{|}</li>
+<li>会在 Person 类的父类 NSObject 中去查找 class 方法</li>
+<li>由于 NSObject 的 class 方法,调用的是 object_getClass(self) ，所以最终消息接收者为 student 实例对象,所以返回的还是 Student</li>
 </ul>
 </li>
-<li><p>URLHostAllowedCharacterSet      </p>
+<li><p>如果在父类中找到class 这个方法</p>
 <ul>
-<li>“#%/&lt;&gt;?@\^`{|}</li>
+<li><p>Person 类实现了 class 方法,就会调用[person class] 方法,</p>
+</li>
+<li><p>这个时候 object_getClass(self), 这个 self 是 Student 的实例对象,就是消息接收者,所以即使重写了 Person 的 class 方法 ,依然返回的还是 Student ,除非来个极端的 把 class 方法 实现 返回个 nil , 这样最终调用[super class]结果才会返回nil</p>
+</li>
 </ul>
 </li>
-<li><p>URLPasswordAllowedCharacterSet </p>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
-<li>“#%/:&lt;&gt;?@[]^`{|}</li>
-</ul>
-</li>
-<li><p>URLPathAllowedCharacterSet     </p>
+<li><p>object_getClass与self.class的区别</p>
 <ul>
-<li>“#%;&lt;&gt;?[]^`{|}</li>
+<li>object_getClass:获得的是isa的指向 </li>
+<li>self.class:当self是实例对象的时候，返回的是类对象，否则则返回自身</li>
 </ul>
 </li>
-<li><p>URLQueryAllowedCharacterSet     </p>
+</ul>
+<p>KVO巧妙的利用了子类 重写了 class 方法 ,让我们误以为 [person class] 还是当前类 Person ,而不是动态创建的子类 NSKVONotifily_Person 这个子类 ,  就是让子类返回了父类的 Class ,所以调用 [person class] 返回的还是 Person 从而对开发者隐藏了 NSKVONotifily_Person子类的存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (Class)class &#123;</div><div class="line">    return class_getSuperclass(object_getClass(self));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>object_getClass(id) 才会返回这个实例对象的真实 class 类型,</p>
+<p>object_getClass(Person) : NSKVONotifying_Person  </p>
+<p>KVO同步移步问题</p>
+<p>在哪个线程中发送监听消息，就在哪个线程中执行监听方法，执行方法的时候在当前线程是同步的</p>
+<p>KVO 底层实现是什么? </p>
 <ul>
-<li>“#%&lt;&gt;[]^`{|}</li>
-</ul>
+<li><p>动态创建NSKVONotifying_Person类（Person的子类）</p>
 </li>
-<li><p>URLUserAllowedCharacterSet     </p>
+<li><p>然后让Person类的isa指针指向NSKVONotifying_Person类</p>
+</li>
+<li><p>重写setName方法，用来通知属性有变化</p>
 <ul>
-<li>“#%/:&lt;&gt;?@[]^`</li>
-</ul>
-</li>
-</ul>
-<h4 id="5-原码、反码、补码"><a href="#5-原码、反码、补码" class="headerlink" title="5 原码、反码、补码"></a>5 原码、反码、补码</h4><ul>
-<li>原码：一个整数，按照绝对值大小转换成的二进制数<ul>
-<li>最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小</li>
-<li>比如5的原码：00000000 00000000 00000000 00000101</li>
-</ul>
-</li>
-<li>反码：将二进制数按位取反，所得的新二进制数称为原二进制数的反码<ul>
-<li>正数的反码与其原码相同</li>
-</ul>
-</li>
-<li>负数的反码是对其原码逐位取反，但符号位除外<ul>
-<li>取反操作指：原为1，得0；原为0，得1。（1变0; 0变1）</li>
-</ul>
-</li>
-<li>补码：反码加1称为补码<ul>
-<li>正数的补码和原码相同</li>
-</ul>
-</li>
-<li>负数以其正值的补码形式表达<ul>
-<li>比如5的补码（也就是-5的表达方式）：11111111 11111111 11111111 11111011</li>
-</ul>
-</li>
-<li>无符号位取值范围<ul>
-<li>0~255 （因为计算机是从0开始计算的而不是1）</li>
-<li>0～2^8 - 1 (256 -1)</li>
-</ul>
-</li>
-<li>有符号位取值范围<ul>
-<li>-128 ～ +127</li>
-<li>-2^7（-128） ~ 2^7-1 （128-1）</li>
-</ul>
-</li>
-</ul>
-<h4 id="6-URL中的特殊字符"><a href="#6-URL中的特殊字符" class="headerlink" title="6 URL中的特殊字符"></a>6 URL中的特殊字符</h4><ul>
-<li>URL中只允许包含英文字母(a-zA-Z)、数字(0-9)、4个特殊字符(- _ . ~)以及所有保留字符，如果要在URL中传递这些特殊符号，那么就要使用他们的编码了</li>
-<li>编码的格式为：百分号（%）加字符的ASCII码（16进制）码值</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th style="text-align:center">特殊含义</th>
-<th style="text-align:center">十六进制值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>部分保留字符</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%3C</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%3E</td>
-</tr>
-<tr>
-<td>“</td>
-<td style="text-align:center">普通文本中起到分隔Url的作用</td>
-<td style="text-align:center">%22</td>
-</tr>
-<tr>
-<td>#</td>
-<td style="text-align:center">通常用于表示书签或者锚点</td>
-<td style="text-align:center">%23</td>
-</tr>
-<tr>
-<td>%</td>
-<td style="text-align:center">指定特殊字符</td>
-<td style="text-align:center">%25</td>
-</tr>
-<tr>
-<td>{</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%7B</td>
-</tr>
-<tr>
-<td>}</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%7D</td>
-</tr>
-<tr>
-<td>\</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%5C</td>
-</tr>
-<tr>
-<td>^</td>
-<td style="text-align:center">加字号</td>
-<td style="text-align:center">%5E</td>
-</tr>
-<tr>
-<td>～</td>
-<td style="text-align:center">波浪</td>
-<td style="text-align:center">%7E</td>
-</tr>
-<tr>
-<td>[</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%5B</td>
-</tr>
-<tr>
-<td>]</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%5D</td>
-</tr>
-<tr>
-<td>`</td>
-<td style="text-align:center">反单引号</td>
-<td style="text-align:center">%60</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">空格</td>
-<td style="text-align:center">%20</td>
-</tr>
-<tr>
-<td>*</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%2A</td>
-</tr>
-<tr>
-<td>‘</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%27</td>
-</tr>
-<tr>
-<td>(</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%28</td>
-</tr>
-<tr>
-<td>)</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%29</td>
-</tr>
-<tr>
-<td>+</td>
-<td style="text-align:center">表示空格（在URL中不能使用空格）</td>
-<td style="text-align:center">%2B</td>
-</tr>
-<tr>
-<td>$</td>
-<td style="text-align:center">表示空格（在URL中不能使用空格）</td>
-<td style="text-align:center">%24</td>
-</tr>
-<tr>
-<td>,</td>
-<td style="text-align:center">表示空格（在URL中不能使用空格）</td>
-<td style="text-align:center">%2C</td>
-</tr>
-<tr>
-<td>保留字符</td>
-</tr>
-<tr>
-<td>;</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%3B</td>
-</tr>
-<tr>
-<td>/</td>
-<td style="text-align:center">分隔目录和子目录</td>
-<td style="text-align:center">%2F</td>
-</tr>
-<tr>
-<td>?</td>
-<td style="text-align:center">分隔实际的 URL 和参数</td>
-<td style="text-align:center">%3F</td>
-</tr>
-<tr>
-<td>:</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%3A</td>
-</tr>
-<tr>
-<td>@</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%40</td>
-</tr>
-<tr>
-<td>=</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">%3D</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td style="text-align:center">URL中指定的参数间的分隔符</td>
-<td style="text-align:center">%26</td>
-</tr>
-</tbody>
-</table>
-<h4 id="7-URL的格式"><a href="#7-URL的格式" class="headerlink" title="7 URL的格式"></a>7 URL的格式</h4><ul>
-<li>URI（Uniform Resource Identifier）：统一资源标识符<ul>
-<li>标识/定义资源</li>
-</ul>
-</li>
-<li>URL（Uniform Resource Location）：统一资源定位符<ul>
-<li>描述如何访问到该资源</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">protocol :// hostname[<span class="string">:port</span>] / path / [<span class="string">;parameters</span>][<span class="symbol">?query</span>]#fragment</div><div class="line"></div><div class="line"></div><div class="line">foo://example.com:8042/over/there?name=ferret#nose  </div><div class="line">\<span class="emphasis">_/  \_</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">___/ \__</span><span class="strong">_____</span><span class="emphasis">_/\_</span><span class="strong">_____</span><span class="strong">___/ \__</span>/  </div><div class="line">|          |              |         |        |  </div><div class="line">scheme    authority        path      query   fragment</div></pre></td></tr></table></figure>
+<li><p>在 Foundation 框架里的 _NSSetObjectValueAndNotify 函数中 </p>
 <ul>
-<li>protocol（协议）<ul>
-<li>指定使用的传输协议，最常用的是HTTP协议</li>
-</ul>
+<li><p>首先调用 willChangeValueForKey </p>
 </li>
-<li>hostname（主机名）<ul>
-<li>存放资源的服务器的域名系统(DNS) 主机名或 IP 地址</li>
-</ul>
+<li><p>其次调用父类的 setter 方法 对属性赋值</p>
 </li>
-<li>port（端口号）<ul>
-<li>各种传输协议都有默认的端口号，如http的默认端口为80</li>
-</ul>
+<li><p>然后调用 didChangeValueForKey</p>
 </li>
-<li>path（路径）<ul>
-<li>由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址</li>
-</ul>
+<li><p>最后调用observeValueForKeyPath 去告诉监听器属性值发生了改变 </p>
 </li>
-<li>parameters（参数）<ul>
-<li>指定特殊参数的可选项</li>
-</ul>
-</li>
-<li>query(查询)<ul>
-<li>可选，用于给动态网页传递参数，可有多个参数，用“&amp;”符号隔开，每个参数的名和值用“=”符号隔开</li>
-</ul>
-</li>
-<li>fragment（信息片断）<ul>
-<li>字符串，用来标识 URI 所标识资源里的某个资源</li>
 </ul>
 </li>
 </ul>
-<h4 id="8-处理字符串的方法-：NSCharacterSet-NSMutableCharacterSet"><a href="#8-处理字符串的方法-：NSCharacterSet-NSMutableCharacterSet" class="headerlink" title="8 处理字符串的方法 ：NSCharacterSet\NSMutableCharacterSet"></a>8 处理字符串的方法 ：NSCharacterSet\NSMutableCharacterSet</h4><ul>
-<li>常用API学习</li>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//NSCharacterSet</div><div class="line">/** 001 根据一个给定的字符串获取一个NSCharacterSet对象 */</div><div class="line">+ (NSCharacterSet *)characterSetWithCharactersInString:(NSString *)aString;</div><div class="line">/** 002 相反字符串限制 【具体见接下的例子】 */</div><div class="line">@property (readonly, copy) NSCharacterSet *invertedSet;</div><div class="line">/** 003 常用快捷方法集合 （常用的，已满足大多数需求） */</div><div class="line">+ controlCharacterSet</div><div class="line">+ whitespaceCharacterSet              //空格</div><div class="line">+ whitespaceAndNewlineCharacterSet    //空格和换行符</div><div class="line">+ decimalDigitCharacterSet            //0-9的数字</div><div class="line">+ letterCharacterSet                  //所有字母</div><div class="line">+ lowercaseLetterCharacterSet         //小写字母</div><div class="line">+ uppercaseLetterCharacterSet         //大写字母</div><div class="line">+ alphanumericCharacterSet            //所有数字和字母（大小写不分）</div><div class="line">+ punctuationCharacterSet             //标点符号</div><div class="line">+ newlineCharacterSet                 //换行</div><div class="line"></div><div class="line">//NSMutableCharacterSet</div><div class="line">/** 001 功能同 invertedSet 方法一样，注意这个没有返回值 */</div><div class="line">- (void)invert;</div></pre></td></tr></table></figure>
 <ul>
-<li>应用1：textFielf只能输入数字</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string &#123;</div><div class="line">NSCharacterSet *charSet = [[NSCharacterSet characterSetWithCharactersInString:@&quot;0123456789&quot;] invertedSet];</div><div class="line">NSString *filteredStr = [[string componentsSeparatedByCharactersInSet:charSet] componentsJoinedByString:@&quot;&quot;];</div><div class="line">if ([string isEqualToString:filteredStr]) &#123;</div><div class="line">return YES;</div><div class="line">&#125;</div><div class="line">return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="9-解析URL的方法-：-NSURLComponents"><a href="#9-解析URL的方法-：-NSURLComponents" class="headerlink" title="9 解析URL的方法 ： NSURLComponents"></a>9 解析URL的方法 ： NSURLComponents</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">初始化方法如下：</div><div class="line"></div><div class="line">- (instancetype)init;</div><div class="line">- (nullable instancetype)initWithURL:(NSURL *)url resolvingAgainstBaseURL:(BOOL)resolve;</div><div class="line">+ (nullable instancetype)componentsWithURL:(NSURL *)url resolvingAgainstBaseURL:(BOOL)resolve;</div><div class="line">- (nullable instancetype)initWithString:(NSString *)URLString;</div><div class="line">+ (nullable instancetype)componentsWithString:(NSString *)URLString;</div><div class="line">//常用的属性如下：</div><div class="line"></div><div class="line">@property (nullable, readonly, copy) NSURL *URL;</div><div class="line">@property (nullable, readonly, copy) NSString *string NS_AVAILABLE(10_10, 8_0);</div><div class="line"></div><div class="line">@property (nullable, copy) NSString *scheme; // Attempting to set the scheme with an invalid scheme string will cause an exception.</div><div class="line">@property (nullable, copy) NSString *user;</div><div class="line">@property (nullable, copy) NSString *password;</div><div class="line">@property (nullable, copy) NSString *host;</div><div class="line">@property (nullable, copy) NSNumber *port; // Attempting to set a negative port number will cause an exception.</div><div class="line">@property (nullable, copy) NSString *path;</div><div class="line">@property (nullable, copy) NSString *query;</div><div class="line">@property (nullable, copy) NSString *fragment;</div><div class="line"></div><div class="line"></div><div class="line">@property (nullable, copy) NSString *percentEncodedUser;</div><div class="line">@property (nullable, copy) NSString *percentEncodedPassword;</div><div class="line">@property (nullable, copy) NSString *percentEncodedHost;</div><div class="line">@property (nullable, copy) NSString *percentEncodedPath;</div><div class="line">@property (nullable, copy) NSString *percentEncodedQuery;</div><div class="line">@property (nullable, copy) NSString *percentEncodedFragment;</div><div class="line"></div><div class="line"></div><div class="line">@property (nullable, copy) NSArray&lt;NSURLQueryItem *&gt; *queryItems NS_AVAILABLE(10_10, 8_0);</div></pre></td></tr></table></figure>
+<li><p>重写Class方法，让外界不知道NSKVONotifying_Person类的存在</p>
 <ul>
-<li>应用1： iOS 解析url中的key和value  </li>
+<li>class_getSuperClass(object_getClass(self))</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSString* wxNASAURLPath = @&quot;http://www.ruyizi.com/url?a=1&amp;b=2&amp;c=3&quot;;</div><div class="line"></div><div class="line">NSURLComponents* wxNASAURLComponents =  [NSURLComponents componentsWithString:wxNASAURLPath];</div><div class="line"></div><div class="line">NSMutableDictionary* queryItemDict = [NSMutableDictionary dictionary];</div><div class="line"></div><div class="line">NSArray* queryItems = wxNASAURLComponents.queryItems;</div><div class="line"></div><div class="line">for (NSURLQueryItem* item in queryItems) &#123;</div><div class="line"></div><div class="line">[queryItemDict setObject:item.value forKey:item.name];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://blog.whezh.com/encoded/" target="_blank" rel="external">1 彻底弄懂 Unicode 编码</a><br><a href="http://nshipster.cn/nsurl/" target="_blank" rel="external">2 NSURL/NSURLComponents</a><br><a href="https://www.cnblogs.com/DaoMuRen/p/5695030.html" target="_blank" rel="external">3 percent-encode 百分号编码</a><br><a href="https://www.jianshu.com/p/2c07fbb52b45" target="_blank" rel="external">4 URI’s fragment</a><br><a href="https://www.jianshu.com/p/5fb58dc73e7b" target="_blank" rel="external">5 学会NSCharacterSet，再也不怕各种字符串处理</a><br><a href="http://www.zhimengzhe.com/IOSkaifa/296070.html" target="_blank" rel="external">6 NSURLComponents的使用</a></p>
+</li>
+<li><p>重写dealloc，做一些 KVO 释放内存</p>
+</li>
+</ul>
+<p>如何手动触发 KVO? </p>
+<p>willChangeValueForKey</p>
+<p>设置name</p>
+<p>didChangeValueForKey</p>
+<p>调用observeValueForKeyPath</p>
+<p>修改成员变量的值会出发 KVO 吗? </p>
+<ul>
+<li>不一定，看是否出发setter方法</li>
+</ul>
+<p>KVC 赋值会出发 KVO 吗?</p>
+<ul>
+<li><p>非容器对象</p>
+<ul>
+<li>修改属性，会触发</li>
+</ul>
+</li>
+<li><p>容器对象</p>
+<ul>
+<li><p>修改属性，只是简单的add或者dele则不会触发</p>
+<ul>
+<li>如果调用下面方法通过<code>key</code>或者<code>keyPath</code>获取集合对象，然后再对容器对象进行<code>add</code>或<code>remove</code>等操作时，就会触发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (NSMutableArray *)mutableArrayValueForKey:(NSString *)key;</div><div class="line">- (NSMutableOrderedSet *)mutableOrderedSetValueForKey:(NSString *)key </div><div class="line">- (NSMutableSet *)mutableSetValueForKey:(NSString *)key;</div><div class="line">//keyPath方法</div><div class="line">- (NSMutableArray *)mutableArrayValueForKeyPath:(NSString *)keyPath;</div><div class="line">- (NSMutableOrderedSet *)mutableOrderedSetValueForKeyPath:(NSString *)keyPath </div><div class="line">- (NSMutableSet *)mutableSetValueForKeyPath:(NSString *)keyPath;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>集合对象主要指<code>NSArray</code>和<code>NSSet</code>，但不包括<code>NSDictionary</code></p>
+<p>KVC原理</p>
+<p>通过key或者keyPath进行操作的时候，可以查找属性方法、成员变量等，查找的时候可以兼容多种命名。例如<code>get&lt;Key&gt;</code>, <code>&lt;key&gt;</code>, <code>is&lt;Key&gt;</code>, <code>_&lt;key&gt;</code>的拼接方案</p>
+<p>详情看<a href="https://www.jianshu.com/p/1d39bc610a5b" target="_blank" rel="external">KVC原理剖析</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">1. 如果第一个 [weak self] 不加，block 和 block2 是否会 retain self</div><div class="line"></div><div class="line">block 会 block2 不会</div><div class="line">第一种情况，block2 使用的weak self 等于是block内部使用了self所以block会捕获self(因为block没有使用weak self 所以这个self是strong self)</div><div class="line">2. 如果第二个 [weak self] 不加，block 和 block2 是否会 retain self</div><div class="line">都不会</div><div class="line">第二种情况 block2 即使没用使用weak self 但是因为block已经使用了weak self 所以block2捕获的是block中已经weak化的self</div><div class="line"></div><div class="line">结论：有嵌套 block，内层 block 用到 weak self，外层一定要加 weak self，但是外层加了 [weak self]，内层就可以不加 [weak self]</div><div class="line">let block = &#123; [weak self] in</div><div class="line">    let block2 = &#123; [weak self] in</div><div class="line">        //…</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -862,7 +569,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/多工程工作/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/iTerm2设置/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="童真的烂漫">
@@ -887,8 +594,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/05/05/多工程工作/" itemprop="url">
-                  多工程工作
+                <a class="post-title-link" href="/2018/08/15/iTerm2设置/" itemprop="url">
+                  iTerm2设置
                 </a>
               
             
@@ -904,8 +611,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T15:51:27+08:00">
-                2018-05-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-15T15:51:27+08:00">
+                2018-08-15
               </time>
             
 
@@ -927,8 +634,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/XCode/" itemprop="url" rel="index">
-                    <span itemprop="name">XCode</span>
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
                   </a>
                 </span>
 
@@ -945,8 +652,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/05/多工程工作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/05/多工程工作/" itemprop="commentCount"></span>
+                <a href="/2018/08/15/iTerm2设置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/15/iTerm2设置/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -954,7 +661,7 @@
 
           
           
-             <span id="/2018/05/05/多工程工作/" class="leancloud_visitors" data-flag-title="多工程工作">
+             <span id="/2018/08/15/iTerm2设置/" class="leancloud_visitors" data-flag-title="iTerm2设置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -985,291 +692,633 @@
       
         
           
-            <h3 id="1-workspace-管理多个project"><a href="#1-workspace-管理多个project" class="headerlink" title="1 workspace 管理多个project"></a>1 workspace 管理多个project</h3><h5 id="1-1-应用场景"><a href="#1-1-应用场景" class="headerlink" title="1.1 应用场景"></a>1.1 应用场景</h5><p>项目有可能要使用其他的项目文件，或者引入其他的静态库文件，workspace 即可以单独管理多个项目，又可以通过配置，让各个项目相互依赖，可以减少来回切换项目</p>
-<h5 id="1-2-步骤"><a href="#1-2-步骤" class="headerlink" title="1.2  步骤"></a>1.2  步骤</h5><ul>
-<li>1 <strong>File &gt; New Workspace </strong><ul>
-<li>新建一个空的workspace</li>
-</ul>
-</li>
-<li>2 <strong>File &gt; New Project</strong> <ul>
-<li>建一个工程myProduct和一个framework工程myStaticFramework</li>
-</ul>
-</li>
-<li>3 <strong>File &gt; Add file to workspace</strong> <ul>
-<li>将myProduct和myStaticFramework工程添加进去</li>
-</ul>
-</li>
-<li>4 <strong>Build  Setting &gt; User Head Search Paths （或者Head Search Paths）</strong><ul>
-<li>添加myStaticFramework路径</li>
-</ul>
-</li>
-<li>5 <strong>Build  Phases &gt; Link Binary With Libraries </strong> <ul>
-<li>添加myStaticFramework工程编译出来的myStaticFramework.framework</li>
-</ul>
-</li>
-<li>6 <strong>Copy Files </strong><ul>
-<li>（1）Destination改为Framework </li>
-<li>（2）添加myStaticFramework工程编译出来的myStaticFramework.framework</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-一个Project多target工作"><a href="#2-一个Project多target工作" class="headerlink" title="2 一个Project多target工作"></a>2 一个Project多target工作</h3><h5 id="2-1-应用场景"><a href="#2-1-应用场景" class="headerlink" title="2.1 应用场景"></a>2.1 应用场景</h5><p>在实际开发过程中难免会遇到同一个项目要发多个版本来服务于业务的需求,而两个版本仅有微小的不同.</p>
-<p>比如我们要发的版本有:</p>
-<p>1.数据版DataTrack-Debug(给数据组,用于埋点统计)</p>
-<p>2.测试版Test-Debug(给测试组,用于上线前测试)</p>
-<p>3.企业版Enterprise-Debug(给第三方测试,用于更专业更客观的测试)</p>
-<p>4.线上版Online(给测试组,用于测试后端上线后对前端的影响)</p>
-<h5 id="2-2-步骤"><a href="#2-2-步骤" class="headerlink" title="2.2 步骤"></a>2.2 步骤</h5><ul>
-<li>复制target<ul>
-<li>选择需要复制的target–&gt;右键点击–&gt;选择Duplicate<ul>
-<li>新target在项目中会生成<ul>
-<li>XXX copy target</li>
-<li>XXX copy Scheme</li>
-<li>XXX copy-Info.plist</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>改名字<ul>
-<li>修改Target名字，双击修改</li>
-<li>修改新的Plist文件<ul>
-<li>如果需要挪动plist，则挪动完了以后需要关联一下<ul>
-<li>target–&gt;General–&gt;Choose Info.plist File</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>修改Scheme名称<ul>
-<li>Target–&gt;Edit Scheme–&gt;Manage Schemes–&gt;修改名称</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-静态库与动态库"><a href="#3-静态库与动态库" class="headerlink" title="3 静态库与动态库"></a>3 静态库与动态库</h3><p>库(Library)是一段编译好的<strong>二进制代码</strong>，加上头文件就可以供别人使用。编译的时候只需要link一下，link（链接阶段）的不同的形式（静态或动态）决定库是静态库还是动态库</p>
-<p>编译过程：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">源文件 -&gt; 预编译 -&gt; 编译 -&gt; 汇编 -&gt; 链接 -&gt; 可执行文件</div></pre></td></tr></table></figure>
-<p>一般会有两种情况要用到库：</p>
-<ul>
-<li>某些代码需要给别人使用，但是我们不希望别人看到源码，就需要以库的形式进行封装，只暴露出头文件</li>
-<li>公司中常用且变动很少的模块可以编译成库，这样做的好处一是可以节省编译时间，二来对于代码的管理也非常方便</li>
-</ul>
-<h5 id="3-1-静态库（-a、-framework）"><a href="#3-1-静态库（-a、-framework）" class="headerlink" title="3.1 静态库（.a、.framework）"></a>3.1 静态库（.a、.framework）</h5><blockquote>
-<p>静态库在链接(link)阶段，会将汇编生成的目标文件.o与引用到的库一起链接打包到可执行文件中，对应的链接方式称为静态链接。一个静态库可以简单看成是一组目标文件（.o/.obj文件）的归档集合</p>
+            <h4 id="1-iTerm2"><a href="#1-iTerm2" class="headerlink" title="1 iTerm2"></a>1 <a href="https://iterm2.com/downloads.html" target="_blank" rel="external">iTerm2</a></h4><blockquote>
+<p> OS X 下一款开源免费的的终端工具，用它替代了原生的 Terminal，与<a href="https://www.jianshu.com/p/2f4bf19001b6" target="_blank" rel="external">Oh My Zsh</a>一起使用</p>
 </blockquote>
-<p>静态库的特点：</p>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install iterm2</div></pre></td></tr></table></figure>
 <ul>
-<li>静态库嵌入App<ul>
-<li>在App项目编译的时候会被编译到目标程序中，所以得到的App二进制文件会变大</li>
-<li>浪费空间和资源的弊端<ul>
-<li>不同的应用程序如果调用相同的库，那么在内存里会有多份该共享库的实例</li>
-</ul>
+<li><p>brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发</p>
 </li>
-<li>静态库更新，程序需要重新编译</li>
-</ul>
-</li>
-<li>静态库依赖的其他类库，需要手动导入</li>
-<li>减少耦合<ul>
-<li>不可以包含其他静态库</li>
-</ul>
-</li>
-<li>每一个静态库都是独立的，不会重复引用</li>
-<li>StaticLibrary需要设置头文件搜索路径，Framework不需要</li>
-<li>共享运行环境（一个应用程序中）<ul>
-<li>假如其运行环境中包换库中同一个类，会发生代码冲突，必须剥离其中一方的此类，然后共享此类</li>
-</ul>
+<li><p>brew cask主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在mac中直接运行使用</p>
 </li>
 </ul>
-<p>framework和.a两种静态库的区别</p>
-<ul>
-<li>.a是一个纯二进制文件<ul>
-<li>.framework中除了有二进制文件之外还有资源文件</li>
+<p>一些基本功能如下：<br> 1、分窗口操作：shift+command+d（横向）command+d（竖向）<br> 2、查找和粘贴：command+f，呼出查找功能，tab 键选中找到的文本，option+enter 粘贴<br> 3、自动完成：command+; 根据上下文呼出自动完成窗口，上下键选择<br> 4、粘贴历史：shift+command+h5、回放功能：option+command+b<br> 6、全屏：command+enter<br> 7、光标去哪了？command+/<br> 8、Expose Tabs：Option+Command+E<br> 功能还有很多，多用多体会。</p>
+<h4 id="2-oh-my-zsh"><a href="#2-oh-my-zsh" class="headerlink" title="2 oh-my-zsh"></a>2 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">oh-my-zsh</a></h4><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c &quot;$(curl -fsSL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh)&quot;</div></pre></td></tr></table></figure>
+<h4 id="3-配置"><a href="#3-配置" class="headerlink" title="3 配置"></a>3 配置</h4><h5 id="1-修改主题"><a href="#1-修改主题" class="headerlink" title="1 修改主题"></a>1 修改主题</h5><ul>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="external">可选主题</a></li>
 </ul>
-</li>
-<li>.a文件不能直接使用，至少要有.h文件配合<ul>
-<li>.framework文件可以直接使用。</li>
-</ul>
-</li>
-<li>.a + .h + sourceFile = .framework。</li>
-<li>.a只是静态库<ul>
-<li>framework既可以是静态库也可以是动态库</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-2-动态库（-framework、-dylib、-tbd）"><a href="#3-2-动态库（-framework、-dylib、-tbd）" class="headerlink" title="3.2 动态库（.framework、.dylib、.tbd）"></a>3.2 动态库（.framework、.dylib、.tbd）</h5><blockquote>
-<p>动态库在链接(link)阶段，不会被链接到目标代码中，而是在程序运行是才被载入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 修改 ZSH_THEME=&quot;主题名&quot;</div><div class="line">vim ~/.zshrc</div><div class="line">ZSH_THEME=&quot;ys&quot;</div></pre></td></tr></table></figure>
+<h5 id="2-代码高亮-zsh-syntax-highlighting"><a href="#2-代码高亮-zsh-syntax-highlighting" class="headerlink" title="2 代码高亮 (zsh-syntax-highlighting)"></a>2 代码高亮 (<a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md" target="_blank" rel="external">zsh-syntax-highlighting</a>)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 1 安装</div><div class="line">brew install zsh-syntax-highlighting</div><div class="line"># 2 用 vim 打开 .zshrc 文件，找到插件设置命令(快捷键 /plugins=)，默认是 plugins=(git) </div><div class="line">plugins=(zsh-syntax-highlighting git)</div></pre></td></tr></table></figure>
+<h5 id="3-自动提示命令（zsh-autosuggestions）"><a href="#3-自动提示命令（zsh-autosuggestions）" class="headerlink" title="3 自动提示命令（zsh-autosuggestions）"></a>3 自动提示命令（<a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md" target="_blank" rel="external">zsh-autosuggestions</a>）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 1 Homebrew安装</div><div class="line">brew install zsh-autosuggestions</div><div class="line">source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh</div><div class="line"># 2 修改字体浅淡（可省略）修改 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=&apos;fg=10&apos; </div><div class="line">vim /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh</div></pre></td></tr></table></figure>
+<h5 id="4-快速切换目录（autojump）"><a href="#4-快速切换目录（autojump）" class="headerlink" title="4 快速切换目录（autojump）"></a>4 快速切换目录（autojump）</h5><blockquote>
+<p>autojump是一个命令行工具,它允许你可以直接跳转到你喜爱的目录,而不受当前所在目录的限制。意思就是可以让你更快地切换目录,而不用频繁地使用cd tab 等命令</p>
 </blockquote>
-<p>动态库（也称共享库）的特点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 1 安装</div><div class="line">brew install autojump</div><div class="line"># 2 用 vim 打开 .zshrc 文件，找到插件设置命令(快捷键 /plugins=)，默认是 plugins=(git) </div><div class="line">plugins=( autojump )</div><div class="line"># 3 在source $ZSH/oh-my-zsh.sh 下边添加如下代码</div><div class="line">[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh</div></pre></td></tr></table></figure>
 <ul>
-<li><p>程序运行时才被载入</p>
+<li>目录跳转:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">j [目录的名字或名字的一部分] // 不受当前所在目录的限制</div></pre></td></tr></table></figure>
 <ul>
-<li>避免浪费空间和资源的弊端<ul>
-<li>不同的应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例</li>
+<li>查看当前权重:</li>
 </ul>
-</li>
-<li>增量更新<ul>
-<li>动态库更新，程序不需要重新编译</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>动态库可以包含静态库，也能自动link所需要的依赖库</p>
-</li>
-<li><p>与运行环境隔离</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">j --stat</div></pre></td></tr></table></figure>
 <ul>
-<li>运行环境中包换库中同一个类，不会发生冲突，同名的两个类会在各自的环境中独立运行，互不干扰，哪怕是单例类</li>
+<li>进入权重最高的目录:</li>
 </ul>
-</li>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">j</span></div></pre></td></tr></table></figure>
+<ul>
+<li>改变权重值</li>
 </ul>
-<blockquote>
-<p>注意：</p>
-<p>1 苹果在iOS 8之前并不支持自己开发的framework.</p>
-<p>2 自己开发的framework无论是动态还是静态的，都要复制到目标程序，苹果又把这种Framework叫做<a href="https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html" target="_blank" rel="external">Embedded Framework</a></p>
-<p>3  Xcode中需要导入我们自己制作的动态库时，需要在Xcode中的<strong>Build phase-&gt;Copy Files</strong>选项添加,其中destination选择“Frameworks”，不然会报错：image not found。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">j</span> <span class="selector-tag">-i</span> <span class="selector-attr">[权重]</span> <span class="comment">// 增加 </span></div><div class="line"></div><div class="line"><span class="selector-tag">j</span> <span class="selector-tag">-d</span> <span class="selector-attr">[权重]</span> <span class="comment">// 减少</span></div></pre></td></tr></table></figure>
+<h5 id="5-启动问候语设置"><a href="#5-启动问候语设置" class="headerlink" title="5 启动问候语设置"></a>5 启动问候语设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 cd /etc</div><div class="line">2 sudo pico motd</div><div class="line">3 control+x</div><div class="line">4 设置问候语</div><div class="line">5 用 y保存退出，再 y一次确认文件名motd</div></pre></td></tr></table></figure>
+<h5 id="6-设置背景图"><a href="#6-设置背景图" class="headerlink" title="6 设置背景图"></a>6 设置背景图</h5><blockquote>
+<p> pereference -&gt; Profiles -&gt; window -&gt; Background image </p>
 </blockquote>
-<h5 id="3-3-判断库是动态库还是静态库-用file命令"><a href="#3-3-判断库是动态库还是静态库-用file命令" class="headerlink" title="3.3  判断库是动态库还是静态库,用file命令"></a>3.3  判断库是动态库还是静态库,用file命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ cd myframework.Frameworks</div><div class="line">$ ls -l</div><div class="line">	myframework</div><div class="line">$ file myframework</div><div class="line">#静态库，显示archive</div><div class="line">&gt; myframework.Frameworks: Mach-O universal binary with 2 architectures: [arm_v7:current ar archive] [arm64]</div><div class="line">&gt; myframework.Frameworks (for architecture armv7):	current ar archive</div><div class="line"> </div><div class="line"> #动态库，dynamically</div><div class="line">&gt; myframework: Mach-O universal binary with 2 architectures: [arm_v7] [arm64:Mach-O 64-bit dynamically linked shared library arm64]</div><div class="line">&gt; myframework (for architecture armv7):	Mach-O dynamically linked shared library arm_v7</div></pre></td></tr></table></figure>
-<h5 id="3-4-合并两个静态库"><a href="#3-4-合并两个静态库" class="headerlink" title="3.4  合并两个静态库"></a>3.4  合并两个静态库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create 模拟器静态库（动态库） 真机静态库（动态库） -output 新静态库的名称（动态库）</div></pre></td></tr></table></figure>
-<p>注意：</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.jianshu.com/p/59a3f1601cfc" target="_blank" rel="external">1 最简单oh-my-zsh mac版基本插件安装-菜鸟实操整理</a></p>
+<p><a href="https://www.jianshu.com/p/bcbe916f97e1" target="_blank" rel="external">2 Vim入门基础</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/26/UIScrollView-autolayout-on-a-storyboard/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/26/UIScrollView-autolayout-on-a-storyboard/" itemprop="url">
+                  UIScrollView  autolayout on a storyboard
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-26T11:27:07+08:00">
+                2018-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/26/UIScrollView-autolayout-on-a-storyboard/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/26/UIScrollView-autolayout-on-a-storyboard/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/26/UIScrollView-autolayout-on-a-storyboard/" class="leancloud_visitors" data-flag-title="UIScrollView  autolayout on a storyboard">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-主要步骤"><a href="#1-主要步骤" class="headerlink" title="1 主要步骤"></a>1 主要步骤</h4><p>1 添加UIScrollView到ViewController（main view），添加 top, bottom, left and right 的constraints（相对于main view）<br><img src="https://img-blog.csdn.net/20180726103026601?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>2 添加UIView作为UIScrollView的contentview（这一步是必须的），添加 top, bottom, left , right,Equal Widths 和 Widths 的constraints （相对于main view，或者相对于UIScrollView）</p>
+<p><img src="https://img-blog.csdn.net/20180726103054537?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180726103104111?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>3 设置滚动方向，修改Equal Heights（Equal Widths）的priority 为low（250）</p>
 <ul>
-<li><p>动态库不是合成.framework，是合成.framework里面的一个黑色文件（二进制文件），生成的也是这个黑色文件，只需将合成的黑色文件替换就好了</p>
-</li>
-<li><p>如果制作的是动态库的话，一定要embeded binaries中将库导入一下（target —&gt; General  —&gt; Embedded Binaries下添加你的动态链接库）</p>
-<ul>
-<li>或者你也可以将动态库当做一个资源文件使用在Build Phases-&gt;Copy Bundle Resources中添加，然后就可以用bundle的方式使用动态库了</li>
+<li>横向滚动<ul>
+<li>设置Equal Widths</li>
 </ul>
 </li>
-<li><p>如果库中包含系统的分类，一定要在target linker flag 里面配置-ObjC以及-all_load</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSString *documentsPath = [NSString stringWithFormat:@&quot;%@/Documents/FWPaySdk.framework/FWPaySdk&quot;,NSHomeDirectory()];  </div><div class="line">   NSError *err = nil;  </div><div class="line">   NSBundle *bundle = [NSBundle bundleWithPath:documentsPath];  </div><div class="line">   if ([bundle loadAndReturnError:&amp;err]) &#123;  </div><div class="line">       NSLog(@&quot;bundle load framework success.&quot;);  </div><div class="line">   &#125; else &#123;  </div><div class="line">       NSLog(@&quot;bundle load framework err:%@&quot;,err);  </div><div class="line">   &#125;  </div><div class="line">     </div><div class="line">   Class worder = NSClassFromString(@&quot;FWorder&quot;);  </div><div class="line">    FWorder * order = (FWorder *)[[worder alloc] init];</div></pre></td></tr></table></figure>
+</ul>
+<p><img src="https://img-blog.csdn.net/20180726103807377?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<ul>
+<li>纵向滚动<ul>
+<li>设置Equal Heights</li>
+</ul>
 </li>
 </ul>
-<h3 id="4-Framework、-a、-dylib-tbd"><a href="#4-Framework、-a、-dylib-tbd" class="headerlink" title="4 Framework、.a、.dylib/.tbd"></a>4 Framework、.a、.dylib/.tbd</h3><h4 id="4-1-Framework（框架）"><a href="#4-1-Framework（框架）" class="headerlink" title="4.1 .Framework（框架）"></a>4.1 .Framework（框架）</h4><ul>
-<li><p>Headers</p>
+<p><img src="https://img-blog.csdn.net/20180726103832494?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">          </p>
+<p>5 往UIScrollView中添加内容。比如两个view</p>
 <ul>
-<li>Framework需要暴露的头文件</li>
+<li>垂直<ul>
+<li>首先要保证height constraint被定义（height equals to A or less or equal to A）</li>
+<li>其次保证每个View的vertical spacing被定义</li>
+<li>此外最上层的View和最下层的View 分别要有相对于我们添加的 ‘Content View’ 的 top spacing 和  bottom spacing的constraint</li>
 </ul>
 </li>
-<li><p>binary文件</p>
-<ul>
-<li>整个Framework的核心，所有代码都被编译成了这样一坨二进制文件，</li>
-<li>添加的依赖库不会被编译进来，用的时候需要重新link其他依赖库。</li>
+<li>水平<ul>
+<li>首先要保证width constraint被定义（width equals to A or less or equal to A ）（A表示某一个值）</li>
+<li>其次保证每个View的horizontal spacing被定义</li>
+<li>此外最左变的View和最右边的View 分别要有相对于我们添加的 ‘Content View’ 的 leading spacing 和  trailling spacing的constraint</li>
 </ul>
 </li>
-<li><p>.bundle</p>
-<ul>
-<li>资源文件都打包放在这里。在制作Framework的时候不可以把图片直接放在项目中，否则制作好之后图片是一张一张的出现在项目中非常乱，需要新建一个bundle将图片放进去，这里的bundle提供整个SDK的图片资源</li>
-<li>图片放进bundle之后不可以用<code>[UIImage ImageWithName:]</code>读取图片。要先找到bundle包再拿图片</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define BUNDLE_NAME @&quot;Resources.bundle&quot;</div><div class="line"></div><div class="line">#define BUNDLE [NSBundle bundleWithPath: [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: BUNDLE_NAME]]</div><div class="line"></div><div class="line">#define LOADIMAGE(name) [UIImage imageWithContentsOfFile:[[BUNDLE resourcePath] stringByAppendingPathComponent:name]]</div></pre></td></tr></table></figure>
-<p>​</p>
+<h4 id="2-例子"><a href="#2-例子" class="headerlink" title="2 例子"></a>2 例子</h4><p>1) Vertical ScrollView </p>
+<p><img src="https://img-blog.csdn.net/2018072611151494?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="https://img-blog.csdn.net/20180726111504459?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>2) Horizontal ScrollView </p>
+<p><img src="https://img-blog.csdn.net/20180726111656390?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180726111711415?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><a href="https://download.csdn.net/download/u010828718/10565092" target="_blank" rel="external">下载地址：demo</a></p>
+<h4 id="3-参考"><a href="#3-参考" class="headerlink" title="3 参考"></a>3 参考</h4><p><a href="https://medium.com/@luisfmachado/uiscrollview-autolayout-on-a-storyboard-a-step-by-step-guide-15bd67ee79e9" target="_blank" rel="external">1 UIScrollView autolayout on a storyboard. A step-by-step guide </a>（翻墙才能看，底端有视频）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/iOS-上传Framework到cocoapods/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/20/iOS-上传Framework到cocoapods/" itemprop="url">
+                  iOS 上传Framework到cocoapods
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T20:15:16+08:00">
+                2018-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/20/iOS-上传Framework到cocoapods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/20/iOS-上传Framework到cocoapods/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/20/iOS-上传Framework到cocoapods/" class="leancloud_visitors" data-flag-title="iOS 上传Framework到cocoapods">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="iOS-上传Framework到cocoapods"><a href="#iOS-上传Framework到cocoapods" class="headerlink" title="iOS 上传Framework到cocoapods"></a>iOS 上传Framework到cocoapods</h4><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>制作cocoapods步骤</p>
+<ul>
+<li><p>创建github平台上的仓库</p>
+</li>
+<li><p>创建.podspec</p>
+</li>
+<li><p>编辑.podspec</p>
+</li>
+<li><p>代码提交到github平台</p>
+</li>
+<li><p>项目打tag</p>
+</li>
+<li><p>验证.podspec</p>
+</li>
+<li><p>注册 cocoapods trunk帐号</p>
+</li>
+<li><p>发布.podspec到cocoapods</p>
 </li>
 </ul>
-<ul>
-<li>Info.plist和Modules<ul>
-<li>记录Framework的版本等相关信息，一般都会删掉</li>
+<h4 id="1-创建github平台上的仓库"><a href="#1-创建github平台上的仓库" class="headerlink" title="1 创建github平台上的仓库"></a>1 创建github平台上的仓库</h4><ul>
+<li>在github上创建一个新的仓库</li>
+<li>填写Repository name<ul>
+<li>勾选Public</li>
+</ul>
+</li>
+<li>勾选Initialize this repository With a README</li>
+<li>Add .gitignore: <ul>
+<li>根据你的情况自己选择。比如： Objectvie-C</li>
+</ul>
+</li>
+<li>Add a license:: <ul>
+<li>根据你的情况自己选择。比如：MIT License</li>
+</ul>
+</li>
+<li>clone代码到本地<ul>
+<li>git clone <a href="https://github.com/xxx/xxx.git" target="_blank" rel="external">https://github.com/xxx/xxx.git</a></li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p>注意：</p>
-<p>1  Framework是动态库还是静态库，取决于编译成的Mach-O（就是那个二进制文件）</p>
-<p>2 Buiding Setings -&gt; Mach-O Type: 默认选择的是Dynamic Library(动态库)，选择Static Library是静态库</p>
+<p>如果有两个github，提交到github前，需要在clone下来的文件中去修改隐藏文件  .Git/config 。否则出现The requested URL returned error: 403 Forbidden while accessing的错误。</p>
+<p>步骤如下：</p>
+<ol>
+<li>vim .Git/config</li>
+<li>修改 url = <a href="https://github.com/xxx/example.git" target="_blank" rel="external">https://github.com/xxx/example.git</a> 为 url = <a href="https://xx@github.com/xxx/example.git" target="_blank" rel="external">https://xx@github.com/xxx/example.git</a> </li>
+</ol>
 </blockquote>
-<h4 id="4-2-a"><a href="#4-2-a" class="headerlink" title="4.2 .a"></a>4.2 .a</h4><ul>
-<li>这类静态库与Framework基本类似，在打包成.a文件的同时，还需要提供头文件，而Framework编译完成暴露的头文件都已经放好了</li>
+<h4 id="2-创建-podspec"><a href="#2-创建-podspec" class="headerlink" title="2 创建.podspec"></a>2 创建.podspec</h4><ul>
+<li>$ pod spec create XXXSDK</li>
+<li>$ vim  XXXSDK.podspec</li>
 </ul>
-<h4 id="4-3-dylib-tbd"><a href="#4-3-dylib-tbd" class="headerlink" title="4.3 .dylib/.tbd"></a>4.3 .dylib/.tbd</h4><ul>
-<li>基本上都是系统提供的动态库</li>
-</ul>
-<h3 id="5-如何选择使用Framework还是StaticLibrary"><a href="#5-如何选择使用Framework还是StaticLibrary" class="headerlink" title="5 如何选择使用Framework还是StaticLibrary"></a>5 如何选择使用Framework还是StaticLibrary</h3><ul>
-<li>假如不想在同一个App中包含多份三方库(减小包大小)，可以使用StaticLibrary，库本身和App共享第三方库。但是产出物的结构可能会比较乱。</li>
-<li>假如不想考虑和App的代码冲突问题，库本身独立使用需要的库，想提供比较好的库结构，可以使用Framework。但是假如库本身和App都使用了同一个三方库，会存在两份三方库，会增加包大小。</li>
-</ul>
-<h3 id="6-iOS自动化版本号和编译号"><a href="#6-iOS自动化版本号和编译号" class="headerlink" title="6 iOS自动化版本号和编译号"></a>6 iOS自动化版本号和编译号</h3><p><code>agvtool</code></p>
+<h4 id="3-编辑-podspec"><a href="#3-编辑-podspec" class="headerlink" title="3 编辑.podspec"></a>3 编辑.podspec</h4><p>假设：github文件夹目录结构</p>
 <ul>
-<li>是一个增加版本号的命令行工具</li>
+<li>XXXSDK<ul>
+<li>lib </li>
 </ul>
-<p><code>版本号（Version）</code></p>
+</li>
+<li>XXXSDK.framework<ul>
+<li>openSource</li>
+<li>publicSource.h </li>
+<li>publicSource.m</li>
+</ul>
+</li>
+<li>resource<ul>
+<li>resource.bundle</li>
+<li>resource.jpg</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">Pod::Spec.new do |s|</div><div class="line">s.name         = &quot;XXXSDK&quot;</div><div class="line">s.version      = &quot;1.0.0&quot;</div><div class="line">s.summary      = &quot;这是一个SDK&quot;</div><div class="line">s.description  = &quot;这是一个SDK 一定要比summary长.&quot;</div><div class="line">s.homepage     = &quot;https://github.com/xxxx/XXXSDK&quot;</div><div class="line">s.license      = &#123; :type =&gt; &quot;MIT&quot;, :file =&gt; &quot;LICENSE&quot; &#125;</div><div class="line">s.author       = &#123; &quot;作者&quot; =&gt; &quot;123456@qq.com&quot; &#125;</div><div class="line">s.platform     = :ios, &quot;8.0&quot;</div><div class="line"></div><div class="line">#  When using multiple platforms ios部署版本</div><div class="line"># s.ios.deployment_target = &quot;5.0&quot;</div><div class="line"># s.osx.deployment_target = &quot;10.7&quot;</div><div class="line"></div><div class="line">#1 git commit -m =&gt;&quot;13287dd&quot;,讲pod版本与git仓库中的某一次提交绑定</div><div class="line">#s.source = &#123; :git =&gt; &quot;https://github.com/xxxx/XXXSDK&quot;, :commit =&gt; &quot;13287dd&quot; &#125;</div><div class="line">#2 将这个Pod版本与Git仓库中某个版本的comit绑定 </div><div class="line">#s.source = &#123; :git =&gt; &quot;https://github.com/xxxx/XXXSDK&quot;, :tag =&gt; 1.0.0 &#125;</div><div class="line">#3 将这个Pod版本与Git仓库中相同版本的comit绑定</div><div class="line">#s.source = &#123; :git =&gt; &quot;https://github.com/xxxx/XXXSDK&quot;, :tag =&gt; s.version &#125;</div><div class="line">s.source       = &#123; :git =&gt; &quot;https://github.com/xxxx/XXXSDK.git&quot;, :tag =&gt; &quot;v#&#123;s.version&#125;&quot; &#125;</div><div class="line">s.source_files  = &quot;XXXSDK&quot;, &quot;XXXSDK/openSource/*.&#123;h,m&#125;&quot;</div><div class="line">s.vendored_frameworks = &apos;XXXSDK/lib/XXXSDK.framework&apos;</div><div class="line">s.resources          = &quot;XXXSDK/resource/resource.bundle&quot;</div><div class="line">s.framework  = &quot;UIKit&quot;</div><div class="line">#s.resource    = &quot;XXXSDK/resource/resource.jpg&quot;</div><div class="line">#s.frameworks = &quot;SomeFramework&quot;, &quot;AnotherFramework&quot;</div><div class="line">#引用libxml2.lib和libz.lib、tbd ，去掉头尾的lib</div><div class="line"># s.library   = &quot;z&quot;</div><div class="line"># s.libraries = &quot;z&quot;, &quot;xml2&quot;</div><div class="line">#s.vendored_libraries = &apos;XXXSDK/lib/XXXSDK.a&apos;</div><div class="line">s.requires_arc = true</div><div class="line"># s.xcconfig = &#123; &quot;HEADER_SEARCH_PATHS&quot; =&gt; &quot;$(SDKROOT)/usr/include/libxml2&quot; &#125;</div><div class="line"># s.dependency &quot;JSONKit&quot;, &quot;~&gt; 1.4&quot; s.dependency = &apos;AFNetworking&apos;, &apos;~&gt; 2.3&apos; s.dependency = &apos;SDWebImage&apos;</div><div class="line"># 创建子库</div><div class="line">#s.subspec &apos;Components&apos; do |ss|</div><div class="line">#ss.source_files = &apos;YDKit/Components/*/.&#123;h,m&#125;&apos;</div><div class="line">#end</div><div class="line">end</div></pre></td></tr></table></figure>
 <ul>
-<li>给用户看的，用于标明当前的发行版本</li>
-<li>存储在 <code>Info.plist</code> 文件的 <code>CFBundleShortVersionString (Bundle versions string, short)</code>中</li>
+<li>s.name：<ul>
+<li>名称</li>
+<li><code>pod search</code> 搜索的关键词,一定要和<code>.podspec</code>的名称一样,否则报错</li>
 </ul>
-<p><code>编译号（Build）</code></p>
+</li>
+<li><code>s.version</code>：<ul>
+<li>版本号</li>
+</ul>
+</li>
+<li><code>s.ios.deployment_target</code>:<ul>
+<li>支持的<code>pod</code>最低版本</li>
+</ul>
+</li>
+<li><code>s.summary</code>: <ul>
+<li>简介</li>
+</ul>
+</li>
+<li><code>s.homepage</code>:<ul>
+<li>项目主页地址</li>
+</ul>
+</li>
+<li><code>s.license</code>:<ul>
+<li>开源协议(创建<code>github</code>库的时候选择的)</li>
+</ul>
+</li>
+<li><code>s.author</code>:<ul>
+<li>作者信息(这里随便谢谢也可以通过)</li>
+</ul>
+</li>
+<li><code>s.social_media_url</code>:<ul>
+<li>社交网址</li>
+</ul>
+</li>
+<li><code>s.source</code>:<ul>
+<li>项目的地址</li>
+</ul>
+</li>
+<li><code>s.source_files</code>:<ul>
+<li>需要包含的源文件</li>
+</ul>
+</li>
+<li><code>s.resource</code>:<ul>
+<li>资源文件,单个</li>
+</ul>
+</li>
+<li><code>s.resources</code>: <ul>
+<li>资源文件(含<code>bundle</code>)</li>
+</ul>
+</li>
+<li><code>s.vendored_frameworks</code>:<ul>
+<li>包含的<code>framework</code>,也就是我们自己制作的pod</li>
+</ul>
+</li>
+<li><code>s.requires_arc</code>: <ul>
+<li>是否支持<code>ARC</code></li>
+</ul>
+</li>
+<li><code>s.dependency</code>：<ul>
+<li>依赖库，不能依赖未发布的库.如AFNetWorking</li>
+</ul>
+</li>
+<li><code>s.description</code>:<ul>
+<li>描述,字数要比<code>s.summary</code>长</li>
+</ul>
+</li>
+<li><code>s.screenshots</code>:<ul>
+<li>截图</li>
+</ul>
+</li>
+<li><code>s.exclude_files</code>:<ul>
+<li>隐藏的文件</li>
+</ul>
+</li>
+<li><code>s.public_header_files</code>:<ul>
+<li>公开的头文件</li>
+</ul>
+</li>
+<li><code>s.framework</code>:<ul>
+<li>所需的<code>framework</code>,单个</li>
+</ul>
+</li>
+<li><code>s.frameworks</code>:<ul>
+<li>所需的<code>framework</code>,多个用逗号隔开</li>
+</ul>
+</li>
+<li><code>s.library</code><ul>
+<li>引用的静态库 </li>
+</ul>
+</li>
+<li><code>s.libraries</code><ul>
+<li>引用的静态库,多个用逗号隔开</li>
+</ul>
+</li>
+<li><code>s.vendored_libraries</code>:<ul>
+<li>引用自己生成的.a</li>
+</ul>
+</li>
+<li><code>s.vendored_frameworks</code>:<ul>
+<li>引用自己生成的.framework</li>
+</ul>
+</li>
+<li><code>s.dependency</code>:<ul>
+<li>依赖的库</li>
+</ul>
+</li>
+<li><code>s.ios.deployment_target</code><ul>
+<li>iOS部署版本</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-代码提交到github平台"><a href="#4-代码提交到github平台" class="headerlink" title="4 代码提交到github平台"></a>4 代码提交到github平台</h4><p>提交到github</p>
 <ul>
-<li>内部使用的，用于标明未发行或者已内部发行的应用程序</li>
-<li>存储在 <code>Info.plist</code> 文件的 <code>CFBundleVersion (Bundle version)</code> 中</li>
+<li>将要上传的文件，拖到此文件夹下</li>
+<li>git add .</li>
+<li>git commit -m “描述”</li>
+<li>git push -u origin master </li>
 </ul>
+<h4 id="5-项目打tag"><a href="#5-项目打tag" class="headerlink" title="5 项目打tag"></a>5 项目打tag</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git tag &apos;v1.0.0&apos;</div><div class="line"></div><div class="line">git push origin --tags</div><div class="line"></div><div class="line">#下边是拓展，不再步骤中</div><div class="line">#删除远程tag</div><div class="line">git push origin --delete tag &apos;v1.0.0&apos;</div></pre></td></tr></table></figure>
+<h4 id="6-验证-podspec"><a href="#6-验证-podspec" class="headerlink" title="6 验证.podspec"></a>6 验证.podspec</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 加上--verbose验证失败会显示详细的报错信息</div><div class="line">pod spec lint XXXSDK.podspec --verbose</div></pre></td></tr></table></figure>
+<p>如果验证成功的话会显示</p>
 <blockquote>
-<p><strong>注意：</strong>如果应用程序包含了多个目标（target），<code>agvtool</code> 工具将会把所有目标都设置为同一个版本号和编译号。</p>
+<p> XXXSDK.podspec passed validation.</p>
 </blockquote>
-<h4 id="6-1-启用-agvtool"><a href="#6-1-启用-agvtool" class="headerlink" title="6.1 启用 agvtool"></a>6.1 启用 agvtool</h4><ul>
-<li><p>设置 Current Project Version 为选定的值</p>
-<ul>
-<li>Xcode 工程文件<code>project.pbxproj</code>包含了 <code>CURRENT_PROJECT_VERSION (Current Project Version)</code>编译设定，这个编译设定指定了当前工程的版本。agvtool 会搜索此编译选项。如果这个值存在就运行，否则不运行，这个值用来更新编译号</li>
-</ul>
-</li>
-<li><p>设置 Versioning System 为 Apple Generic</p>
-<ul>
-<li>默认情况下苹果不使用任何版本系统，设置为 Apple Generic 确保 Xcode 包含全部的 agvtool 生成的版本信息</li>
-</ul>
+<h4 id="7-注册-cocoapods-trunk帐号"><a href="#7-注册-cocoapods-trunk帐号" class="headerlink" title="7 注册 cocoapods trunk帐号"></a>7 注册 cocoapods trunk帐号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># 1 注册</div><div class="line">pod trunk register 123456@qq.com &apos;用户名&apos; --description=&apos;描述&apos; --verbose</div><div class="line"></div><div class="line"># 下边是拓展，不再步骤中</div><div class="line"># 2 查看注册信息</div><div class="line">pod trunk me</div><div class="line"># 3 添加其他维护者</div><div class="line">pod trunk add-owner XXXSDK 123456@qq.com</div><div class="line"># 4 删除已发的版本</div><div class="line">pod trunk delete XXXSDK 版本号</div><div class="line"># 5 删除某个pod</div><div class="line">pod trunk deprecate XXXSDK</div><div class="line"># 6 删除其他维护者</div><div class="line">pod trunk remove-owner XXXSDK 56789@qq.com</div></pre></td></tr></table></figure>
+<h4 id="8-发布-或更新-podspec到cocoapods"><a href="#8-发布-或更新-podspec到cocoapods" class="headerlink" title="8 发布(或更新).podspec到cocoapods"></a>8 发布(或更新).podspec到cocoapods</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk push XXXSDK.podspec</div></pre></td></tr></table></figure>
+<h4 id="9-注意"><a href="#9-注意" class="headerlink" title="9 注意"></a>9 注意</h4><ul>
+<li><p>pod search 搜索的时候出现[!] Unable to find a pod with name, author, summary, or description matching <code>xxxxx</code> 错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm ~/Library/Caches/CocoaPods/search_index.json </div><div class="line">pod search xxx</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="6-2-设置版本和编译号"><a href="#6-2-设置版本和编译号" class="headerlink" title="6.2 设置版本和编译号"></a>6.2 设置版本和编译号</h4><ul>
-<li>进入到包含 .xcodeproj 工程文件的目录</li>
-<li>更新版本号</li>
-</ul>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">注意： </div><div class="line">如果存在多个Xcode需要选择一个，否则报错。 </div><div class="line">sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</div><div class="line">*/</div><div class="line"> agvtool<span class="built_in"> new-marketing-version </span> 2.1</div></pre></td></tr></table></figure>
 <ul>
-<li>更新编译号</li>
-</ul>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//自动更新编译号</div><div class="line"> agvtool next-version -all  </div><div class="line">//更新编译号</div><div class="line"> agvtool<span class="built_in"> new-version </span>-all 2.1</div></pre></td></tr></table></figure>
-<ul>
-<li>查看版本号</li>
-</ul>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">agvtool what-marketing-<span class="built_in">version</span></div></pre></td></tr></table></figure>
-<ul>
-<li>查看当前编译号</li>
-</ul>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">agvtool what-<span class="built_in">version</span></div></pre></td></tr></table></figure>
-<h3 id="7-其他："><a href="#7-其他：" class="headerlink" title="7  其他："></a>7  其他：</h3><h4 id="1-User-Head-Search-Paths-和Head-Search-Paths的区别"><a href="#1-User-Head-Search-Paths-和Head-Search-Paths的区别" class="headerlink" title="1 User Head Search Paths 和Head Search Paths的区别"></a>1 User Head Search Paths 和Head Search Paths的区别</h4><p>共同点</p>
-<ul>
-<li>用来存放 Project 中头文件的搜索根源，没有被add到项目里的头文件</li>
-</ul>
-<p>区别</p>
-<ul>
-<li><p>Xcode设置了Header Search Paths，则一定会去搜索的。</p>
-</li>
-<li><p>UserHeader Search Paths只有在Always Search User Paths（是否搜索用户路径）为Yes时才会被搜索</p>
-<ul>
-<li>&lt;&gt; 是从系统目录空间 （对应 Header Search Paths）中搜索文件，只在Header Search Paths 中搜索</li>
-<li>“” 是从用户目录空间（对应 User Header Search Paths）中搜索文件，如果没有则去Header Search Paths 搜索</li>
-</ul>
+<li><p>pod search 搜索搜不到,需要更新本地pod依赖库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod setup</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="2-iOS-Code-Sign-On-Copy"><a href="#2-iOS-Code-Sign-On-Copy" class="headerlink" title="2 iOS Code Sign On Copy"></a>2 <a href="http://www.cnblogs.com/breezemist/p/6553268.html" target="_blank" rel="external">iOS Code Sign On Copy</a></h4><p>xcode中embed的framework，都是需要签名的。如果在生成framework时，签过名了，就不用在选上 code sign on copy选项了。如果没有签过名，必须选上，不然无法在真机上运行！</p>
-<h4 id="3-常见模拟器-amp-真机所使用的CPU架构"><a href="#3-常见模拟器-amp-真机所使用的CPU架构" class="headerlink" title="3.常见模拟器&amp;真机所使用的CPU架构"></a>3.常见模拟器&amp;真机所使用的CPU架构</h4><ul>
-<li>模拟器使用的CPU架构 <ul>
-<li>iPhone3gs~iPhone5 : i386 </li>
-<li>iPhone5s~iPhone7plus : x86_64 </li>
-</ul>
-</li>
-<li>真机设备CPU架构<ul>
-<li>iPhone3gs~iPhone4s : armv7       </li>
-<li>iPhone5~iPhone5c : armv7s(只要支持armv7即可)         </li>
-<li>iPhone5s~iPhone7plus : arm64</li>
-</ul>
-</li>
-</ul>
-<h3 id="8-参考："><a href="#8-参考：" class="headerlink" title="8 参考："></a>8 参考：</h3><p><a href="https://developer.apple.com/videos/wwdc2014/#416" target="_blank" rel="external">1 WWDC 2014 Videos</a></p>
-<p><a href="https://www.cnblogs.com/brycezhang/p/4117180.html" target="_blank" rel="external">2 使用CocoaPods开发并打包静态库</a></p>
-<p><a href="http://www.cnblogs.com/zhanglinfeng/p/5493690.html" target="_blank" rel="external">3 iOS 最新framework和.a静态库制作及使用全解(含工程套工程，多工程联调)</a></p>
-<p><a href="http://www.cnblogs.com/wfwenchao/articles/5044475.html" target="_blank" rel="external">4 iOS 静态库，动态库与 Framework)</a></p>
-<p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html" target="_blank" rel="external">5 App Extension Programming Guide</a>  </p>
-<p><a href="https://www.jianshu.com/p/155a3cfb765e?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="external">6 iOS静态库SDK制作（包含第三方静态库）</a></p>
-<p><a href="https://developer.apple.com/library/content/qa/qa1827/_index.html" target="_blank" rel="external">7 Automating Version and Build Numbers Using agvtool</a></p>
-<p>mechanism 机制   conditionally 有条件的 Explore 探索 implement实施</p>
-<p>Deploying 部署     Adopting 采用  technologies 技术 facilitate 促进 corresponding 对应的</p>
+<h4 id="10-参考"><a href="#10-参考" class="headerlink" title="10 参考"></a>10 参考</h4><p> <a href="https://link.juejin.im/?target=https%3A%2F%2Fguides.cocoapods.org%2Fterminal%2Fcommands.html%23group_trunk" target="_blank" rel="external">1  trunk 命令详解</a></p>
+<p> <a href="https://link.juejin.im/?target=https%3A%2F%2Fguides.cocoapods.org%2Fmaking%2Findex.html" target="_blank" rel="external">2 制作cocoapods的官方网站</a></p>
+<p> <a href="https://juejin.im/post/5af289735188256712788257" target="_blank" rel="external">3 iOS 私有库、创建、使用、更新</a></p>
+<p><a href="https://segmentfault.com/a/1190000012269307" target="_blank" rel="external">4 Cocoapods整理（三）——编写podspec文件</a></p>
+<p><a href="https://guides.cocoapods.org/syntax/podspec.html#specification" target="_blank" rel="external">5 Podspec Syntax Reference</a></p>
+<p><a href="https://www.jianshu.com/p/112133356e8e" target="_blank" rel="external">6 iOS开发：项目管理之利用cocopods以及svn创建本地私有仓库</a></p>
+<p><a href="https://www.cnblogs.com/zhaoyanjun/p/5882784.html" target="_blank" rel="external">7 GitHub 实现多人协同提交代码并且权限分组管理</a></p>
 
           
         
@@ -1310,7 +1359,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Xcode Run之后发生的事/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/递归/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="童真的烂漫">
@@ -1335,8 +1384,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/05/05/Xcode Run之后发生的事/" itemprop="url">
-                  点击 Run 之后发生了什么
+                <a class="post-title-link" href="/2018/07/13/递归/" itemprop="url">
+                  递归
                 </a>
               
             
@@ -1352,8 +1401,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T15:51:27+08:00">
-                2018-05-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-13T10:19:03+08:00">
+                2018-07-13
               </time>
             
 
@@ -1375,8 +1424,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/原理/" itemprop="url" rel="index">
-                    <span itemprop="name">原理</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -1393,8 +1442,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/05/Xcode Run之后发生的事/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/05/Xcode Run之后发生的事/" itemprop="commentCount"></span>
+                <a href="/2018/07/13/递归/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/13/递归/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1402,7 +1451,7 @@
 
           
           
-             <span id="/2018/05/05/Xcode Run之后发生的事/" class="leancloud_visitors" data-flag-title="点击 Run 之后发生了什么">
+             <span id="/2018/07/13/递归/" class="leancloud_visitors" data-flag-title="递归">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1433,554 +1482,10 @@
       
         
           
-            <p><a href="https://www.jianshu.com/p/d5cf01424e92" target="_blank" rel="external">原文：点击 Run 之后发生了什么？</a></p>
-<p>简单来说，点击 Run 之后 App 进行编译、汇编、链接、代码签名以及启动执行等操作<br><img src="https://img-blog.csdn.net/20180529102159987?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h3 id="一-编译"><a href="#一-编译" class="headerlink" title="一 编译"></a>一 编译</h3><blockquote>
-<p>编译主要依靠编译器来完成一系列的操作</p>
+            <h4 id="1-递归的定义"><a href="#1-递归的定义" class="headerlink" title="1 递归的定义"></a>1 递归的定义</h4><blockquote>
+<p>程序调用自身的编程技巧称为递归（ recursion）</p>
 </blockquote>
-<p>主要操作有</p>
-<ul>
-<li>预处理</li>
-<li>词法分析</li>
-<li>语法分析</li>
-<li>语义分析</li>
-<li>生成中间代码</li>
-<li>生成目标代码</li>
-<li>优化目标代码</li>
-</ul>
-<p>OS X 现在使用的编译器是 <strong>LLVM （Low Level Virtual Machine）</strong>，在最初使用的是 GCC作为官方的编译器，但是由于下面的众多限制，apple 使用了自己的一套编译器</p>
-<ul>
-<li>GCC 原名为<strong>GNU C语言编译器</strong>，它原本只能处理 C语言，后来扩展了Objective-C、Java等语言，但是对于Objective-C的处理还是存在众多不便</li>
-<li>GCC 效率低下、性能不强</li>
-<li>苹果开发自己的编译器，有利于开展自己的工具链，比如后期做 Swift、lldb 等</li>
-</ul>
-<h5 id="llvm-的基本架构"><a href="#llvm-的基本架构" class="headerlink" title="llvm 的基本架构"></a>llvm 的基本架构</h5><p><img src="https://img-blog.csdn.net/20180529105852249?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="1-编译器"><a href="#1-编译器" class="headerlink" title="1 编译器"></a>1 编译器</h5><ul>
-<li>编译器前端（clang）<ul>
-<li>负责产生机器无关的<strong>中间代码</strong></li>
-</ul>
-</li>
-<li>编译器后端<ul>
-<li>负责对<strong>中间代码</strong>进行优化并转化为<strong>目标机器代码</strong></li>
-</ul>
-</li>
-</ul>
-<p>中间代码（IR：intermediate representation）也称为中间表示</p>
-<ul>
-<li>通过中间代码为不同的语言针对诸多架构生成代码<br><img src="https://img-blog.csdn.net/20180529142417770?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></li>
-</ul>
-<h4 id="2-预处理"><a href="#2-预处理" class="headerlink" title="2 预处理"></a>2 预处理</h4><ul>
-<li>处理源文件中以 #开头的预编译命令，比如#include等</li>
-</ul>
-<h4 id="3-词法分析"><a href="#3-词法分析" class="headerlink" title="3 词法分析"></a>3 词法分析</h4><p>将输入分解为一个个独立的词法符号，也叫<strong>单词符号（token）</strong></p>
-<ul>
-<li>注释、宏、空格、换行等都不是单词</li>
-</ul>
-<p>例子：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1 find a zero</span></div><div class="line"><span class="keyword">float</span>  matchZero(<span class="keyword">char</span> *s) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//2 返回下列单词流</span></div><div class="line"><span class="comment">//大概了解即可，觉得背这些词法符号定义对目前 iOS 开发用处不大</span></div><div class="line"><span class="keyword">FLOAT</span>、ID(MATCHZERO)、LPAREN、<span class="keyword">CHAR</span>、ID(S) 、RPAREN</div></pre></td></tr></table></figure>
-<h4 id="4-语法分析"><a href="#4-语法分析" class="headerlink" title="4 语法分析"></a>4 语法分析</h4><ul>
-<li>将符号化的字符串，转化抽象为能被计算机存储的树形结构（即抽象语法树（AST））</li>
-<li>验证语法的正确性<ul>
-<li>例如：忘记带分号</li>
-</ul>
-</li>
-<li>只能完成语法层面的分析，无法判别整个语句的真正意义<ul>
-<li>比如类型不匹配就无法检查<h4 id="5-语义分析"><a href="#5-语义分析" class="headerlink" title="5 语义分析"></a>5 语义分析</h4></li>
-</ul>
-</li>
-<li>类型检查、以及符号表管理</li>
-</ul>
-<h4 id="6-生成中间代码"><a href="#6-生成中间代码" class="headerlink" title="6 生成中间代码"></a>6 生成中间代码</h4><ul>
-<li>编译器前端<ul>
-<li>负责产生机器无关的<strong>中间代码</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="7-目标代码的生成与优化"><a href="#7-目标代码的生成与优化" class="headerlink" title="7 目标代码的生成与优化"></a>7 目标代码的生成与优化</h4><p>编译器后端包括</p>
-<ul>
-<li>代码生成器<ul>
-<li>代码生成器将<strong>中间代码</strong>转换为<strong>目标代码</strong></li>
-</ul>
-</li>
-<li>代码优化器<ul>
-<li>代码优化器主要是进行一些优化，比如删除多余指令，选择合适寻址方式等</li>
-</ul>
-</li>
-</ul>
-<h3 id="二-汇编"><a href="#二-汇编" class="headerlink" title="二 汇编"></a>二 汇编</h3><ul>
-<li>目标代码经过汇编器处理，变成机器上可以执行的指令。生成对应的<strong>.o文件</strong></li>
-</ul>
-<h3 id="三-链接"><a href="#三-链接" class="headerlink" title="三 链接"></a>三 链接</h3><ul>
-<li>链接器（这里指的是静态链接器）将多个目标文件合并为一个可执行文件</li>
-<li>在 OS X 和 iOS中的可执行文件是 <strong>Mach-O</strong></li>
-</ul>
-<p>链接又分为静态链接和动态链接</p>
-<ul>
-<li>静态链接<ul>
-<li>在编译链接期间，把目标文件和静态库一起链接形成可执行文件</li>
-<li>静态库如果多个程序都用到了一个库，那么每个程序都要将其链接到可执行文件中，非常冗余</li>
-<li>不方便升级，必须重新编译</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180529193113705?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<ul>
-<li>动态链接<ul>
-<li>在运行时，把目标文件和动态库一起链接形成可执行文件</li>
-<li>多个程序可以共享同一段代码，不需要在磁盘上存多份拷贝</li>
-<li>增加启动时间，影响性能<ul>
-<li>因为动态链接发生在启动或运行时</li>
-</ul>
-</li>
-<li>方便升级</li>
-</ul>
-</li>
-</ul>
-<p>整个过程如下图</p>
-<p><img src="https://img-blog.csdn.net/2018052919245184?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h3 id="四-代码签名"><a href="#四-代码签名" class="headerlink" title="四 代码签名"></a>四 代码签名</h3><ul>
-<li>应用构建（build）完成之后会自动调用命令行工具<strong>codesign</strong> 进行签名，形成一个可以在系统上跑起来的可执行程序</li>
-<li>程序一旦签名，就没有办法更改其中的任何东西，包括资源文件，可执行文件等，iOS系统会检查这个签名</li>
-<li>我们每次build之后，都会发现工程目录下多了一个<strong>.app文件</strong><ul>
-<li>在 <strong>.app</strong>目录中，包含一个叫<strong>_CodeSignature的子目录</strong> ，它是一个 plist文件<ul>
-<li>包含了程序的代码签名<br><img src="https://img-blog.csdn.net/20180529195016743?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="五-启动"><a href="#五-启动" class="headerlink" title="五 启动"></a>五 启动</h3><ul>
-<li>其实在启动过程中，<strong>dyld（动态链接器）</strong> 起了很重要的作用，进行动态链接，进行符号和地址的一个绑定</li>
-</ul>
-<p>dyld 主要在启动过程中主要做了以下事情：</p>
-<ul>
-<li>加载所依赖的dylibs</li>
-<li><strong>Fix-ups：Rebase</strong>修正地址偏移，因为 OS X和 iOS 搞了一个叫 ASLR的东西来做地址偏移（随机化）来避免收到攻击</li>
-<li><strong>Fix-ups：Binding</strong>确定 <strong>Non-Lazy Pointer</strong>地址，进行符号地址绑定。</li>
-<li><strong>ObjC runtime</strong>初始化：加载所有类</li>
-<li><strong>Initializers</strong>：执行<strong>load</strong> 方法和<strong><strong>attribute</strong>((constructor))</strong>修饰的函数</li>
-</ul>
-<p>对于如何减少启动时间，今年的 WWDC 也有详细的阐述，可以在参考链接中找到相关的资料。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
-<p>编译 - 汇编 - 静态链接 - 签名 - 启动（动态链接等操作）- 跑起来了</p>
-</blockquote>
-<p><img src="https://img-blog.csdn.net/20180529195449655?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA4Mjg3MTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li>虎书</li>
-<li>程序员的自我修养</li>
-<li>MDCC 2016 - 孙源（Sunnyxx）- clang 概述</li>
-<li>iDev 2016 - 孙源（Sunnyxx）- 把玩链接器</li>
-<li>优化 App 的启动时间</li>
-<li>WWDC 2016 Session 406</li>
-</ul>
-<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
-<li><p>SPARC</p>
-<ul>
-<li>全称为“可扩充处理器架构”（Scalable Processor ARChitecture），是RISC微处理器架构之一</li>
-</ul>
-</li>
-<li><p>MIPS(Million Instructions Per Second)：</p>
-<ul>
-<li>单字长定点指令平均执行速度 Million Instructions Per Second的缩写，每秒处理的百万级的机器语言指令数。这是衡量CPU速度的一个指标</li>
-</ul>
-</li>
-<li><p>Pentium</p>
-<ul>
-<li>Pentium（奔腾）是英特尔第五代x86架构的微处理器</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/Android-studio-mac版本快捷键/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="童真的烂漫">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="童真的烂漫">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/21/Android-studio-mac版本快捷键/" itemprop="url">
-                  Android studio mac版本快捷键
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T11:24:23+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安卓/" itemprop="url" rel="index">
-                    <span itemprop="name">安卓</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/21/Android-studio-mac版本快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/21/Android-studio-mac版本快捷键/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/03/21/Android-studio-mac版本快捷键/" class="leancloud_visitors" data-flag-title="Android studio mac版本快捷键">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-Mac下快捷键的符号所对应的按键"><a href="#1-Mac下快捷键的符号所对应的按键" class="headerlink" title="1 Mac下快捷键的符号所对应的按键"></a><strong>1 Mac下快捷键的符号所对应的按键</strong></h2><p><code>⌥</code>—&gt; <code>option</code>|<code>alt</code></p>
-<p><code>⇧</code>—&gt;<code>shift</code></p>
-<p><code>⌃</code>—&gt;<code>control</code></p>
-<p><code>⌘</code>—&gt;<code>command</code></p>
-<p><code>⎋</code>—&gt;<code>esc</code></p>
-<p><strong>注:</strong> 与<code>F6</code>/<code>F7</code>/<code>F12</code>等F功能键开头的组合的快捷键需要按住<code>fn</code>开启功能键<br>如：快捷键<code>⌘F12</code>的按键组合为：<code>fn + command + F12</code></p>
-<h2 id="2-Android-Studio-常用快捷键-for-mac"><a href="#2-Android-Studio-常用快捷键-for-mac" class="headerlink" title="2 Android Studio 常用快捷键 for mac"></a><strong>2 Android Studio 常用快捷键 for mac</strong></h2><h4 id="1-查找／查看相关"><a href="#1-查找／查看相关" class="headerlink" title="1 查找／查看相关"></a><strong>1 查找／查看相关</strong></h4><p><strong>⌘O</strong>: 全局查找class类名&lt;使用率非常高&gt;</p>
-<p><strong>⌘F</strong>: 在当前编辑文件中查找&lt;使用率非常高&gt; ｜ 对应window中的<code>Ctrl + F</code></p>
-<p><strong>⌘F12</strong>：当前编辑的文件中结构快速导航 | 对应window中的 <code>Ctrl + F12</code></p>
-<p><strong>⌘E</strong>: 打开最近访问的文件列表 | 对应window中的<code>Ctrl + E</code></p>
-<p><strong>⌥⌘O</strong>: 输入类名／方法名／字段名来查找任何匹配的类／方法／字段&lt;使用率非常高&gt;</p>
-<p><strong>⇧⌘O</strong>: 全局项目查找文件（类／资源文件／布局文件都通过该快捷键查找）&lt;使用率非常高&gt;</p>
-<p><strong>⌃H</strong>: 查看当前编辑class类的hierarchy结构 | 对应window中的<code>Ctrl + H</code></p>
-<p><strong>⌥F7</strong>: 列出全局项目中该类／方法 被引用／调用的情况&lt;使用率非常高&gt;[比<code>⌥⌘F7</code>显示效果好] | 对应window中的<code>Alt + F7</code></p>
-<p><strong>⌥⌘F7</strong>: 列出全局项目中该类／方法 被引用／调用的情况 | 对应window中的<code>Ctrl + Alt + F7</code></p>
-<p><strong>⌃⌥H</strong>: 方法被调用结构［method’s Call Hierarchy］| 对应window中的<code>ctrl + alt + h</code></p>
-<p><strong>⌘P</strong>: 列出函数方法一系列的有效参数，如果光标是一个方法调用的括号之间 | 对应window中的<code>Ctrl + P</code></p>
-<p><strong>⇧⌘F7</strong>: 快速，高亮显示变量在当前文件中的引用情况,使用<code>⌘G</code>和<code>⇧⌘G</code>快捷键 可以前往跳到下一个/上一个高亮的变量，按<code>⎋</code>移除高亮显示 | 对应window中的<code>Ctrl + Shift + F7</code></p>
-<p><strong>F1</strong>: 查看类／方法的注释文档</p>
-<h4 id="2-控制操作相关"><a href="#2-控制操作相关" class="headerlink" title="2 控制操作相关"></a><strong>2 控制操作相关</strong></h4><p><strong>⌘/</strong>: 注释与取消注释，注释效果 <code>//...</code> | 对应window中的<code>Ctrl + /</code></p>
-<p><strong>⌥⌘/</strong>: 注释与取消注释，注释效果 <code>/*...*/</code> | 对应window中的<code>Ctrl+Shift+/</code></p>
-<p><strong>⇧⌥up/down</strong>: 移动行上下移动 | 对应window中的<code>alt + shift + up/down</code></p>
-<p><strong>⌘delete</strong>: 删除行 ｜ 对应window中的<code>ctrl + y</code></p>
-<p><strong>⌘d</strong>: 复制行 ｜ 对应window中的 <code>ctrl + d</code></p>
-<p><strong>⌘J</strong>: 快速生成模版代码块，如<code>if</code>,<code>while</code>,<code>return</code>等&lt;使用频率非常高，高效率编写代码&gt; | 对应window中的<code>Ctrl + J</code></p>
-<p><strong>⌘N</strong>: 快速生成getter／setter方法，构造方法，toString()方法等 &lt;使用率非常高&gt; | 对应window中的<code>Alt + Insert</code></p>
-<p><strong>⌥⌘T</strong>: Surround with快速调出<code>if</code>,<code>for</code>,<code>try...catch</code>,<code>while</code>等环绕代码 ｜ 对应window中的<code>ctrl + alt + t</code></p>
-<p><strong>⌃O</strong>: 引入重写父类的方法［Override Methods］&lt;使用率非常高&gt;</p>
-<p><strong>⌃I</strong>: 引入实现接口或抽象类方法［Implement Methods］&lt;使用率非常高&gt;</p>
-<p><strong>⌃Space</strong>: 当申明一个变量时，根据变量类型提示给出建议的变量名称，等还有其他很多智能提示作用&lt;使用率非常高&gt;</p>
-<p><strong>⌥⌘L</strong>: 代码格式化 &lt;使用率非常高&gt; | 对应window中的<code>Ctrl+Alt+L</code></p>
-<h4 id="3-代码重构相关"><a href="#3-代码重构相关" class="headerlink" title="3 代码重构相关"></a><strong>3 代码重构相关</strong></h4><p><strong>⇧F6</strong>:代码重构时，类名／方法名／变量名 重命名操作 | 对应window中的<code>Shift + F6</code></p>
-<p><strong>⌘R</strong>: 代码重构时，可以用来批量重命名变量</p>
-<p><strong>⌥⌘M</strong>: 方法重构，方法抽离 ｜对应window中的<code>Ctrl+Alt+M</code></p>
-<p><strong>⌥⌘P</strong>: 参数重构，将方法内变量抽离成方法参数 ｜对应window中的<code>Ctrl+Alt+P</code></p>
-<p><strong>⌥⌘V</strong>: 变量抽离，&lt;使用率非常高&gt; | 对应window中的<code>Ctrl+Alt+V</code></p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">StringBuffer</span>()</div></pre></td></tr></table></figure>
-<p>使用快捷键后效果如下：</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">StringBuffer</span> stringBuffer = <span class="keyword">new</span> <span class="built_in">StringBuffer</span>();</div></pre></td></tr></table></figure>
-<p><strong>⌥⌘F</strong>: 字段抽离，将方法内的变量抽离成类字段申明,简单说就是把变量的申明从方法内重构抽离到方法外 ｜ 对应window中的<code>Ctrl+Alt+F</code></p>
-<h4 id="4-工程设置"><a href="#4-工程设置" class="headerlink" title="4 工程设置"></a><strong>4 工程设置</strong></h4><p>Preferences下<br>Editor —&gt;General-&gt; Code Completion —&gt;Case sensitive completion 调成 none ，使大小写不敏感<br>Editor —&gt;General-&gt; Other -&gt;Show quick doc on mouse move 打勾，鼠标移动到方法上显示api<br>Editor —&gt;General-&gt; Auto Import —&gt;Optimize imports on fly 打勾，把不用的声明移除掉，相当于Ctrl + Alt + O </p>
-<h4 id="5-其他快捷键"><a href="#5-其他快捷键" class="headerlink" title="5 其他快捷键"></a><strong>5 其他快捷键</strong></h4><p><strong>⇧⌘A</strong>: 你可以调用任何菜单或动作的名称在Android studio中 ｜ 对应window中的<code>ctrl + shift + a</code></p>
-<p>下面我就是个人觉得有用的快捷(虽然有些可能也没用到过)：</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">CTRL + R Build and run</div><div class="line">OPTION + <span class="built_in">CMD</span> + O	查找工程内的文件或方法或字段</div><div class="line"><span class="built_in">CMD</span> + <span class="number">0</span>	查找工程内的类文件</div><div class="line"><span class="built_in">CMD</span> + P	Show parameters <span class="keyword">for</span> selected method</div><div class="line">OPTION + <span class="built_in">CMD</span> + L	Reformat code</div><div class="line"><span class="built_in">CMD</span> + N	Generate method</div><div class="line"><span class="built_in">CMD</span> + R	相当于搜索替换</div><div class="line"><span class="built_in">CMD</span> + ,	打开Preferences</div><div class="line"><span class="built_in">CMD</span> + ;	打开Project Structure</div><div class="line"><span class="built_in">CMD</span> + X	删除行</div><div class="line"><span class="built_in">CMD</span> + D	复制行</div><div class="line">CTRL + J	显示该方法或类的api</div><div class="line"><span class="built_in">CMD</span> + [ 返回上一次编辑位置</div><div class="line"><span class="built_in">CMD</span> + ]	前进到上一次编辑位置</div><div class="line">CTRL + P	鼠标移动到上一行</div><div class="line">CTRL + N	鼠标移动到下一行</div><div class="line">ALT + ENTER	导入包，自动修正（未验证）</div><div class="line"><span class="built_in">SHIFT</span> + <span class="built_in">CMD</span> + [	previous tab</div><div class="line"><span class="built_in">SHIFT</span> + <span class="built_in">CMD</span> + ]	next tab </div><div class="line">ALT + 向上键	选择当前光标处所在单词或行</div><div class="line">CTRL + ALT + H	查找调用的位置</div><div class="line">ALT + <span class="built_in">SHIFT</span> + UP/DOWN	上下移动代码</div><div class="line">CTRL + O	快捷覆写方法</div><div class="line">ALT + CTRL + O	清除无效引用</div><div class="line">ALT + ENTER	提示错误解决方案(在抽取局部变量时，调出对话框后选第二个)</div><div class="line"><span class="built_in">CMD</span> + <span class="built_in">SHIFT</span> + F	相当于 Eclipse 的 Ctrl + h</div><div class="line">CTRL + T	调出Refactor选项框，可以抽取方法、成员变量等</div><div class="line"><span class="built_in">CMD</span> + ALT + V	相当于Eclipse的Ctrl + <span class="number">2</span> ,L  自动生成变量</div><div class="line"><span class="built_in">CMD</span> + ALT + F	抽取成成员变量</div><div class="line"></div><div class="line"><span class="built_in">CMD</span> + SPACE 相当于 Eclipse 的ALT + /，不过与系统的切换输入法冲突，修改快捷键搜索 Basic</div><div class="line">ALT + /	自动补全最后一个方法名(原)</div><div class="line"></div><div class="line">keymap —&gt;Reformat Code 添加ALT + F</div><div class="line"></div><div class="line"></div><div class="line">Android_Studio 导入项目</div><div class="line"><span class="number">1</span>、修改buid.gradle文件的classpath 为自带最新：eg.</div><div class="line">	dependencies &#123; </div><div class="line">		 classpath 'com.android.tools.build:gradle:<span class="number">1</span>.<span class="number">0</span>.<span class="number">0</span>-rc1’ </div><div class="line">	 &#125;</div><div class="line"><span class="number">2</span>、修改gradle/wrapper/gradle-wrapper.properties文件的distributionUrl(看需要)：eg.</div><div class="line">	distributionUrl=https\://services.gradle.org/distributions/gradle-<span class="number">2</span>.<span class="number">2</span>.<span class="number">1</span>-all.zip</div><div class="line"></div><div class="line">CTRL + <span class="built_in">CMD</span> + F	全屏切换，期间导致过一次工具栏消失</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/微信Mac客户端如何做到消息防撤回和多开/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="童真的烂漫">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="童真的烂漫">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/20/微信Mac客户端如何做到消息防撤回和多开/" itemprop="url">
-                  微信Mac客户端如何做到消息防撤回和多开
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:39:19+08:00">
-                2018-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/越狱/" itemprop="url" rel="index">
-                    <span itemprop="name">越狱</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/20/微信Mac客户端如何做到消息防撤回和多开/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/20/微信Mac客户端如何做到消息防撤回和多开/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/03/20/微信Mac客户端如何做到消息防撤回和多开/" class="leancloud_visitors" data-flag-title="微信Mac客户端如何做到消息防撤回和多开">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://zhuanlan.zhihu.com/p/31260954" target="_blank" rel="external">微信Mac客户端如何做到消息防撤回和多开？</a></p>
-<p>教程   **</p>
-<p><strong>1、安装微信 Mac 官方客户端。</strong>这个是必须的，我就不解释了，哈哈。</p>
-<p><strong>2、打开终端（Terminal）下载源码：</strong></p>
-<p><strong>3、在终端输入：</strong><code>git clone https://github.com/Sunnyyoung/WeChatTweak-macOS.git</code></p>
-<p><strong>4、编译安装：</strong><code>cd WeChatTweak-macOS &amp;&amp; sudo make install</code></p>
-<p><strong>5、打开Mac微信客户端，登录微信</strong>（如果本来就已经打开了客户端，请完全退出后重新打开一遍）<strong>。</strong></p>
-<p><strong>6、打开微信的偏好设置</strong></p>
-<p><strong>7、设置如下</strong>（免手机认证登录和消息撤回的通知设置）</p>
-<ul>
-<li>消息撤回通知：全部接收</li>
-<li>免手机认证登陆：开启</li>
-</ul>
-<p><strong>8、客户端无限多开的两种方法：</strong></p>
-<ul>
-<li>右键dock栏中的微信图标，点击登录新的微信账号，如图：</li>
-</ul>
-<ul>
-<li>命令行执行：open -n /Applications/WeChat.app</li>
-</ul>
-<p><strong>9、卸载插件命令：</strong>cd WeChatTweak-macOS &amp;&amp; sudo make uninstall</p>
+<p>在函数调用的过程中是有一个叫函数调用栈的东西存在的。调用一个函数，首先要把原函数的局部变量等压入栈中，这是为了保护现场，保证调用函数完成后能够顺利返回继续运行下去。当调用函数返回时，又要将这些局部变量等从栈中弹出</p>
 
           
         
@@ -2016,7 +1521,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2059,7 +1564,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2068,7 +1573,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2077,7 +1582,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

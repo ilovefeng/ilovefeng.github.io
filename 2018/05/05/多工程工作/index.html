@@ -109,7 +109,7 @@
 
 2 File &amp;gt; New Project 
 建一个工程myProd">
-<meta property="og:updated_time" content="2018-06-06T09:26:49.268Z">
+<meta property="og:updated_time" content="2018-07-12T11:43:01.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多工程工作">
 <meta name="twitter:description" content="1 workspace 管理多个project1.1 应用场景项目有可能要使用其他的项目文件，或者引入其他的静态库文件，workspace 即可以单独管理多个项目，又可以通过配置，让各个项目相互依赖，可以减少来回切换项目
@@ -459,6 +459,9 @@
 </ul>
 </li>
 </ul>
+<h5 id="1-3-另一种方式"><a href="#1-3-另一种方式" class="headerlink" title="1.3 另一种方式"></a>1.3 另一种方式</h5><ul>
+<li>1.直接拖.xcodeproj 到另一个.xcodeproj工程中，则会自动关联</li>
+</ul>
 <h3 id="2-一个Project多target工作"><a href="#2-一个Project多target工作" class="headerlink" title="2 一个Project多target工作"></a>2 一个Project多target工作</h3><h5 id="2-1-应用场景"><a href="#2-1-应用场景" class="headerlink" title="2.1 应用场景"></a>2.1 应用场景</h5><p>在实际开发过程中难免会遇到同一个项目要发多个版本来服务于业务的需求,而两个版本仅有微小的不同.</p>
 <p>比如我们要发的版本有:</p>
 <p>1.数据版DataTrack-Debug(给数据组,用于埋点统计)</p>
@@ -694,16 +697,25 @@
 </li>
 </ul>
 <h4 id="2-iOS-Code-Sign-On-Copy"><a href="#2-iOS-Code-Sign-On-Copy" class="headerlink" title="2 iOS Code Sign On Copy"></a>2 <a href="http://www.cnblogs.com/breezemist/p/6553268.html" target="_blank" rel="external">iOS Code Sign On Copy</a></h4><p>xcode中embed的framework，都是需要签名的。如果在生成framework时，签过名了，就不用在选上 code sign on copy选项了。如果没有签过名，必须选上，不然无法在真机上运行！</p>
-<h4 id="3-常见模拟器-amp-真机所使用的CPU架构"><a href="#3-常见模拟器-amp-真机所使用的CPU架构" class="headerlink" title="3.常见模拟器&amp;真机所使用的CPU架构"></a>3.常见模拟器&amp;真机所使用的CPU架构</h4><ul>
-<li>模拟器使用的CPU架构 <ul>
-<li>iPhone3gs~iPhone5 : i386 </li>
-<li>iPhone5s~iPhone7plus : x86_64 </li>
+<h4 id="3-常见模拟器-amp-真机所使用的CPU架构"><a href="#3-常见模拟器-amp-真机所使用的CPU架构" class="headerlink" title="3.常见模拟器&amp;真机所使用的CPU架构"></a>3.常见模拟器&amp;真机所使用的CPU架构</h4><blockquote>
+<p>苹果 A7 处理器支持两个不同的指令集，32位 ARM 指令集（armv6 | armv7 | armv7s），64位 ARM 指令集 （arm64）</p>
+</blockquote>
+<ul>
+<li>i386/x86_64： <ul>
+<li>i386 是针对 intel 通用微处理器 32位架构的，x86_64 是针对 x86 架构的 64位处理器</li>
+<li>模拟器</li>
 </ul>
 </li>
-<li>真机设备CPU架构<ul>
-<li>iPhone3gs~iPhone4s : armv7       </li>
-<li>iPhone5~iPhone5c : armv7s(只要支持armv7即可)         </li>
-<li>iPhone5s~iPhone7plus : arm64</li>
+<li>ARMv8/ARM64<ul>
+<li>iPhone 5s ~ iPhone X, iPad Air ~ iPad 5th</li>
+</ul>
+</li>
+<li>ARMv7s: <ul>
+<li>iPhone 5/5c, iPad 4th</li>
+</ul>
+</li>
+<li>ARMv7:<ul>
+<li>iPhone 3GS~4s, iPad 1st ~ iPad 3rd</li>
 </ul>
 </li>
 </ul>
@@ -857,7 +869,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -866,7 +878,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -875,7 +887,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -917,7 +929,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-workspace-管理多个project"><span class="nav-number">1.</span> <span class="nav-text">1 workspace 管理多个project</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-应用场景"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-步骤"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2  步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-一个Project多target工作"><span class="nav-number">2.</span> <span class="nav-text">2 一个Project多target工作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-应用场景"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-步骤"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-静态库与动态库"><span class="nav-number">3.</span> <span class="nav-text">3 静态库与动态库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-静态库（-a、-framework）"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 静态库（.a、.framework）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-动态库（-framework、-dylib、-tbd）"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 动态库（.framework、.dylib、.tbd）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-判断库是动态库还是静态库-用file命令"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3  判断库是动态库还是静态库,用file命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-合并两个静态库"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4  合并两个静态库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Framework、-a、-dylib-tbd"><span class="nav-number">4.</span> <span class="nav-text">4 Framework、.a、.dylib/.tbd</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-Framework（框架）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 .Framework（框架）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-a"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 .a</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-dylib-tbd"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 .dylib/.tbd</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如何选择使用Framework还是StaticLibrary"><span class="nav-number">5.</span> <span class="nav-text">5 如何选择使用Framework还是StaticLibrary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-iOS自动化版本号和编译号"><span class="nav-number">6.</span> <span class="nav-text">6 iOS自动化版本号和编译号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-启用-agvtool"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 启用 agvtool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-设置版本和编译号"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置版本和编译号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-其他："><span class="nav-number">7.</span> <span class="nav-text">7  其他：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-User-Head-Search-Paths-和Head-Search-Paths的区别"><span class="nav-number">7.1.</span> <span class="nav-text">1 User Head Search Paths 和Head Search Paths的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-iOS-Code-Sign-On-Copy"><span class="nav-number">7.2.</span> <span class="nav-text">2 iOS Code Sign On Copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-常见模拟器-amp-真机所使用的CPU架构"><span class="nav-number">7.3.</span> <span class="nav-text">3.常见模拟器&真机所使用的CPU架构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-参考："><span class="nav-number">8.</span> <span class="nav-text">8 参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-workspace-管理多个project"><span class="nav-number">1.</span> <span class="nav-text">1 workspace 管理多个project</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-应用场景"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-步骤"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2  步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-另一种方式"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 另一种方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-一个Project多target工作"><span class="nav-number">2.</span> <span class="nav-text">2 一个Project多target工作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-应用场景"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-步骤"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-静态库与动态库"><span class="nav-number">3.</span> <span class="nav-text">3 静态库与动态库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-静态库（-a、-framework）"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 静态库（.a、.framework）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-动态库（-framework、-dylib、-tbd）"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 动态库（.framework、.dylib、.tbd）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-判断库是动态库还是静态库-用file命令"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3  判断库是动态库还是静态库,用file命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-合并两个静态库"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4  合并两个静态库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Framework、-a、-dylib-tbd"><span class="nav-number">4.</span> <span class="nav-text">4 Framework、.a、.dylib/.tbd</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-Framework（框架）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 .Framework（框架）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-a"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 .a</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-dylib-tbd"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 .dylib/.tbd</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如何选择使用Framework还是StaticLibrary"><span class="nav-number">5.</span> <span class="nav-text">5 如何选择使用Framework还是StaticLibrary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-iOS自动化版本号和编译号"><span class="nav-number">6.</span> <span class="nav-text">6 iOS自动化版本号和编译号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-启用-agvtool"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 启用 agvtool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-设置版本和编译号"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置版本和编译号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-其他："><span class="nav-number">7.</span> <span class="nav-text">7  其他：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-User-Head-Search-Paths-和Head-Search-Paths的区别"><span class="nav-number">7.1.</span> <span class="nav-text">1 User Head Search Paths 和Head Search Paths的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-iOS-Code-Sign-On-Copy"><span class="nav-number">7.2.</span> <span class="nav-text">2 iOS Code Sign On Copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-常见模拟器-amp-真机所使用的CPU架构"><span class="nav-number">7.3.</span> <span class="nav-text">3.常见模拟器&真机所使用的CPU架构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-参考："><span class="nav-number">8.</span> <span class="nav-text">8 参考：</span></a></li></ol></div>
             
 
           </div>

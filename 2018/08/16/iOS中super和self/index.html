@@ -1,0 +1,1116 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="童真的烂漫" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="title: iOS中super和selfdate: 2018-08-16 10:18:43tags: [基础]categories: 基础
+1 [self class] 与 [super class]
+
+将Student.m 转换成 Cpp 文件
+xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc Student.m
+
+123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="童真的烂漫">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/iOS中super和self/index.html">
+<meta property="og:site_name" content="童真的烂漫">
+<meta property="og:description" content="title: iOS中super和selfdate: 2018-08-16 10:18:43tags: [基础]categories: 基础
+1 [self class] 与 [super class]
+
+将Student.m 转换成 Cpp 文件
+xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc Student.m
+
+123456789101">
+<meta property="og:updated_time" content="2018-08-16T12:07:10.243Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="童真的烂漫">
+<meta name="twitter:description" content="title: iOS中super和selfdate: 2018-08-16 10:18:43tags: [基础]categories: 基础
+1 [self class] 与 [super class]
+
+将Student.m 转换成 Cpp 文件
+xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc Student.m
+
+123456789101">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/iOS中super和self/"/>
+
+
+
+
+
+  <title>  | 童真的烂漫 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">童真的烂漫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/iOS中super和self/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="童真的烂漫">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="童真的烂漫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="童真的烂漫" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T10:18:43+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/16/iOS中super和self/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/16/iOS中super和self/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/16/iOS中super和self/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>title: iOS中super和self<br>date: 2018-08-16 10:18:43<br>tags: [基础]<br>categories: 基础</p>
+<p>1 [self class] 与 [super class]</p>
+<blockquote>
+<p>将Student.m 转换成 Cpp 文件</p>
+<p>xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc Student.m</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">@implementation Student : Person</div><div class="line"></div><div class="line">- (instancetype)init</div><div class="line">&#123;</div><div class="line">    // self = ((Student *(*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super)&#123;(id)self, (id)class_getSuperclass(objc_getClass(&quot;Student&quot;))&#125;, sel_registerName(&quot;init&quot;));</div><div class="line">    self = [super init];</div><div class="line">    if (self) &#123;</div><div class="line">    </div><div class="line">    	// id objSelf = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)self, sel_registerName(&quot;class&quot;));</div><div class="line">        id obj1 = [self class];</div><div class="line">        // id objSuper = ((Class (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super)&#123;(id)self, (id)class_getSuperclass(objc_getClass(&quot;Student&quot;))&#125;, sel_registerName(&quot;class&quot;));</div><div class="line">        id obj2 = [super class];</div><div class="line">        NSLog(@&quot;%@&quot;,obj1);</div><div class="line">        NSLog(@&quot;%@&quot;,obj2);</div><div class="line">        //手动实现一个super </div><div class="line">        struct objc_super1 &#123;</div><div class="line">            __unsafe_unretained id receiver;</div><div class="line">            Class superClass;</div><div class="line">        &#125;;</div><div class="line">        struct objc_super1 obj_super = &#123;self,class_getSuperclass(object_getClass(self))&#125;;</div><div class="line">        id obj3 = objc_msgSendSuper(&amp;obj_super,@selector(class));</div><div class="line"></div><div class="line">        </div><div class="line"></div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<blockquote>
+<p>继承关系：Student-&gt;Person-&gt;NSObject</p>
+</blockquote>
+<ul>
+<li><p>[self class]</p>
+<ul>
+<li>转成 objc_msgSend(self,@selector(class)) ，消息的接收者是当前所在类的实例对象</li>
+<li>去查找 class 方法<ul>
+<li>去self 所在类 Student 中查找</li>
+<li>如果类 Student 没有 class ，会向Student 父类 Person 类找 class 方法</li>
+<li>如果 Person 类也没有找到 class 方法,最终会找到最顶级父类 NSObject 的 class 方法</li>
+<li>最终找到 NSObject 的 class 方法 ,并调用了object_getClass(self) ,由于消息接收者是 self 当前类实例对象, 所以最终 [self class]输出 Student</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>[super class]</p>
+<ul>
+<li><p>转化成 objc_msgSendSuper(struct objc_super *,SEL) </p>
+<ul>
+<li>objc_super 是一个结构体，包含<ul>
+<li>一个 receiver 实例（student 实例对象）</li>
+<li>一 个 Class super_class（指向了当前类的父类Person类 ）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>去查找 class 方法</p>
+<ul>
+<li><p>消息的接收者还是student 类的实例对象，然后从父类Person类开始查找</p>
+</li>
+<li><p>如果在父类中没有找到class 这个方法</p>
+<ul>
+<li>会在 Person 类的父类 NSObject 中去查找 class 方法</li>
+<li>由于 NSObject 的 class 方法,调用的是 object_getClass(self) ，所以最终消息接收者为 student 实例对象,所以返回的还是 Student</li>
+</ul>
+</li>
+<li><p>如果在父类中找到class 这个方法</p>
+<ul>
+<li><p>Person 类实现了 class 方法,就会调用[person class] 方法,</p>
+</li>
+<li><p>这个时候 object_getClass(self), 这个 self 是 Student 的实例对象,就是消息接收者,所以即使重写了 Person 的 class 方法 ,依然返回的还是 Student ,除非来个极端的 把 class 方法 实现 返回个 nil , 这样最终调用[super class]结果才会返回nil</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>object_getClass与self.class的区别</p>
+<ul>
+<li>object_getClass:获得的是isa的指向 </li>
+<li>self.class:当self是实例对象的时候，返回的是类对象，否则则返回自身</li>
+</ul>
+</li>
+</ul>
+<p>KVO巧妙的利用了子类 重写了 class 方法 ,让我们误以为 [person class] 还是当前类 Person ,而不是动态创建的子类 NSKVONotifily_Person 这个子类 ,  就是让子类返回了父类的 Class ,所以调用 [person class] 返回的还是 Person 从而对开发者隐藏了 NSKVONotifily_Person子类的存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (Class)class &#123;</div><div class="line">    return class_getSuperclass(object_getClass(self));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>object_getClass(id) 才会返回这个实例对象的真实 class 类型,</p>
+<p>object_getClass(Person) : NSKVONotifying_Person  </p>
+<p>KVO同步移步问题</p>
+<p>在哪个线程中发送监听消息，就在哪个线程中执行监听方法，执行方法的时候在当前线程是同步的</p>
+<p>KVO 底层实现是什么? </p>
+<ul>
+<li><p>动态创建NSKVONotifying_Person类（Person的子类）</p>
+</li>
+<li><p>然后让Person类的isa指针指向NSKVONotifying_Person类</p>
+</li>
+<li><p>重写setName方法，用来通知属性有变化</p>
+<ul>
+<li><p>在 Foundation 框架里的 _NSSetObjectValueAndNotify 函数中 </p>
+<ul>
+<li><p>首先调用 willChangeValueForKey </p>
+</li>
+<li><p>其次调用父类的 setter 方法 对属性赋值</p>
+</li>
+<li><p>然后调用 didChangeValueForKey</p>
+</li>
+<li><p>最后调用observeValueForKeyPath 去告诉监听器属性值发生了改变 </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>重写Class方法，让外界不知道NSKVONotifying_Person类的存在</p>
+<ul>
+<li>class_getSuperClass(object_getClass(self))</li>
+</ul>
+</li>
+<li><p>重写dealloc，做一些 KVO 释放内存</p>
+</li>
+</ul>
+<p>如何手动触发 KVO? </p>
+<p>willChangeValueForKey</p>
+<p>设置name</p>
+<p>didChangeValueForKey</p>
+<p>调用observeValueForKeyPath</p>
+<p>修改成员变量的值会出发 KVO 吗? </p>
+<ul>
+<li>不一定，看是否出发setter方法</li>
+</ul>
+<p>KVC 赋值会出发 KVO 吗?</p>
+<ul>
+<li><p>非容器对象</p>
+<ul>
+<li>修改属性，会触发</li>
+</ul>
+</li>
+<li><p>容器对象</p>
+<ul>
+<li><p>修改属性，只是简单的add或者dele则不会触发</p>
+<ul>
+<li>如果调用下面方法通过<code>key</code>或者<code>keyPath</code>获取集合对象，然后再对容器对象进行<code>add</code>或<code>remove</code>等操作时，就会触发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (NSMutableArray *)mutableArrayValueForKey:(NSString *)key;</div><div class="line">- (NSMutableOrderedSet *)mutableOrderedSetValueForKey:(NSString *)key </div><div class="line">- (NSMutableSet *)mutableSetValueForKey:(NSString *)key;</div><div class="line">//keyPath方法</div><div class="line">- (NSMutableArray *)mutableArrayValueForKeyPath:(NSString *)keyPath;</div><div class="line">- (NSMutableOrderedSet *)mutableOrderedSetValueForKeyPath:(NSString *)keyPath </div><div class="line">- (NSMutableSet *)mutableSetValueForKeyPath:(NSString *)keyPath;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>集合对象主要指<code>NSArray</code>和<code>NSSet</code>，但不包括<code>NSDictionary</code></p>
+<p>KVC原理</p>
+<p>通过key或者keyPath进行操作的时候，可以查找属性方法、成员变量等，查找的时候可以兼容多种命名。例如<code>get&lt;Key&gt;</code>, <code>&lt;key&gt;</code>, <code>is&lt;Key&gt;</code>, <code>_&lt;key&gt;</code>的拼接方案</p>
+<p>详情看<a href="https://www.jianshu.com/p/1d39bc610a5b" target="_blank" rel="external">KVC原理剖析</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">1. 如果第一个 [weak self] 不加，block 和 block2 是否会 retain self</div><div class="line"></div><div class="line">block 会 block2 不会</div><div class="line">第一种情况，block2 使用的weak self 等于是block内部使用了self所以block会捕获self(因为block没有使用weak self 所以这个self是strong self)</div><div class="line">2. 如果第二个 [weak self] 不加，block 和 block2 是否会 retain self</div><div class="line">都不会</div><div class="line">第二种情况 block2 即使没用使用weak self 但是因为block已经使用了weak self 所以block2捕获的是block中已经weak化的self</div><div class="line"></div><div class="line">结论：有嵌套 block，内层 block 用到 weak self，外层一定要加 weak self，但是外层加了 [weak self]，内层就可以不加 [weak self]</div><div class="line">let block = &#123; [weak self] in</div><div class="line">    let block2 = &#123; [weak self] in</div><div class="line">        //…</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/iTerm2设置/" rel="next" title="iTerm2设置">
+                <i class="fa fa-chevron-left"></i> iTerm2设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2018/08/16/iOS中super和self/"
+     data-title=""
+     data-content=""
+     data-url="http://yoursite.com/2018/08/16/iOS中super和self/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/08/16/iOS中super和self/"
+           data-title="" data-url="http://yoursite.com/2018/08/16/iOS中super和self/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="童真的烂漫" />
+          <p class="site-author-name" itemprop="name">童真的烂漫</p>
+          <p class="site-description motion-element" itemprop="description">代码简单点，bug少一点！</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">童真的烂漫</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ilovefeng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("mcWzUpQ3AldFJ4kzarMYUdHm-gzGzoHsz", "r4IAP9mahPuKIgHr5NQA4bPF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
